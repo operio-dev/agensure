@@ -1,4 +1,18 @@
-<html lang="en"> <head> <meta charset="UTF-8"/> <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <title>Agensure — Making AI Agents Insurable in Europe</title> <meta name="description" content="Risk assessment, EU AI Act certification and insurance for autonomous AI agents deployed in production. Europe's first AI agent trust layer."/> <link rel="preconnect" href="https://fonts.googleapis.com"/> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/> <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet"/> <style> *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agensure — Making AI Agents Insurable in Europe</title>
+  <meta name="description" content="Risk assessment, EU AI Act certification and insurance for autonomous AI agents deployed in production. Europe's first AI agent trust layer."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+```
 :root {
   --bg:       #EEF2F7;
   --navy:     #0D1B2E;
@@ -628,4 +642,232 @@ footer a:hover { color: var(--navy); }
   .footer-left { flex-direction: column; gap: 12px; }
   .footer-sep { display: none; }
 }
-</style> </head> <body> <div class="glow glow-1"></div> <div class="glow glow-2"></div> <div class="glow glow-3" style="position:fixed;width:600px;height:600px;background:radial-gradient(circle,rgba(140,185,225,0.2) 0%,transparent 70%);top:20%;left:30%;border-radius:50%;pointer-events:none;z-index:0;"></div> <nav> <a href="/" class="logo"> <svg width="24" height="24" viewBox="0 0 28 28" fill="none"> <path d="M14 2L4 7V14C4 19.5 8.4 24.7 14 26C19.6 24.7 24 19.5 24 14V7L14 2Z" stroke="#00C4B4" stroke-width="1.6" stroke-linejoin="round"/> <path d="M10 14L13 17L18 11" stroke="#00C4B4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/> </svg> <span class="logo-text">Agensure</span> </a> <div class="nav-right"> <a href="#product" class="nav-link">Product</a> <a href="#why" class="nav-link">Why Now</a> <a href="#waitlist" class="nav-cta">Join Waitlist</a> </div> </nav> <div class="hero"> <div class="hero-tag"><span></span>EU AI Act · August 2026<span></span></div> <h1>Making AI Agents<br/><em>Insurable</em><br/>in Europe</h1> <p class="hero-sub">The all-in-one trust layer — risk assessment, EU AI Act certification, and insurance coverage for every autonomous agent in production.</p> <div class="hero-form-wrap"> <form class="hero-form" id="f1" onsubmit="sub(event,'s1')"> <input type="email" placeholder="work@yourcompany.eu" required/> <button type="submit">Join Waitlist</button> </form> <div class="success" id="s1"> <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="6.5" stroke="#00C4B4" stroke-width="1.4"/><path d="M4.5 7.5l2 2 4-4" stroke="#00C4B4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg> You're on the list. </div> <p class="form-note">Design partners only · No spam</p> </div> <div class="hero-pills"> <span class="pill">EU AI Act Art. 12 + 14</span> <span class="pill">GDPR Native</span> <span class="pill">Risk Score in 48h</span> <span class="pill">MGA Insurance Model</span> <span class="pill">Milan, Italy</span> </div> </div> <div class="marquee-wrap"> <div class="marquee-track"> <span class="marquee-item">Risk Assessment</span><span class="marquee-item">·</span> <span class="marquee-item">EU AI Act Certification</span><span class="marquee-item">·</span> <span class="marquee-item">AI Agent Insurance</span><span class="marquee-item">·</span> <span class="marquee-item">Prompt Injection Testing</span><span class="marquee-item">·</span> <span class="marquee-item">Permission Escalation</span><span class="marquee-item">·</span> <span class="marquee-item">ADR Certificate</span><span class="marquee-item">·</span> <span class="marquee-item">MGA Model</span><span class="marquee-item">·</span> <span class="marquee-item">GDPR Native</span><span class="marquee-item">·</span> <span class="marquee-item">Risk Assessment</span><span class="marquee-item">·</span> <span class="marquee-item">EU AI Act Certification</span><span class="marquee-item">·</span> <span class="marquee-item">AI Agent Insurance</span><span class="marquee-item">·</span> <span class="marquee-item">Prompt Injection Testing</span><span class="marquee-item">·</span> <span class="marquee-item">Permission Escalation</span><span class="marquee-item">·</span> <span class="marquee-item">ADR Certificate</span><span class="marquee-item">·</span> <span class="marquee-item">MGA Model</span><span class="marquee-item">·</span> <span class="marquee-item">GDPR Native</span><span class="marquee-item">·</span> </div> </div> <section class="problem"> <div class="wrap"> <p class="s-label">The Problem</p> <h2>Nobody covers AI agents<br/>when they <em>fail</em>.</h2> <div class="problem-layout"> <div> <div class="stat-row"> <div class="stat-num">93%</div> <div class="stat-text"> <h3>Insurers are exiting</h3> <p>Zurich, Tokio Marine and Berkshire Hathaway have all filed AI-specific exclusions. Zero financial safety net exists for autonomous agent failures.</p> </div> </div> <div class="stat-row"> <div class="stat-num">3%</div> <div class="stat-text"> <h3>Real board-level liability</h3> <p>EU AI Act fines reach up to 3% of global annual turnover for high-risk AI deployers — enforceable from August 2026.</p> </div> </div> <div class="stat-row"> <div class="stat-num">0</div> <div class="stat-text"> <h3>EU-native solutions</h3> <p>The only comparable product (Mount, YC W26) is US-only with no EU AI Act alignment. Europe has no independent trust layer.</p> </div> </div> </div> <div class="problem-right"> <div class="eyebrow">Why it matters</div> <blockquote>"When an AI agent moves money, signs a contract, or accesses sensitive data —<br/><em>who is liable?</em>"</blockquote> <p>Enterprises want to deploy autonomous agents but cannot quantify or transfer the operational risk. Traditional cyber insurance was never designed for agentic AI behavior. Agensure closes this gap — built natively for European regulation.</p> </div> </div> </div> </section> <section class="product" id="product"> <div class="wrap"> <p class="s-label">The Product</p> <h2>Assess. Certify. <em>Insure.</em></h2> <p class="s-body">Three products. One platform. Each phase builds the proprietary risk data that makes the next possible.</p> <div class="product-steps"> <div class="step"> <div class="step-header"> <span class="step-num">01</span> <span class="step-badge badge-now">Available now</span> </div> <h3>Risk Assessment</h3> <p>Automated red-teaming of your deployed AI agents. Prompt injection, permission escalation, data leakage, unauthorized actions. Risk score + prioritized remediation report in 48 hours.</p> <span class="step-price">€5,000 – €15,000 / assessment</span> </div> <div class="step"> <div class="step-header"> <span class="step-num">02</span> <span class="step-badge badge-soon">Q3 2026</span> </div> <h3>ADR Certification</h3> <p>The SOC 2 for AI agents — aligned to EU AI Act Art. 12 and Art. 14. Annual certification with continuous monitoring. Proof of compliance for customers, partners and regulators.</p> <span class="step-price">€10,000 – €30,000 / year</span> </div> <div class="step"> <div class="step-header"> <span class="step-num">03</span> <span class="step-badge badge-soon">2027</span> </div> <h3>AI Agent Insurance</h3> <p>Coverage for unauthorized actions, erroneous outputs, data breaches and business interruption. Underwritten using our proprietary risk dataset — a data moat no traditional carrier can replicate.</p> <span class="step-price">€10,000 – €100,000 / year premium</span> </div> </div> </div> </section> <section class="why" id="why"> <div class="wrap"> <div class="why-inner"> <div class="why-left"> <p class="s-label">Why Now</p> <p class="s-body">Three forces converging at once.</p> <div class="deadline">Aug<em>2026.</em></div> </div> <div> <div class="why-item"> <span class="why-n">01</span> <div> <h3>EU AI Act becomes enforceable</h3> <p>High-risk AI obligations apply from August 2026. Companies deploying autonomous agents face fines up to 3% of global annual turnover with no grace period.</p> </div> </div> <div class="why-item"> <span class="why-n">02</span> <div> <h3>Insurers are running away</h3> <p>Traditional carriers are explicitly excluding AI agent risk from cyber policies. The gap between what enterprises need and what the market offers has never been wider.</p> </div> </div> <div class="why-item"> <span class="why-n">03</span> <div> <h3>The agentic wave is here</h3> <p>Every SaaS company is evolving toward agentic models. From HR automation to customer support — autonomous action is becoming the product. Someone has to insure it.</p> </div> </div> </div> </div> </div> </section> <section class="cta" id="waitlist"> <div class="wrap"> <div class="cta-inner"> <div class="cta-left"> <p class="s-label">Early Access</p> <h2>Join the waitlist.<br/><em>Shape the standard.</em></h2> <p class="s-body" style="margin-top:16px;">We're onboarding design partners — companies deploying AI agents who want early access and influence over the product.</p> </div> <div class="cta-right"> <p>Request early access or get in touch directly.</p> <form class="hero-form" id="f2" onsubmit="sub(event,'s2')"> <input type="email" placeholder="work@yourcompany.eu" required/> <button type="submit">Get Access</button> </form> <div class="success" id="s2"> <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="6.5" stroke="#00C4B4" stroke-width="1.4"/><path d="M4.5 7.5l2 2 4-4" stroke="#00C4B4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg> You're on the list. </div> <p class="form-note" style="margin-top:12px;">Or email: <a href="mailto:founder@agensure.eu" style="color:var(--teal);text-decoration:none;">founder@agensure.eu</a></p> </div> </div> </div> </section> <footer> <div class="footer-left"> <a href="/" class="footer-logo"> <svg width="20" height="20" viewBox="0 0 28 28" fill="none"> <path d="M14 2L4 7V14C4 19.5 8.4 24.7 14 26C19.6 24.7 24 19.5 24 14V7L14 2Z" stroke="#00C4B4" stroke-width="1.6" stroke-linejoin="round"/> <path d="M10 14L13 17L18 11" stroke="#00C4B4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/> </svg> <span>Agensure</span> </a> <div class="footer-sep"></div> <a href="mailto:founder@agensure.eu">founder@agensure.eu</a> <a href="#">Privacy</a> </div> <div class="footer-right">© 2026 Agensure · Milan, Italy</div> </footer> <script> function sub(e, id) { e.preventDefault(); e.target.style.display = 'none'; document.getElementById(id).style.display = 'flex'; } </script> </body> </html>
+```
+
+  </style>
+</head>
+<body>
+
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+<div class="glow glow-3" style="position:fixed;width:600px;height:600px;background:radial-gradient(circle,rgba(140,185,225,0.2) 0%,transparent 70%);top:20%;left:30%;border-radius:50%;pointer-events:none;z-index:0;"></div>
+
+<nav>
+  <a href="/" class="logo">
+    <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+      <path d="M14 2L4 7V14C4 19.5 8.4 24.7 14 26C19.6 24.7 24 19.5 24 14V7L14 2Z" stroke="#00C4B4" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M10 14L13 17L18 11" stroke="#00C4B4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="logo-text">Agensure</span>
+  </a>
+  <div class="nav-right">
+    <a href="#product" class="nav-link">Product</a>
+    <a href="#why" class="nav-link">Why Now</a>
+    <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag"><span></span>EU AI Act · August 2026<span></span></div>
+  <h1>Making AI Agents<br/><em>Insurable</em><br/>in Europe</h1>
+  <p class="hero-sub">The all-in-one trust layer — risk assessment, EU AI Act certification, and insurance coverage for every autonomous agent in production.</p>
+  <div class="hero-form-wrap">
+    <form class="hero-form" id="f1" onsubmit="sub(event,'s1')">
+      <input type="email" placeholder="work@yourcompany.eu" required/>
+      <button type="submit">Join Waitlist</button>
+    </form>
+    <div class="success" id="s1">
+      <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="6.5" stroke="#00C4B4" stroke-width="1.4"/><path d="M4.5 7.5l2 2 4-4" stroke="#00C4B4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      You're on the list.
+    </div>
+    <p class="form-note">Design partners only · No spam</p>
+  </div>
+  <div class="hero-pills">
+    <span class="pill">EU AI Act Art. 12 + 14</span>
+    <span class="pill">GDPR Native</span>
+    <span class="pill">Risk Score in 48h</span>
+    <span class="pill">MGA Insurance Model</span>
+    <span class="pill">Milan, Italy</span>
+  </div>
+</div>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Risk Assessment</span><span class="marquee-item">·</span>
+    <span class="marquee-item">EU AI Act Certification</span><span class="marquee-item">·</span>
+    <span class="marquee-item">AI Agent Insurance</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Prompt Injection Testing</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Permission Escalation</span><span class="marquee-item">·</span>
+    <span class="marquee-item">ADR Certificate</span><span class="marquee-item">·</span>
+    <span class="marquee-item">MGA Model</span><span class="marquee-item">·</span>
+    <span class="marquee-item">GDPR Native</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Risk Assessment</span><span class="marquee-item">·</span>
+    <span class="marquee-item">EU AI Act Certification</span><span class="marquee-item">·</span>
+    <span class="marquee-item">AI Agent Insurance</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Prompt Injection Testing</span><span class="marquee-item">·</span>
+    <span class="marquee-item">Permission Escalation</span><span class="marquee-item">·</span>
+    <span class="marquee-item">ADR Certificate</span><span class="marquee-item">·</span>
+    <span class="marquee-item">MGA Model</span><span class="marquee-item">·</span>
+    <span class="marquee-item">GDPR Native</span><span class="marquee-item">·</span>
+  </div>
+</div>
+
+<section class="problem">
+  <div class="wrap">
+    <p class="s-label">The Problem</p>
+    <h2>Nobody covers AI agents<br/>when they <em>fail</em>.</h2>
+    <div class="problem-layout">
+      <div>
+        <div class="stat-row">
+          <div class="stat-num">93%</div>
+          <div class="stat-text">
+            <h3>Insurers are exiting</h3>
+            <p>Zurich, Tokio Marine and Berkshire Hathaway have all filed AI-specific exclusions. Zero financial safety net exists for autonomous agent failures.</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-num">3%</div>
+          <div class="stat-text">
+            <h3>Real board-level liability</h3>
+            <p>EU AI Act fines reach up to 3% of global annual turnover for high-risk AI deployers — enforceable from August 2026.</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-num">0</div>
+          <div class="stat-text">
+            <h3>EU-native solutions</h3>
+            <p>The only comparable product (Mount, YC W26) is US-only with no EU AI Act alignment. Europe has no independent trust layer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="problem-right">
+        <div class="eyebrow">Why it matters</div>
+        <blockquote>"When an AI agent moves money, signs a contract, or accesses sensitive data —<br/><em>who is liable?</em>"</blockquote>
+        <p>Enterprises want to deploy autonomous agents but cannot quantify or transfer the operational risk. Traditional cyber insurance was never designed for agentic AI behavior. Agensure closes this gap — built natively for European regulation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product" id="product">
+  <div class="wrap">
+    <p class="s-label">The Product</p>
+    <h2>Assess. Certify. <em>Insure.</em></h2>
+    <p class="s-body">Three products. One platform. Each phase builds the proprietary risk data that makes the next possible.</p>
+    <div class="product-steps">
+      <div class="step">
+        <div class="step-header">
+          <span class="step-num">01</span>
+          <span class="step-badge badge-now">Available now</span>
+        </div>
+        <h3>Risk Assessment</h3>
+        <p>Automated red-teaming of your deployed AI agents. Prompt injection, permission escalation, data leakage, unauthorized actions. Risk score + prioritized remediation report in 48 hours.</p>
+        <span class="step-price">€5,000 – €15,000 / assessment</span>
+      </div>
+      <div class="step">
+        <div class="step-header">
+          <span class="step-num">02</span>
+          <span class="step-badge badge-soon">Q3 2026</span>
+        </div>
+        <h3>ADR Certification</h3>
+        <p>The SOC 2 for AI agents — aligned to EU AI Act Art. 12 and Art. 14. Annual certification with continuous monitoring. Proof of compliance for customers, partners and regulators.</p>
+        <span class="step-price">€10,000 – €30,000 / year</span>
+      </div>
+      <div class="step">
+        <div class="step-header">
+          <span class="step-num">03</span>
+          <span class="step-badge badge-soon">2027</span>
+        </div>
+        <h3>AI Agent Insurance</h3>
+        <p>Coverage for unauthorized actions, erroneous outputs, data breaches and business interruption. Underwritten using our proprietary risk dataset — a data moat no traditional carrier can replicate.</p>
+        <span class="step-price">€10,000 – €100,000 / year premium</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="why-inner">
+      <div class="why-left">
+        <p class="s-label">Why Now</p>
+        <p class="s-body">Three forces converging at once.</p>
+        <div class="deadline">Aug<em>2026.</em></div>
+      </div>
+      <div>
+        <div class="why-item">
+          <span class="why-n">01</span>
+          <div>
+            <h3>EU AI Act becomes enforceable</h3>
+            <p>High-risk AI obligations apply from August 2026. Companies deploying autonomous agents face fines up to 3% of global annual turnover with no grace period.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-n">02</span>
+          <div>
+            <h3>Insurers are running away</h3>
+            <p>Traditional carriers are explicitly excluding AI agent risk from cyber policies. The gap between what enterprises need and what the market offers has never been wider.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-n">03</span>
+          <div>
+            <h3>The agentic wave is here</h3>
+            <p>Every SaaS company is evolving toward agentic models. From HR automation to customer support — autonomous action is becoming the product. Someone has to insure it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="waitlist">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="cta-left">
+        <p class="s-label">Early Access</p>
+        <h2>Join the waitlist.<br/><em>Shape the standard.</em></h2>
+        <p class="s-body" style="margin-top:16px;">We're onboarding design partners — companies deploying AI agents who want early access and influence over the product.</p>
+      </div>
+      <div class="cta-right">
+        <p>Request early access or get in touch directly.</p>
+        <form class="hero-form" id="f2" onsubmit="sub(event,'s2')">
+          <input type="email" placeholder="work@yourcompany.eu" required/>
+          <button type="submit">Get Access</button>
+        </form>
+        <div class="success" id="s2">
+          <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="6.5" stroke="#00C4B4" stroke-width="1.4"/><path d="M4.5 7.5l2 2 4-4" stroke="#00C4B4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          You're on the list.
+        </div>
+        <p class="form-note" style="margin-top:12px;">Or email: <a href="mailto:founder@agensure.eu" style="color:var(--teal);text-decoration:none;">founder@agensure.eu</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">
+    <a href="/" class="footer-logo">
+      <svg width="20" height="20" viewBox="0 0 28 28" fill="none">
+        <path d="M14 2L4 7V14C4 19.5 8.4 24.7 14 26C19.6 24.7 24 19.5 24 14V7L14 2Z" stroke="#00C4B4" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M10 14L13 17L18 11" stroke="#00C4B4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Agensure</span>
+    </a>
+    <div class="footer-sep"></div>
+    <a href="mailto:founder@agensure.eu">founder@agensure.eu</a>
+    <a href="#">Privacy</a>
+  </div>
+  <div class="footer-right">© 2026 Agensure · Milan, Italy</div>
+</footer>
+
+<script>
+  function sub(e, id) {
+    e.preventDefault();
+    e.target.style.display = 'none';
+    document.getElementById(id).style.display = 'flex';
+  }
+</script>
+
+</body>
+</html>
