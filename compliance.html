@@ -47,10 +47,10 @@
     .glow { position:fixed; border-radius:50%; pointer-events:none; z-index:0; }
     .glow-1 { width:900px; height:900px; background:radial-gradient(circle,rgba(150,190,230,0.35) 0%,transparent 70%); top:-300px; right:-250px; }
     .glow-2 { width:700px; height:700px; background:radial-gradient(circle,rgba(160,200,235,0.25) 0%,transparent 65%); bottom:0; left:-200px; }
- 
+
     nav {
       position:fixed; top:0; left:0; right:0; z-index:100;
-      padding:22px 52px;
+      padding:14px 52px;
       display:flex; align-items:center; justify-content:space-between;
       backdrop-filter:blur(24px);
       background:rgba(230,238,248,0.85);
@@ -63,10 +63,41 @@
     .nav-link.active { color:var(--teal); font-weight:600; }
     .nav-cta { font-size:13px; font-weight:600; color:#fff; background:var(--teal); padding:9px 20px; border-radius:8px; text-decoration:none; transition:opacity 0.2s; }
     .nav-cta:hover { opacity:0.85; }
- 
+
+    /* HERO OUTER for bg image */
+    .hero-outer {
+      position:relative;
+      z-index:1;
+      overflow:hidden;
+    }
+    .hero-map {
+      position:absolute;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+    }
+    .hero-map img {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      opacity:0.18;
+    }
+    .hero-map::before {
+      content:'';
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 50%, rgba(221,232,240,0.55) 0%, transparent 70%),
+        linear-gradient(to bottom, rgba(221,232,240,0.5) 0%, transparent 30%, transparent 70%, rgba(216,230,242,0.5) 100%);
+      z-index:1;
+    }
+
     /* HERO */
     .hero {
-      position:relative; z-index:1;
+      position:relative; z-index:2;
       min-height:80vh;
       display:flex; flex-direction:column; justify-content:center;
       padding:160px 52px 80px;
@@ -105,7 +136,7 @@
       font-size:12px; color:var(--muted); margin-top:12px;
       opacity:0; animation:up 0.7s ease 0.6s forwards;
     }
- 
+
     /* SECTIONS */
     section { position:relative; z-index:1; }
     .wrap { max-width:1100px; margin:0 auto; padding:0 52px; }
@@ -113,7 +144,7 @@
     h2 { font-size:clamp(26px,3vw,40px); font-weight:800; line-height:1.1; letter-spacing:-0.03em; color:var(--navy); }
     h2 em { font-style:italic; font-weight:400; color:#1A5070; }
     .s-body { font-size:17px; font-weight:300; color:#4A6070; line-height:1.7; max-width:540px; margin-top:14px; }
- 
+
     /* WHAT WE CHECK */
     .checks { padding:100px 0; border-top:1px solid var(--border2); }
     .checks-grid {
@@ -136,7 +167,7 @@
     }
     .check-card h3 { font-size:16px; font-weight:800; color:var(--navy); margin-bottom:10px; letter-spacing:-0.01em; }
     .check-card p { font-size:13px; color:#4A6070; line-height:1.65; }
- 
+
     /* OUTPUT */
     .output { padding:100px 0; border-top:1px solid var(--border2); }
     .output-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; margin-top:52px; }
@@ -167,7 +198,7 @@
     .output-card blockquote { font-size:19px; font-weight:700; line-height:1.4; letter-spacing:-0.02em; margin-bottom:20px; color:var(--navy); }
     .output-card blockquote em { font-style:italic; font-weight:400; color:#1A5070; }
     .output-card p { font-size:14px; color:#4A6070; line-height:1.65; }
- 
+
     /* HOW IT WORKS */
     .how { padding:100px 0; border-top:1px solid var(--border2); }
     .how-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:52px; }
@@ -183,7 +214,7 @@
     .how-step-n { font-size:48px; font-weight:800; color:rgba(26,107,138,0.12); line-height:1; margin-bottom:16px; letter-spacing:-0.04em; }
     .how-step h3 { font-size:18px; font-weight:800; color:var(--navy); margin-bottom:10px; letter-spacing:-0.01em; }
     .how-step p { font-size:14px; color:#4A6070; line-height:1.65; }
- 
+
     /* CTA BAND */
     .cta-band {
       padding:100px 0;
@@ -193,7 +224,7 @@
     .cta-band h2 { font-size:clamp(28px,3.5vw,46px); margin-bottom:16px; }
     .cta-band p { font-size:17px; color:#4A6070; max-width:480px; margin:0 auto 36px; line-height:1.7; }
     .cta-band .hero-cta { animation:none; opacity:1; display:inline-flex; }
- 
+
     footer {
       position:relative; z-index:1;
       border-top:1px solid rgba(26,107,138,0.1);
@@ -206,11 +237,11 @@
     footer a { font-size:13px; color:#4A6070; text-decoration:none; transition:color 0.2s; }
     footer a:hover { color:var(--navy); }
     .footer-right { font-size:12px; color:var(--muted); }
- 
+
     @keyframes up { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
- 
+
     @media(max-width:900px){
-      nav{padding:18px 24px;}
+      nav{padding:14px 24px;}
       .nav-right .nav-link{display:none;}
       .hero{padding:130px 24px 60px;}
       .wrap{padding:0 24px;}
@@ -225,7 +256,7 @@
 <body>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
- 
+
 <nav>
   <a href="/" class="logo">
     <img src="agescrittalogo.png" alt="Agensure" height="80" style="display:block;object-fit:contain;"/>
@@ -236,14 +267,19 @@
     <a href="/#waitlist" class="nav-cta">Get Free Audit</a>
   </div>
 </nav>
- 
-<div class="hero">
-  <h1>EU AI Act full-compliance,<br/><em>verified.</em></h1>
-  <p class="hero-sub">Agensure audits your AI agent deployments against every relevant EU AI Act obligation and gives you a clear, actionable report in a matter of hours.</p>
-  <a href="mailto:founder@agensure.eu" class="hero-cta">Get your free audit →</a>
-  <p class="hero-note">Free for early design partners · founder@agensure.eu</p>
+
+<div class="hero-outer">
+  <div class="hero-map" aria-hidden="true">
+    <img src="WRLD-EU-02-4002.png" alt="" />
+  </div>
+  <div class="hero">
+    <h1>EU AI Act full-compliance,<br/><em>verified.</em></h1>
+    <p class="hero-sub">Agensure audits your AI agent deployments against every relevant EU AI Act obligation and gives you a clear, actionable report in a matter of hours.</p>
+    <a href="mailto:founder@agensure.eu" class="hero-cta">Get your free audit →</a>
+    <p class="hero-note">Free for early design partners · founder@agensure.eu</p>
+  </div>
 </div>
- 
+
 <!-- WHAT WE CHECK -->
 <section class="checks">
   <div class="wrap">
@@ -283,7 +319,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- OUTPUT -->
 <section class="output">
   <div class="wrap">
@@ -336,7 +372,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- HOW IT WORKS -->
 <section class="how">
   <div class="wrap">
@@ -361,7 +397,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- CTA BAND -->
 <section class="cta-band">
   <div class="wrap">
@@ -371,7 +407,7 @@
     <a href="mailto:founder@agensure.eu" class="hero-cta">Get your free audit →</a>
   </div>
 </section>
- 
+
 <footer>
   <div class="footer-left">
     <a href="/" class="footer-logo">
@@ -385,3 +421,5 @@
 </footer>
 </body>
 </html>
+
+compliance done
