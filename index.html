@@ -339,38 +339,24 @@
       pointer-events: none;
     }
 
-    .hero-map svg {
+    .hero-map img {
       position: absolute;
-      right: -2%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 65%;
-      max-width: 780px;
-      height: auto;
-      opacity: 0.14;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.08;
     }
 
-    /* Fade left so text stays readable */
+    /* Gradient overlay for readability */
     .hero-map::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to right,
-        #DDE8F0 0%,
-        rgba(221,232,240,0.9) 25%,
-        rgba(221,232,240,0.4) 50%,
-        transparent 70%
-      );
-      z-index: 1;
-    }
-
-    /* Fade top + bottom */
-    .hero-map::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(221,232,240,0.7) 0%, transparent 15%, transparent 85%, rgba(216,230,242,0.7) 100%);
+      background: 
+        radial-gradient(ellipse 80% 60% at 50% 50%, rgba(221,232,240,0.55) 0%, transparent 70%),
+        linear-gradient(to bottom, rgba(221,232,240,0.5) 0%, transparent 30%, transparent 70%, rgba(216,230,242,0.5) 100%);
       z-index: 1;
     }
 
@@ -827,87 +813,7 @@
 <div class="hero-outer">
   <!-- Europe map background -->
   <div class="hero-map" aria-hidden="true">
-    <svg viewBox="0 0 900 860" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-      <!-- Scandinavia / Norway -->
-      <path d="M430 60 L445 55 L460 62 L468 75 L472 95 L465 115 L455 130 L448 150 L442 170 L435 185 L428 175 L420 160 L415 145 L418 125 L422 105 L425 85 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Sweden -->
-      <path d="M455 65 L478 58 L495 68 L500 85 L498 108 L492 130 L485 155 L476 178 L465 195 L455 188 L448 172 L445 150 L448 128 L455 105 L460 82 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Finland -->
-      <path d="M495 68 L520 58 L545 62 L558 78 L555 98 L548 118 L538 138 L525 155 L510 165 L498 158 L492 138 L495 115 L498 92 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Denmark -->
-      <path d="M438 198 L448 192 L455 200 L450 215 L440 218 L432 210 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- UK -->
-      <path d="M358 178 L375 168 L390 172 L398 188 L395 205 L385 218 L370 225 L358 220 L350 205 L352 190 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Ireland -->
-      <path d="M338 190 L350 185 L355 198 L348 212 L336 215 L330 202 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Netherlands / Belgium -->
-      <path d="M418 228 L435 222 L445 230 L442 245 L428 250 L415 242 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- France -->
-      <path d="M368 252 L395 238 L425 242 L440 258 L438 282 L425 305 L405 318 L385 322 L365 312 L352 295 L350 272 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Iberian Peninsula - Spain & Portugal -->
-      <path d="M318 330 L348 318 L380 322 L400 338 L405 360 L398 385 L382 405 L360 415 L335 412 L315 398 L305 375 L308 352 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Germany -->
-      <path d="M438 245 L465 238 L490 245 L500 262 L498 285 L485 298 L465 305 L445 300 L432 285 L430 265 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Poland -->
-      <path d="M498 242 L528 238 L555 245 L565 262 L558 282 L540 295 L515 298 L498 285 L495 265 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Czech / Slovakia / Austria / Hungary -->
-      <path d="M465 305 L498 298 L528 302 L538 318 L530 335 L508 342 L482 340 L462 328 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Switzerland -->
-      <path d="M432 298 L448 295 L460 305 L455 318 L440 320 L428 312 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Italy -->
-      <path d="M440 320 L462 315 L478 325 L488 345 L490 368 L482 392 L472 415 L460 435 L448 448 L440 440 L438 418 L442 395 L445 370 L440 348 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Balkans - rough shape -->
-      <path d="M508 342 L540 338 L565 345 L578 362 L572 385 L555 402 L532 408 L510 400 L498 382 L500 362 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Greece -->
-      <path d="M530 408 L555 402 L568 418 L562 438 L545 450 L528 445 L518 428 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Romania / Bulgaria -->
-      <path d="M562 328 L592 322 L618 330 L625 350 L618 370 L598 382 L572 378 L558 360 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Baltic states rough -->
-      <path d="M528 195 L555 188 L575 198 L578 215 L565 228 L542 230 L525 218 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Ukraine rough -->
-      <path d="M578 268 L620 258 L658 265 L672 282 L665 305 L645 320 L618 325 L590 318 L572 302 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Belarus rough -->
-      <path d="M555 238 L588 232 L615 240 L622 258 L608 272 L578 275 L555 265 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Turkey western -->
-      <path d="M575 398 L610 390 L638 398 L648 418 L635 435 L608 440 L582 432 L568 415 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
-      <!-- Morocco / N.Africa hint (very faint) -->
-      <path d="M318 445 L360 438 L400 442 L415 460 L408 478 L385 485 L355 482 L325 470 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.5" opacity="0.5"/>
-      <!-- Sardinia -->
-      <path d="M432 378 L442 372 L450 382 L446 398 L435 402 L428 392 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.6"/>
-      <!-- Sicily -->
-      <path d="M450 448 L468 442 L478 452 L472 465 L455 468 L445 458 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.6"/>
-      <!-- Iceland -->
-      <path d="M268 95 L295 88 L318 92 L325 108 L315 122 L292 128 L272 120 L262 108 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.7" opacity="0.8"/>
-      <!-- Dots for capitals — subtle -->
-      <circle cx="398" cy="272" r="3.5" fill="#1A6B8A" opacity="0.6"/> <!-- Paris -->
-      <circle cx="468" cy="268" r="3.5" fill="#1A6B8A" opacity="0.6"/> <!-- Berlin -->
-      <circle cx="375" cy="200" r="3" fill="#1A6B8A" opacity="0.5"/> <!-- London -->
-      <circle cx="445" cy="360" r="3" fill="#1A6B8A" opacity="0.5"/> <!-- Rome -->
-      <circle cx="508" cy="258" r="3" fill="#1A6B8A" opacity="0.5"/> <!-- Warsaw -->
-      <circle cx="362" cy="368" r="3" fill="#1A6B8A" opacity="0.5"/> <!-- Madrid -->
-      <circle cx="538" cy="165" r="3" fill="#1A6B8A" opacity="0.5"/> <!-- Helsinki -->
-      <circle cx="478" cy="110" r="3" fill="#1A6B8A" opacity="0.5"/> <!-- Stockholm -->
-      <!-- Fine grid overlay for tech feel -->
-      <line x1="200" y1="0" x2="200" y2="860" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
-      <line x1="300" y1="0" x2="300" y2="860" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
-      <line x1="400" y1="0" x2="400" y2="860" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
-      <line x1="500" y1="0" x2="500" y2="860" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
-      <line x1="600" y1="0" x2="600" y2="860" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
-      <line x1="700" y1="0" x2="700" y2="860" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
-      <line x1="0" y1="150" x2="900" y2="150" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
-      <line x1="0" y1="250" x2="900" y2="250" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
-      <line x1="0" y1="350" x2="900" y2="350" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
-      <line x1="0" y1="450" x2="900" y2="450" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
-      <line x1="0" y1="550" x2="900" y2="550" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
-      <line x1="0" y1="650" x2="900" y2="650" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
-      <!-- Subtle connection lines between capitals -->
-      <line x1="398" y1="272" x2="468" y2="268" stroke="#1A6B8A" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 4"/>
-      <line x1="468" y1="268" x2="508" y2="258" stroke="#1A6B8A" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 4"/>
-      <line x1="398" y1="272" x2="375" y2="200" stroke="#1A6B8A" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 4"/>
-      <line x1="445" y1="360" x2="398" y2="272" stroke="#1A6B8A" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 4"/>
-      <line x1="362" y1="368" x2="398" y2="272" stroke="#1A6B8A" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 4"/>
-      <line x1="538" y1="165" x2="478" y2="110" stroke="#1A6B8A" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 4"/>
-    </svg>
+    <img src="europemapnight.avif" alt="" />
   </div><!-- /hero-map -->
 
   <div class="hero">
