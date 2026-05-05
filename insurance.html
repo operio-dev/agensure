@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Agensure</title>
-  <link rel="icon" type="image/png" href="IMG_7944.jpg">
-  <meta name="description" content="The first insurance product built for autonomous AI agents in Europe. Coverage for unauthorized actions, erroneous outputs, data breaches and business interruption."/>
+  <title>Agensure — AI Agent Insurance</title>
+  <meta name="description" content="Insurance for AI agents deployed in production. Coverage for unauthorized actions, erroneous outputs, data breaches and business interruption. Built for Europe."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet"/>
@@ -45,9 +44,420 @@
     .glow { position:fixed; border-radius:50%; pointer-events:none; z-index:0; }
     .glow-1 { width:900px; height:900px; background:radial-gradient(circle,rgba(150,190,230,0.35) 0%,transparent 70%); top:-300px; right:-250px; }
     .glow-2 { width:700px; height:700px; background:radial-gradient(circle,rgba(160,200,235,0.25) 0%,transparent 65%); bottom:0; left:-200px; }
-
+ 
     nav {
       position:fixed; top:0; left:0; right:0; z-index:100;
       padding:22px 52px;
       display:flex; align-items:center; justify-content:space-between;
-      backdrop
+      backdrop-filter:blur(24px);
+      background:rgba(230,238,248,0.85);
+      border-bottom:1px solid rgba(26,107,138,0.1);
+    }
+    .logo { display:flex; align-items:center; gap:9px; text-decoration:none; }
+    .nav-right { display:flex; align-items:center; gap:28px; }
+    .nav-link { font-size:14px; color:var(--gray); text-decoration:none; transition:color 0.2s; }
+    .nav-link:hover { color:var(--navy); }
+    .nav-link.active { color:var(--teal); font-weight:600; }
+    .nav-cta { font-size:13px; font-weight:600; color:#fff; background:var(--teal); padding:9px 20px; border-radius:8px; text-decoration:none; transition:opacity 0.2s; }
+    .nav-cta:hover { opacity:0.85; }
+ 
+    /* HERO */
+    .hero {
+      position:relative; z-index:1;
+      min-height:80vh;
+      display:flex; flex-direction:column; justify-content:center;
+      padding:160px 52px 80px;
+      max-width:1100px; margin:0 auto;
+    }
+    .eyebrow {
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; font-weight:600; color:var(--teal);
+      letter-spacing:0.1em; text-transform:uppercase;
+      margin-bottom:28px;
+      opacity:0; animation:up 0.7s ease 0.1s forwards;
+    }
+    .eyebrow span { display:block; width:24px; height:1px; background:var(--teal); }
+    h1 {
+      font-size:clamp(42px,5.5vw,78px);
+      font-weight:800; line-height:1.05; letter-spacing:-0.04em;
+      max-width:720px; margin-bottom:24px; color:var(--navy);
+      opacity:0; animation:up 0.7s ease 0.2s forwards;
+    }
+    h1 em { font-style:italic; font-weight:400; color:#1A5070; }
+    .hero-sub {
+      font-size:18px; font-weight:300; color:#4A6070;
+      max-width:520px; line-height:1.7; margin-bottom:40px;
+      opacity:0; animation:up 0.7s ease 0.35s forwards;
+    }
+    .hero-pills {
+      display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px;
+      opacity:0; animation:up 0.7s ease 0.45s forwards;
+    }
+    .pill {
+      font-size:12px; font-weight:500; color:#4A6070;
+      background:rgba(255,255,255,0.6);
+      border:1px solid rgba(26,107,138,0.15);
+      padding:7px 14px; border-radius:100px;
+    }
+    .hero-cta {
+      display:inline-flex; align-items:center; gap:10px;
+      font-size:14px; font-weight:700; color:#fff;
+      background:var(--teal); padding:14px 28px; border-radius:10px;
+      text-decoration:none; transition:opacity 0.2s, transform 0.15s;
+      opacity:0; animation:up 0.7s ease 0.55s forwards;
+    }
+    .hero-cta:hover { opacity:0.85; transform:translateY(-1px); }
+    .hero-note { font-size:12px; color:var(--muted); margin-top:12px; opacity:0; animation:up 0.7s ease 0.65s forwards; }
+ 
+    section { position:relative; z-index:1; }
+    .wrap { max-width:1100px; margin:0 auto; padding:0 52px; }
+    .s-label { font-size:11px; font-weight:700; color:var(--teal); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:14px; }
+    h2 { font-size:clamp(26px,3vw,40px); font-weight:800; line-height:1.1; letter-spacing:-0.03em; color:var(--navy); }
+    h2 em { font-style:italic; font-weight:400; color:#1A5070; }
+    .s-body { font-size:17px; font-weight:300; color:#4A6070; line-height:1.7; max-width:540px; margin-top:14px; }
+ 
+    /* PROBLEM BAND */
+    .problem-band {
+      padding:80px 0;
+      border-top:1px solid var(--border2);
+      background:rgba(255,255,255,0.25);
+    }
+    .problem-band-inner {
+      display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+    }
+    .problem-band h2 { font-size:clamp(24px,2.8vw,36px); }
+    .problem-stats { display:flex; flex-direction:column; gap:0; }
+    .stat-row {
+      display:flex; align-items:flex-start; gap:20px;
+      padding:24px 0; border-bottom:1px solid var(--border2);
+    }
+    .stat-row:first-child { border-top:1px solid var(--border2); }
+    .stat-num { font-size:42px; font-weight:800; color:var(--teal); letter-spacing:-0.04em; line-height:1; min-width:100px; }
+    .stat-text h4 { font-size:14px; font-weight:700; color:var(--navy); margin-bottom:4px; }
+    .stat-text p { font-size:13px; color:#4A6070; line-height:1.6; }
+ 
+    /* WHAT WE COVER */
+    .covers { padding:100px 0; border-top:1px solid var(--border2); }
+    .covers-grid {
+      display:grid; grid-template-columns:repeat(2,1fr); gap:1px;
+      background:rgba(26,107,138,0.08);
+      border:1px solid rgba(26,107,138,0.12);
+      border-radius:16px; overflow:hidden;
+      margin-top:52px;
+    }
+    .cover-card {
+      padding:40px 36px;
+      background:var(--card);
+      backdrop-filter:blur(8px);
+      transition:background 0.2s;
+    }
+    .cover-card:hover { background:rgba(255,255,255,0.92); }
+    .cover-icon {
+      width:40px; height:40px;
+      background:var(--teal-dim);
+      border:1px solid rgba(26,107,138,0.15);
+      border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:20px;
+    }
+    .cover-card h3 { font-size:17px; font-weight:800; color:var(--navy); margin-bottom:10px; letter-spacing:-0.01em; }
+    .cover-card p { font-size:14px; color:#4A6070; line-height:1.65; }
+ 
+    /* HOW UNDERWRITING WORKS */
+    .underwriting { padding:100px 0; border-top:1px solid var(--border2); }
+    .underwriting-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; margin-top:52px; }
+    .underwriting-steps { display:flex; flex-direction:column; gap:0; }
+    .u-step {
+      display:flex; gap:20px;
+      padding:28px 0; border-bottom:1px solid var(--border2);
+    }
+    .u-step:first-child { border-top:1px solid var(--border2); }
+    .u-n { font-size:12px; font-weight:700; color:var(--teal); letter-spacing:0.06em; min-width:28px; padding-top:3px; }
+    .u-step h4 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:5px; }
+    .u-step p { font-size:13px; color:#4A6070; line-height:1.65; }
+    .underwriting-card {
+      padding:36px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      backdrop-filter:blur(8px);
+      position:sticky; top:100px;
+    }
+    .underwriting-card .u-label { font-size:11px; font-weight:700; color:var(--teal); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:16px; }
+    .underwriting-card h3 { font-size:22px; font-weight:800; color:var(--navy); line-height:1.3; letter-spacing:-0.02em; margin-bottom:16px; }
+    .underwriting-card h3 em { font-style:italic; font-weight:400; color:#1A5070; }
+    .underwriting-card p { font-size:14px; color:#4A6070; line-height:1.65; margin-bottom:24px; }
+    .u-pricing { display:flex; flex-direction:column; gap:10px; }
+    .u-price-row { display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:var(--teal-dim); border-radius:8px; border:1px solid rgba(26,107,138,0.12); }
+    .u-price-label { font-size:13px; font-weight:600; color:var(--navy); }
+    .u-price-val { font-size:13px; font-weight:700; color:var(--teal); }
+ 
+    /* WHY AGENSURE */
+    .why { padding:100px 0; border-top:1px solid var(--border2); }
+    .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:52px; }
+    .why-card {
+      padding:32px 28px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      backdrop-filter:blur(8px);
+    }
+    .why-card h3 { font-size:16px; font-weight:800; color:var(--navy); margin-bottom:10px; letter-spacing:-0.01em; }
+    .why-card p { font-size:14px; color:#4A6070; line-height:1.65; }
+    .why-badge {
+      display:inline-block; font-size:11px; font-weight:600;
+      color:var(--teal); background:var(--teal-dim);
+      border:1px solid rgba(26,107,138,0.2);
+      padding:4px 10px; border-radius:100px;
+      margin-bottom:14px;
+    }
+ 
+    /* CTA */
+    .cta-band { padding:100px 0; border-top:1px solid var(--border2); text-align:center; }
+    .cta-band h2 { font-size:clamp(28px,3.5vw,46px); margin-bottom:16px; }
+    .cta-band p { font-size:17px; color:#4A6070; max-width:480px; margin:0 auto 36px; line-height:1.7; }
+    .cta-band .hero-cta { animation:none; opacity:1; display:inline-flex; }
+ 
+    footer {
+      position:relative; z-index:1;
+      border-top:1px solid rgba(26,107,138,0.1);
+      padding:36px 52px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .footer-left { display:flex; align-items:center; gap:24px; }
+    .footer-logo { display:flex; align-items:center; gap:8px; text-decoration:none; }
+    .footer-sep { width:1px; height:16px; background:rgba(26,107,138,0.15); }
+    footer a { font-size:13px; color:#4A6070; text-decoration:none; transition:color 0.2s; }
+    footer a:hover { color:var(--navy); }
+    .footer-right { font-size:12px; color:var(--muted); }
+ 
+    @keyframes up { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+ 
+    @media(max-width:900px){
+      nav{padding:18px 24px;}
+      .nav-right .nav-link{display:none;}
+      .hero{padding:130px 24px 60px;}
+      .wrap{padding:0 24px;}
+      .problem-band-inner,.underwriting-layout{grid-template-columns:1fr;gap:40px;}
+      .covers-grid,.why-grid{grid-template-columns:1fr;}
+      .underwriting-card{position:static;}
+      footer{flex-direction:column;gap:16px;text-align:center;padding:28px 24px;}
+      .footer-left{flex-direction:column;gap:12px;}
+      .footer-sep{display:none;}
+    }
+  </style>
+</head>
+<body>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+ 
+<nav>
+  <a href="/" class="logo">
+    <img src="agescrittalogo.png" alt="Agensure" height="22" style="display:block;object-fit:contain;"/>
+  </a>
+  <div class="nav-right">
+    <a href="/compliance.html" class="nav-link">Compliance</a>
+    <a href="/insurance.html" class="nav-link active">Insurance</a>
+    <a href="/#waitlist" class="nav-cta">Join Waitlist</a>
+  </div>
+</nav>
+ 
+<div class="hero">
+  <div class="eyebrow"><span></span>Coming 2027<span></span></div>
+  <h1>Insurance for deployed<br/><em>AI agents.</em></h1>
+  <p class="hero-sub">Agensure covers direct financial loss caused by verified AI agent incidents — built for companies deploying autonomous agents in real European workflows.</p>
+  <div class="hero-pills">
+    <span class="pill">Unauthorized actions</span>
+    <span class="pill">Erroneous outputs</span>
+    <span class="pill">Data breaches</span>
+    <span class="pill">Business interruption</span>
+    <span class="pill">EU-native</span>
+  </div>
+  <a href="mailto:founder@agensure.eu" class="hero-cta">Express interest →</a>
+  <p class="hero-note">Insurance launching 2027 · Start with a free compliance audit today</p>
+</div>
+ 
+<!-- PROBLEM BAND -->
+<section class="problem-band">
+  <div class="wrap">
+    <div class="problem-band-inner">
+      <div>
+        <p class="s-label">The Problem</p>
+        <h2>Once AI agents can act, small failures become <em>real business loss.</em></h2>
+        <p class="s-body" style="margin-top:16px;">Agents now approve, send, modify, and execute in real systems. A single mistake can cascade into measurable financial damage — and no traditional insurer is built to cover it.</p>
+      </div>
+      <div class="problem-stats">
+        <div class="stat-row">
+          <div class="stat-num">93%</div>
+          <div class="stat-text">
+            <h4>Insurers filing exclusions</h4>
+            <p>Zurich, Tokio Marine and Berkshire Hathaway have all explicitly excluded AI agent risk from existing policies.</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-num">0</div>
+          <div class="stat-text">
+            <h4>EU-native AI agent insurers</h4>
+            <p>No insurer in Europe today is built to underwrite autonomous agent behavior. Agensure is building the first.</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-num">90%</div>
+          <div class="stat-text">
+            <h4>Enterprises want coverage</h4>
+            <p>Nine in ten enterprises deploying AI agents say they want financial protection. No product exists yet to give it to them.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- WHAT WE COVER -->
+<section class="covers">
+  <div class="wrap">
+    <p class="s-label">What We Cover</p>
+    <h2>Coverage for the incidents<br/>that matter <em>in production.</em></h2>
+    <div class="covers-grid">
+      <div class="cover-card">
+        <div class="cover-icon">
+          <svg width="18" height="18" fill="none" viewBox="0 0 18 18"><path d="M9 2L3 5.5v5C3 13.9 5.7 16.8 9 17.5c3.3-.7 6-3.6 6-7V5.5L9 2Z" stroke="#1A6B8A" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.5 9.5l1.5 1.5 3-3" stroke="#1A6B8A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Unauthorized Actions</h3>
+        <p>The agent takes an action outside its intended authority — sending a message, executing a transaction, or modifying a record without human approval — and creates measurable loss.</p>
+      </div>
+      <div class="cover-card">
+        <div class="cover-icon">
+          <svg width="18" height="18" fill="none" viewBox="0 0 18 18"><circle cx="9" cy="9" r="6" stroke="#1A6B8A" stroke-width="1.4"/><path d="M9 6v4M9 12h.01" stroke="#1A6B8A" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Erroneous Actions</h3>
+        <p>The agent performs a declared task incorrectly — wrong calculation, wrong recipient, wrong data — and causes operational or financial damage to your business or a third party.</p>
+      </div>
+      <div class="cover-card">
+        <div class="cover-icon">
+          <svg width="18" height="18" fill="none" viewBox="0 0 18 18"><rect x="3" y="7" width="12" height="8" rx="2" stroke="#1A6B8A" stroke-width="1.4"/><path d="M6 7V5a3 3 0 016 0v2" stroke="#1A6B8A" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Data & Tool Misuse</h3>
+        <p>The agent exposes sensitive data, misuses connected APIs, or leaks confidential information through prompts, memory, or tool output inside a covered workflow.</p>
+      </div>
+      <div class="cover-card">
+        <div class="cover-icon">
+          <svg width="18" height="18" fill="none" viewBox="0 0 18 18"><path d="M9 3L4 6v4c0 3.3 2.2 6.4 5 7.2 2.8-.8 5-3.9 5-7.2V6L9 3Z" stroke="#1A6B8A" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 9l1.5 1.5L12 7" stroke="#1A6B8A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Manipulation Events</h3>
+        <p>A verified prompt injection, tool manipulation, or adversarial input causes the agent to take a harmful covered action — resulting in direct financial loss or liability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- HOW UNDERWRITING WORKS -->
+<section class="underwriting">
+  <div class="wrap">
+    <p class="s-label">How Underwriting Works</p>
+    <h2>Coverage built around how<br/>the agent <em>actually operates.</em></h2>
+    <div class="underwriting-layout">
+      <div class="underwriting-steps">
+        <div class="u-step">
+          <span class="u-n">01</span>
+          <div>
+            <h4>Compliance audit first</h4>
+            <p>Every insurance policy starts with a full EU AI Act compliance audit. We need to understand your agent's architecture, permissions, and controls before we can underwrite it.</p>
+          </div>
+        </div>
+        <div class="u-step">
+          <span class="u-n">02</span>
+          <div>
+            <h4>Risk scoring</h4>
+            <p>We assess what the agent can do, what it can access, what oversight controls are in place, and where the downside sits. Our proprietary risk dataset powers the underwriting model.</p>
+          </div>
+        </div>
+        <div class="u-step">
+          <span class="u-n">03</span>
+          <div>
+            <h4>Coverage structured to the deployment</h4>
+            <p>Premium and coverage limits are calculated based on actual agent behavior and operational context — not generic cyber policy language.</p>
+          </div>
+        </div>
+        <div class="u-step">
+          <span class="u-n">04</span>
+          <div>
+            <h4>Continuous monitoring</h4>
+            <p>Our agentic monitoring layer tracks regulatory changes and agent behavior over time — keeping your coverage aligned with your deployment.</p>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="underwriting-card">
+        <div class="u-label">Indicative pricing</div>
+        <h3>Coverage starting from<br/><em>€10,000 / year.</em></h3>
+        <p>Final premium depends on agent scope, permissions, data sensitivity, and the results of the compliance audit. All policies backed by Tier-1 European carriers via MGA model.</p>
+        <div class="u-pricing">
+          <div class="u-price-row">
+            <span class="u-price-label">Entry — limited scope agents</span>
+            <span class="u-price-val">€10K – €25K/yr</span>
+          </div>
+          <div class="u-price-row">
+            <span class="u-price-label">Standard — production workflows</span>
+            <span class="u-price-val">€25K – €60K/yr</span>
+          </div>
+          <div class="u-price-row">
+            <span class="u-price-label">Enterprise — high-risk AI systems</span>
+            <span class="u-price-val">€60K – €100K+/yr</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- WHY AGENSURE -->
+<section class="why">
+  <div class="wrap">
+    <p class="s-label">Why Agensure</p>
+    <h2>An insurer built for <em>agentic risk.</em></h2>
+    <p class="s-body">Not a generic cyber policy with AI language added on. Insurance built around agent behavior, delegated authority, and measurable workflow loss.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-badge">EU Native</span>
+        <h3>Built for European regulation</h3>
+        <p>Every policy is structured around EU AI Act obligations — not US voluntary standards bolt-on. GDPR-native data handling. European carrier partners.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-badge">Data Moat</span>
+        <h3>Proprietary risk dataset</h3>
+        <p>Our compliance audits generate the most comprehensive dataset on European AI agent risk. This is the underwriting advantage no traditional carrier can replicate.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-badge">MGA Model</span>
+        <h3>Backed by Tier-1 carriers</h3>
+        <p>Agensure operates as a Managing General Agent — combining our proprietary risk intelligence with the balance sheet of established European insurers (AXA, Allianz, Generali).</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CTA -->
+<section class="cta-band">
+  <div class="wrap">
+    <p class="s-label">Get Started</p>
+    <h2>Insurance launches 2027.<br/><em>Compliance starts today.</em></h2>
+    <p>Get your free EU AI Act compliance audit now — the first step toward full insurance coverage when it launches.</p>
+    <a href="/compliance.html" class="hero-cta">Get your free audit →</a>
+  </div>
+</section>
+ 
+<footer>
+  <div class="footer-left">
+    <a href="/" class="footer-logo">
+      <img src="agescrittalogo.png" alt="Agensure" height="60" style="display:block;object-fit:contain;"/>
+    </a>
+    <div class="footer-sep"></div>
+    <a href="mailto:founder@agensure.eu">founder@agensure.eu</a>
+    <a href="#">Privacy</a>
+  </div>
+  <div class="footer-right">© 2026 Agensure</div>
+</footer>
+</body>
+</html>
+ 
