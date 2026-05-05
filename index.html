@@ -325,31 +325,113 @@
       border-radius: 100px;
     }
 
+    /* EUROPE MAP BACKGROUND */
+    .hero-map {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .hero-map svg {
+      position: absolute;
+      right: -4%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 72%;
+      max-width: 820px;
+      height: auto;
+      opacity: 0.13;
+      filter: saturate(0.2) blur(0.4px);
+    }
+
+    /* Fade the map out on the left so text stays readable */
+    .hero-map::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        var(--bg) 0%,
+        rgba(237,242,248,0.85) 30%,
+        transparent 60%
+      );
+      z-index: 1;
+    }
+
+    /* Also fade top + bottom softly */
+    .hero-map::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(221,232,240,0.6) 0%, transparent 18%, transparent 82%, rgba(216,230,242,0.6) 100%);
+      z-index: 1;
+    }
+
+    .hero {
+      position: relative; /* already set but reinforce */
+    }
+
+    .hero > * { position: relative; z-index: 2; }
+
+    /* MARQUEE with fade sides */
     .marquee-wrap {
       position: relative;
       z-index: 1;
       border-top: 1px solid rgba(26,107,138,0.1);
       border-bottom: 1px solid rgba(26,107,138,0.1);
-      padding: 16px 0;
+      padding: 20px 0;
       overflow: hidden;
-      background: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.35);
+    }
+
+    /* Fade mask left + right */
+    .marquee-wrap::before,
+    .marquee-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 140px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .marquee-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, rgba(237,242,248,1) 0%, transparent 100%);
+    }
+    .marquee-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, rgba(237,242,248,1) 0%, transparent 100%);
     }
 
     .marquee-track {
       display: flex;
-      gap: 48px;
+      gap: 0;
       width: max-content;
-      animation: marquee 28s linear infinite;
+      animation: marquee 32s linear infinite;
     }
 
     .marquee-item {
       font-size: 12px;
-      font-weight: 600;
-      color: var(--teal);
-      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       white-space: nowrap;
-      opacity: 0.6;
+      opacity: 0.45;
+      padding: 0 32px;
+    }
+
+    .marquee-dot {
+      font-size: 16px;
+      color: var(--teal);
+      opacity: 0.4;
+      display: flex;
+      align-items: center;
+      padding: 0 4px;
     }
 
     @keyframes marquee {
@@ -745,6 +827,90 @@
 </nav>
 
 <div class="hero">
+  <!-- Europe map background -->
+  <div class="hero-map" aria-hidden="true">
+    <svg viewBox="0 0 900 860" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <!-- Scandinavia / Norway -->
+      <path d="M430 60 L445 55 L460 62 L468 75 L472 95 L465 115 L455 130 L448 150 L442 170 L435 185 L428 175 L420 160 L415 145 L418 125 L422 105 L425 85 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Sweden -->
+      <path d="M455 65 L478 58 L495 68 L500 85 L498 108 L492 130 L485 155 L476 178 L465 195 L455 188 L448 172 L445 150 L448 128 L455 105 L460 82 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Finland -->
+      <path d="M495 68 L520 58 L545 62 L558 78 L555 98 L548 118 L538 138 L525 155 L510 165 L498 158 L492 138 L495 115 L498 92 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Denmark -->
+      <path d="M438 198 L448 192 L455 200 L450 215 L440 218 L432 210 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- UK -->
+      <path d="M358 178 L375 168 L390 172 L398 188 L395 205 L385 218 L370 225 L358 220 L350 205 L352 190 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Ireland -->
+      <path d="M338 190 L350 185 L355 198 L348 212 L336 215 L330 202 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Netherlands / Belgium -->
+      <path d="M418 228 L435 222 L445 230 L442 245 L428 250 L415 242 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- France -->
+      <path d="M368 252 L395 238 L425 242 L440 258 L438 282 L425 305 L405 318 L385 322 L365 312 L352 295 L350 272 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Iberian Peninsula - Spain & Portugal -->
+      <path d="M318 330 L348 318 L380 322 L400 338 L405 360 L398 385 L382 405 L360 415 L335 412 L315 398 L305 375 L308 352 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Germany -->
+      <path d="M438 245 L465 238 L490 245 L500 262 L498 285 L485 298 L465 305 L445 300 L432 285 L430 265 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Poland -->
+      <path d="M498 242 L528 238 L555 245 L565 262 L558 282 L540 295 L515 298 L498 285 L495 265 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Czech / Slovakia / Austria / Hungary -->
+      <path d="M465 305 L498 298 L528 302 L538 318 L530 335 L508 342 L482 340 L462 328 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Switzerland -->
+      <path d="M432 298 L448 295 L460 305 L455 318 L440 320 L428 312 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Italy -->
+      <path d="M440 320 L462 315 L478 325 L488 345 L490 368 L482 392 L472 415 L460 435 L448 448 L440 440 L438 418 L442 395 L445 370 L440 348 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Balkans - rough shape -->
+      <path d="M508 342 L540 338 L565 345 L578 362 L572 385 L555 402 L532 408 L510 400 L498 382 L500 362 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Greece -->
+      <path d="M530 408 L555 402 L568 418 L562 438 L545 450 L528 445 L518 428 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Romania / Bulgaria -->
+      <path d="M562 328 L592 322 L618 330 L625 350 L618 370 L598 382 L572 378 L558 360 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Baltic states rough -->
+      <path d="M528 195 L555 188 L575 198 L578 215 L565 228 L542 230 L525 218 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Ukraine rough -->
+      <path d="M578 268 L620 258 L658 265 L672 282 L665 305 L645 320 L618 325 L590 318 L572 302 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Belarus rough -->
+      <path d="M555 238 L588 232 L615 240 L622 258 L608 272 L578 275 L555 265 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Turkey western -->
+      <path d="M575 398 L610 390 L638 398 L648 418 L635 435 L608 440 L582 432 L568 415 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.8"/>
+      <!-- Morocco / N.Africa hint (very faint) -->
+      <path d="M318 445 L360 438 L400 442 L415 460 L408 478 L385 485 L355 482 L325 470 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.5" opacity="0.5"/>
+      <!-- Sardinia -->
+      <path d="M432 378 L442 372 L450 382 L446 398 L435 402 L428 392 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.6"/>
+      <!-- Sicily -->
+      <path d="M450 448 L468 442 L478 452 L472 465 L455 468 L445 458 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.6"/>
+      <!-- Iceland -->
+      <path d="M268 95 L295 88 L318 92 L325 108 L315 122 L292 128 L272 120 L262 108 Z" fill="#1A6B8A" stroke="#1A6B8A" stroke-width="0.7" opacity="0.8"/>
+      <!-- Dots for capitals — subtle -->
+      <circle cx="398" cy="272" r="3.5" fill="#1A6B8A" opacity="0.6"/> <!-- Paris -->
+      <circle cx="468" cy="268" r="3.5" fill="#1A6B8A" opacity="0.6"/> <!-- Berlin -->
+      <circle cx="375" cy="200" r="3" fill="#1A6B8A" opacity="0.5"/> <!-- London -->
+      <circle cx="445" cy="360" r="3" fill="#1A6B8A" opacity="0.5"/> <!-- Rome -->
+      <circle cx="508" cy="258" r="3" fill="#1A6B8A" opacity="0.5"/> <!-- Warsaw -->
+      <circle cx="362" cy="368" r="3" fill="#1A6B8A" opacity="0.5"/> <!-- Madrid -->
+      <circle cx="538" cy="165" r="3" fill="#1A6B8A" opacity="0.5"/> <!-- Helsinki -->
+      <circle cx="478" cy="110" r="3" fill="#1A6B8A" opacity="0.5"/> <!-- Stockholm -->
+      <!-- Fine grid overlay for tech feel -->
+      <line x1="200" y1="0" x2="200" y2="860" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
+      <line x1="300" y1="0" x2="300" y2="860" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
+      <line x1="400" y1="0" x2="400" y2="860" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
+      <line x1="500" y1="0" x2="500" y2="860" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
+      <line x1="600" y1="0" x2="600" y2="860" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
+      <line x1="700" y1="0" x2="700" y2="860" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
+      <line x1="0" y1="150" x2="900" y2="150" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
+      <line x1="0" y1="250" x2="900" y2="250" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
+      <line x1="0" y1="350" x2="900" y2="350" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
+      <line x1="0" y1="450" x2="900" y2="450" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
+      <line x1="0" y1="550" x2="900" y2="550" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
+      <line x1="0" y1="650" x2="900" y2="650" stroke="#1A6B8A" stroke-width="0.3" opacity="0.15"/>
+      <!-- Subtle connection lines between capitals -->
+      <line x1="398" y1="272" x2="468" y2="268" stroke="#1A6B8A" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 4"/>
+      <line x1="468" y1="268" x2="508" y2="258" stroke="#1A6B8A" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 4"/>
+      <line x1="398" y1="272" x2="375" y2="200" stroke="#1A6B8A" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 4"/>
+      <line x1="445" y1="360" x2="398" y2="272" stroke="#1A6B8A" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 4"/>
+      <line x1="362" y1="368" x2="398" y2="272" stroke="#1A6B8A" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 4"/>
+      <line x1="538" y1="165" x2="478" y2="110" stroke="#1A6B8A" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 4"/>
+    </svg>
+  </div>
   <h1>Making AI Agents<br/><em>Insurable</em><br/>in Europe</h1>
   <p class="hero-sub">Agensure instantly deploys EU AI Act full-compliant certification and insurance coverage for every autonomous agent in production.</p>
   <div class="hero-form-wrap">
@@ -762,16 +928,27 @@
 
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <span class="marquee-item">EU AI Act Assessment & Certification</span><span class="marquee-item">·</span>
-    <span class="marquee-item">AI Agent Insurance</span><span class="marquee-item">·</span>
-    <span class="marquee-item">ADR Certificate</span><span class="marquee-item">·</span>
-    <span class="marquee-item">MGA Model</span><span class="marquee-item">·</span>
-    <span class="marquee-item">GDPR Native</span><span class="marquee-item">·</span>
-    <span class="marquee-item">EU AI Act Full Compliance</span><span class="marquee-item">·</span>
-    <span class="marquee-item">AI Agent Insurance</span><span class="marquee-item">·</span>
-    <span class="marquee-item">ADR Certificate</span><span class="marquee-item">·</span>
-    <span class="marquee-item">MGA Model</span><span class="marquee-item">·</span>
-    <span class="marquee-item">GDPR Native</span><span class="marquee-item">·</span>
+    <span class="marquee-item">EU AI Act Compliance Audit</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">AI Agent Insurance</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">ADR Certificate</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Risk Assessment</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">GDPR Native</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">EU AI Act Art. 12 &amp; 14</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">MGA Model</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Gap Analysis &amp; Remediation</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Agentic Monitoring</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">August 2026 Deadline</span><span class="marquee-dot">◆</span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item">EU AI Act Compliance Audit</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">AI Agent Insurance</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">ADR Certificate</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Risk Assessment</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">GDPR Native</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">EU AI Act Art. 12 &amp; 14</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">MGA Model</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Gap Analysis &amp; Remediation</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Agentic Monitoring</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">August 2026 Deadline</span><span class="marquee-dot">◆</span>
   </div>
 </div>
 
