@@ -92,6 +92,37 @@
         linear-gradient(to bottom, rgba(221,232,240,0.5) 0%, transparent 30%, transparent 70%, rgba(216,230,242,0.5) 100%);
       z-index:1;
     }
+    /* Definisce il comportamento dell'SVG */
+.hero-map svg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+/* Crea l'effetto "linea che scorre" */
+.floating-path {
+  fill: none;
+  stroke: var(--teal); /* Usa il tuo blu/verde */
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  opacity: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawPath 12s linear infinite;
+}
+
+/* L'animazione vera e propria */
+@keyframes drawPath {
+  0% { stroke-dashoffset: 1000; opacity: 0; }
+  15% { opacity: 0.3; }
+  85% { opacity: 0.3; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+/* Velocità diverse per ogni linea così non si muovono a scatto */
+.path-1 { animation-duration: 14s; }
+.path-2 { animation-duration: 18s; animation-delay: -4s; }
+.path-3 { animation-duration: 15s; animation-delay: -7s; }
     /* --- ANIMATED BACKGROUND PATHS --- */
 .hero-map svg {
   position: absolute;
