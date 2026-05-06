@@ -133,12 +133,21 @@
     }
     .hero-cta {
       display:inline-flex; align-items:center; gap:10px;
+      width:fit-content;
       font-size:14px; font-weight:700; color:#fff;
-      background:var(--teal); padding:14px 28px; border-radius:10px;
-      text-decoration:none; transition:opacity 0.2s, transform 0.15s;
+      background:var(--teal); padding:14px 32px; border-radius:10px;
+      text-decoration:none;
+      box-shadow: 0 2px 12px rgba(26,107,138,0.25), 0 1px 3px rgba(26,107,138,0.15);
+      transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       opacity:0; animation:up 0.7s ease 0.55s forwards;
     }
-    .hero-cta:hover { opacity:0.85; transform:translateY(-1px); }
+    .hero-cta:hover {
+      transform:translateY(-2px);
+      box-shadow: 0 8px 28px rgba(26,107,138,0.35), 0 2px 8px rgba(26,107,138,0.2);
+      background: #1d7a9e;
+    }
+    .hero-cta:active { transform:translateY(0); box-shadow:0 2px 8px rgba(26,107,138,0.2); }
+    .cta-band .hero-cta { animation:none; opacity:1; }
     .hero-note { font-size:12px; color:var(--muted); margin-top:12px; opacity:0; animation:up 0.7s ease 0.65s forwards; }
 
     section { position:relative; z-index:1; }
@@ -419,7 +428,7 @@
       <div class="why-card">
         <span class="why-badge">MGA Model</span>
         <h3>Backed by Tier-1 carriers</h3>
-        <p>Agensure operates as a Managing General Agent — combining our proprietary risk intelligence with the balance sheet of established European insurers (AXA, Allianz, Generali).</p>
+        <p>Agensure operates as a Managing General Agent combining our proprietary risk intelligence with the balance sheet of established European insurers.</p>
       </div>
     </div>
   </div>
