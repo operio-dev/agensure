@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Agensure</title>
+  <title>Agensure | Compliance</title>
   <link rel="icon" type="image/png" href="IMG_7944.jpg">
   <meta name="description" content="EU AI Act compliance audit for companies deploying AI agents. Structured verification across Art. 12, Art. 14 and all high-risk AI obligations. Report in 48 hours."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -13,13 +13,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg:      #EEF2F7;
-      --navy:    #0D1B2E;
+      --navy:    #0D2A3F;
       --card:    rgba(255,255,255,0.75);
       --teal:    #1A6B8A;
       --teal-dim:rgba(26,107,138,0.08);
-      --white:   #FFFFFF;
+      --white:    #FFFFFF;
       --gray:    #5A6E80;
-      --muted:   rgba(90,110,128,0.5);
+      --muted:    #64748b;
       --border:  rgba(26,107,138,0.12);
       --border2: rgba(26,107,138,0.1);
       --text:    #0D1B2E;
@@ -34,400 +34,151 @@
       overflow-x: hidden;
     }
     body::after {
-      content:'';
-      position:fixed;
-      inset:0;
-      background:
-        radial-gradient(ellipse 70% 50% at 20% 10%, rgba(180,210,240,0.5) 0%, transparent 55%),
-        radial-gradient(ellipse 60% 45% at 80% 20%, rgba(200,220,245,0.4) 0%, transparent 50%),
-        radial-gradient(ellipse 50% 40% at 50% 80%, rgba(170,200,230,0.3) 0%, transparent 55%);
-      pointer-events:none;
-      z-index:0;
+      content:''; position:fixed; inset:0;
+      background: radial-gradient(ellipse 70% 50% at 20% 10%, rgba(180,210,240,0.5) 0%, transparent 55%),
+                  radial-gradient(ellipse 60% 45% at 80% 20%, rgba(200,220,245,0.4) 0%, transparent 50%);
+      pointer-events:none; z-index:0;
     }
-    .glow { position:fixed; border-radius:50%; pointer-events:none; z-index:0; }
-    .glow-1 { width:900px; height:900px; background:radial-gradient(circle,rgba(150,190,230,0.35) 0%,transparent 70%); top:-300px; right:-250px; }
-    .glow-2 { width:700px; height:700px; background:radial-gradient(circle,rgba(160,200,235,0.25) 0%,transparent 65%); bottom:0; left:-200px; }
 
     nav {
       position:fixed; top:0; left:0; right:0; z-index:100;
-      padding:15px 52px;
-      display:flex; align-items:center; justify-content:space-between;
-      backdrop-filter:blur(24px);
-      background:rgba(230,238,248,0.85);
-      border-bottom:1px solid rgba(26,107,138,0.1);
+      padding:15px 52px; display:flex; align-items:center; justify-content:space-between;
+      backdrop-filter:blur(24px); background:rgba(230,238,248,0.85); border-bottom:1px solid var(--border2);
     }
     .logo { display:flex; align-items:center; gap:9px; text-decoration:none; }
     .nav-right { display:flex; align-items:center; gap:28px; }
-    .nav-link { font-size:14px; color:var(--gray); text-decoration:none; transition:color 0.2s; }
-    .nav-link:hover { color:var(--navy); }
+    .nav-link { font-size:14px; color:var(--gray); text-decoration:none; transition:0.2s; }
     .nav-link.active { color:var(--teal); font-weight:600; }
-    .nav-cta { font-size:13px; font-weight:600; color:#fff; background:var(--teal); padding:9px 20px; border-radius:8px; text-decoration:none; transition:opacity 0.2s; }
-    .nav-cta:hover { opacity:0.85; }
+    .nav-cta { font-size:13px; font-weight:600; color:#fff; background:var(--teal); padding:9px 20px; border-radius:8px; text-decoration:none; }
 
-    /* HERO OUTER for bg image */
-    .hero-outer {
-      position:relative;
-      z-index:1;
-      overflow:hidden;
-    }
-    .hero-map {
-      position:absolute;
-      inset:0;
-      z-index:0;
-      pointer-events:none;
-    }
-    .hero-map img {
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-      opacity:0.18;
-    }
-    .hero-map::before {
-      content:'';
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 50%, rgba(221,232,240,0.55) 0%, transparent 70%),
-        linear-gradient(to bottom, rgba(221,232,240,0.5) 0%, transparent 30%, transparent 70%, rgba(216,230,242,0.5) 100%);
-      z-index:1;
-    }
-
-    /* HERO */
-    .hero {
-      position:relative; z-index:2;
-      min-height:80vh;
-      display:flex; flex-direction:column; justify-content:center;
-      padding:160px 52px 80px;
-      max-width:1100px; margin:0 auto;
-    }
-    .eyebrow {
-      display:inline-flex; align-items:center; gap:8px;
-      font-size:12px; font-weight:600; color:var(--teal);
-      letter-spacing:0.1em; text-transform:uppercase;
-      margin-bottom:28px;
-      opacity:0; animation:up 0.7s ease 0.1s forwards;
-    }
-    .eyebrow span { display:block; width:24px; height:1px; background:var(--teal); }
-    h1 {
-      font-size:clamp(42px,5.5vw,78px);
-      font-weight:800; line-height:1.05; letter-spacing:-0.04em;
-      max-width:720px; margin-bottom:24px;
-      color:var(--navy);
-      opacity:0; animation:up 0.7s ease 0.2s forwards;
-    }
+    .hero-outer { position:relative; z-index:1; overflow:hidden; }
+    .hero-map img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.18; }
+    .hero { position:relative; z-index:2; min-height:80vh; display:flex; flex-direction:column; justify-content:center; padding:160px 0 80px; max-width:1100px; margin:0 auto; }
+    h1 { font-size:clamp(42px,5.5vw,78px); font-weight:800; line-height:1.05; letter-spacing:-0.04em; color:var(--navy); }
     h1 em { font-style:italic; font-weight:400; color:#1A5070; }
-    .hero-sub {
-      font-size:18px; font-weight:300; color:#4A6070;
-      max-width:520px; line-height:1.7; margin-bottom:40px;
-      opacity:0; animation:up 0.7s ease 0.35s forwards;
-    }
-    .hero-cta {
-      display:inline-flex; align-items:center; gap:10px;
-      width:fit-content;
-      font-size:14px; font-weight:700; color:#fff;
-      background:var(--teal); padding:14px 32px; border-radius:10px;
-      text-decoration:none;
-      box-shadow: 0 2px 12px rgba(26,107,138,0.25), 0 1px 3px rgba(26,107,138,0.15);
-      transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-      opacity:0; animation:up 0.7s ease 0.5s forwards;
-    }
-    .hero-cta:hover {
-      transform:translateY(-2px);
-      box-shadow: 0 8px 28px rgba(26,107,138,0.35), 0 2px 8px rgba(26,107,138,0.2);
-      background: #1d7a9e;
-    }
-    .hero-cta:active { transform:translateY(0); box-shadow:0 2px 8px rgba(26,107,138,0.2); }
-    .cta-band .hero-cta { animation:none; opacity:1; }
-    .hero-note {
-      font-size:12px; color:var(--muted); margin-top:12px;
-      opacity:0; animation:up 0.7s ease 0.6s forwards;
-    }
+    .hero-sub { font-size:18px; font-weight:300; color:#4A6070; max-width:520px; line-height:1.7; margin-bottom:40px; }
+    .hero-cta { display:inline-flex; align-items:center; gap:10px; font-size:14px; font-weight:700; color:#fff; background:var(--teal); padding:14px 32px; border-radius:10px; text-decoration:none; transition:0.2s; }
 
-    /* SECTIONS */
     section { position:relative; z-index:1; }
     .wrap { max-width:1100px; margin:0 auto; padding:0 52px; }
     .s-label { font-size:11px; font-weight:700; color:var(--teal); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:14px; }
-    h2 { font-size:clamp(26px,3vw,40px); font-weight:800; line-height:1.1; letter-spacing:-0.03em; color:var(--navy); }
-    h2 em { font-style:italic; font-weight:400; color:#1A5070; }
-    .s-body { font-size:17px; font-weight:300; color:#4A6070; line-height:1.7; max-width:540px; margin-top:14px; }
-
-    /* WHAT WE CHECK */
+    h2 { font-size:clamp(26px,3vw,40px); font-weight:800; color:var(--navy); }
+    
     .checks { padding:100px 0; border-top:1px solid var(--border2); }
-    .checks-grid {
-      display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
-      background:rgba(26,107,138,0.08);
-      border:1px solid rgba(26,107,138,0.12);
-      border-radius:16px; overflow:hidden;
-      margin-top:52px;
-    }
-    .check-card {
-      padding:36px 28px;
-      background:var(--card);
-      backdrop-filter:blur(8px);
-      transition:background 0.2s;
-    }
-    .check-card:hover { background:rgba(255,255,255,0.92); }
-    .check-num {
-      font-size:11px; font-weight:700; color:var(--muted);
-      letter-spacing:0.08em; margin-bottom:16px;
-    }
-    .check-card h3 { font-size:16px; font-weight:800; color:var(--navy); margin-bottom:10px; letter-spacing:-0.01em; }
-    .check-card p { font-size:13px; color:#4A6070; line-height:1.65; }
+    .checks-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border2); border:1px solid var(--border2); border-radius:16px; overflow:hidden; margin-top:52px; }
+    .check-card { padding:36px 28px; background:var(--card); backdrop-filter:blur(8px); }
+    .check-card h3 { font-size:16px; font-weight:800; color:var(--navy); margin-bottom:10px; }
+    .check-card p { font-size:13px; color:#4A6070; }
 
-    /* OUTPUT */
     .output { padding:100px 0; border-top:1px solid var(--border2); }
     .output-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; margin-top:52px; }
-    .output-list { display:flex; flex-direction:column; gap:0; }
-    .output-item {
-      display:flex; align-items:flex-start; gap:16px;
-      padding:22px 0; border-bottom:1px solid var(--border2);
-    }
-    .output-item:first-child { border-top:1px solid var(--border2); }
-    .output-check {
-      width:20px; height:20px; flex-shrink:0;
-      background:var(--teal-dim);
-      border:1px solid rgba(26,107,138,0.2);
-      border-radius:6px;
-      display:flex; align-items:center; justify-content:center;
-      margin-top:2px;
-    }
-    .output-item h4 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:4px; }
-    .output-item p { font-size:13px; color:#4A6070; line-height:1.6; }
-    .output-card {
-      padding:36px;
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:16px;
-      backdrop-filter:blur(8px);
-    }
-    .output-card .label { font-size:11px; font-weight:700; color:var(--teal); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:16px; }
-    .output-card blockquote { font-size:19px; font-weight:700; line-height:1.4; letter-spacing:-0.02em; margin-bottom:20px; color:var(--navy); }
-    .output-card blockquote em { font-style:italic; font-weight:400; color:#1A5070; }
-    .output-card p { font-size:14px; color:#4A6070; line-height:1.65; }
+    .output-item { display:flex; gap:16px; padding:22px 0; border-bottom:1px solid var(--border2); }
+    .output-card { padding:36px; background:var(--card); border:1px solid var(--border); border-radius:16px; }
 
-    /* HOW IT WORKS */
     .how { padding:100px 0; border-top:1px solid var(--border2); }
     .how-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:52px; }
-    .how-step {
-      padding:36px 28px;
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:16px;
-      backdrop-filter:blur(8px);
-      transition:transform 0.2s;
-    }
-    .how-step:hover { transform:translateY(-3px); }
-    .how-step-n { font-size:48px; font-weight:800; color:rgba(26,107,138,0.12); line-height:1; margin-bottom:16px; letter-spacing:-0.04em; }
-    .how-step h3 { font-size:18px; font-weight:800; color:var(--navy); margin-bottom:10px; letter-spacing:-0.01em; }
-    .how-step p { font-size:14px; color:#4A6070; line-height:1.65; }
+    .how-step { padding:36px 28px; background:var(--card); border:1px solid var(--border); border-radius:16px; }
 
-    /* CTA BAND */
-    .cta-band {
-      padding:100px 0;
-      border-top:1px solid var(--border2);
-      text-align:center;
-    }
-    .cta-band h2 { font-size:clamp(28px,3.5vw,46px); margin-bottom:16px; }
-    .cta-band p { font-size:17px; color:#4A6070; max-width:480px; margin:0 auto 36px; line-height:1.7; }
-    .cta-band .hero-cta { animation:none; opacity:1; display:inline-flex; }
+    .cta-band { padding:100px 0; border-top:1px solid var(--border2); text-align:center; }
 
-    footer {
-      position:relative; z-index:1;
-      border-top:1px solid rgba(26,107,138,0.1);
-      padding:36px 52px;
-      display:flex; align-items:center; justify-content:space-between;
-    }
-    .footer-left { display:flex; align-items:center; gap:24px; }
-    .footer-logo { display:flex; align-items:center; gap:8px; text-decoration:none; }
-    .footer-sep { width:1px; height:16px; background:rgba(26,107,138,0.15); }
-    footer a { font-size:13px; color:#4A6070; text-decoration:none; transition:color 0.2s; }
-    footer a:hover { color:var(--navy); }
-    .footer-right { font-size:12px; color:var(--muted); }
-
-    @keyframes up { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+    /* NUOVO CSS FOOTER UNIFORMATO */
+    footer { position: relative; z-index: 1; padding: 60px 0 0; background: transparent; }
+    .footer-inner { display: grid; grid-template-columns: 1fr 1.8fr; gap: 24px; }
+    .footer-brand { background: linear-gradient(135deg, #0D2A3F 0%, #0F3D52 40%, #1A6B8A 100%); border-radius: 16px; padding: 36px; display: flex; flex-direction: column; justify-content: space-between; min-height: 240px; color: #fff; }
+    .footer-brand-top { display: flex; align-items: center; gap: 10px; }
+    .footer-brand-tagline { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 14px; }
+    .footer-brand-label { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.35); letter-spacing: 0.14em; text-transform: uppercase; margin-top: 24px; }
+    .footer-brand-headline { font-size: 22px; font-weight: 800; line-height: 1.25; margin-top: 8px; }
+    .footer-brand-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; font-size: 13px; font-weight: 700; color: #fff; background: rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); }
+    .footer-nav-card { background: rgba(255,255,255,0.55); border: 1px solid var(--border); border-radius: 16px; padding: 36px; backdrop-filter: blur(12px); display: flex; flex-direction: column; justify-content: space-between; }
+    .footer-nav-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-nav-col-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+    .footer-nav-col a { display: block; font-size: 15px; font-weight: 500; color: var(--navy); text-decoration: none; margin-bottom: 12px; }
+    .footer-bottom { border-top: 1px solid rgba(26,107,138,0.1); padding: 20px 0; margin-top: 24px; }
+    .footer-bottom-copy { font-size: 12px; color: var(--muted); }
 
     @media(max-width:900px){
-      nav{padding:14px 24px;}
-      .nav-right .nav-link{display:none;}
-      .hero{padding:130px 24px 60px;}
       .wrap{padding:0 24px;}
-      .checks-grid,.how-steps{grid-template-columns:1fr;}
-      .output-layout{grid-template-columns:1fr;gap:40px;}
-      footer{flex-direction:column;gap:16px;text-align:center;padding:28px 24px;}
-      .footer-left{flex-direction:column;gap:12px;}
-      .footer-sep{display:none;}
+      .nav-right .nav-link{display:none;}
+      .checks-grid, .how-steps, .output-layout, .footer-inner { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-<div class="glow glow-1"></div>
-<div class="glow glow-2"></div>
 
 <nav>
   <a href="/" class="logo">
-    <img src="agescrittalogo.png" alt="Agensure" height="50" style="display:block;object-fit:contain;"/>
+    <img src="agescrittalogo.png" alt="Agensure" height="50"/>
   </a>
   <div class="nav-right">
     <a href="/compliance.html" class="nav-link active">Compliance</a>
     <a href="/insurance.html" class="nav-link">Insurance</a>
-    <a href="/#waitlist" class="nav-cta">Get Free Audit</a>
+    <a href="#" onclick="contactUs(event)" class="nav-cta">Get Free Audit</a>
   </div>
 </nav>
 
 <div class="hero-outer">
-  <div class="hero-map" aria-hidden="true">
-    <img src="WRLD-EU-02-4001.png" alt="" />
-  </div>
+  <div class="hero-map"><img src="WRLD-EU-02-4001.png" alt=""/></div>
   <div class="hero">
-    <h1>EU AI Act compliance,<br/><em>verified.</em></h1>
-    <p class="hero-sub">Agensure audits your AI agent deployments against every relevant EU AI Act obligation and gives you a clear, actionable report in a matter of hours.</p>
-    <a href="#" onclick="contactUs(event)" class="hero-cta">Get your free audit →</a>
-    <p class="hero-note">Free for early design partners</p>
+    <div class="wrap">
+      <h1>EU AI Act compliance,<br/><em>verified.</em></h1>
+      <p class="hero-sub">Agensure audits your AI agent deployments against every relevant EU AI Act obligation and gives you a clear, actionable report in a matter of hours.</p>
+      <a href="#" onclick="contactUs(event)" class="hero-cta">Get your free audit →</a>
+    </div>
   </div>
 </div>
 
-<!-- WHAT WE CHECK -->
 <section class="checks">
   <div class="wrap">
     <p class="s-label">What We Verify</p>
     <h2>Every obligation that matters<br/>for your AI agent deployment.</h2>
     <div class="checks-grid">
-      <div class="check-card">
-        <div class="check-num">ART. 12</div>
-        <h3>Logging & Traceability</h3>
-        <p>We verify that your AI system generates the mandatory logs required for post-hoc audits including input/output records, timestamps, and decision trails.</p>
-      </div>
-      <div class="check-card">
-        <div class="check-num">ART. 14</div>
-        <h3>Human Oversight</h3>
-        <p>We check that appropriate human oversight mechanisms are in place including override controls, monitoring dashboards, and escalation procedures for your agents.</p>
-      </div>
-      <div class="check-card">
-        <div class="check-num">ART. 9</div>
-        <h3>Risk Management System</h3>
-        <p>We assess whether a documented risk management process exists for your AI deployment covering identification, evaluation, and mitigation of foreseeable risks.</p>
-      </div>
-      <div class="check-card">
-        <div class="check-num">ART. 11</div>
-        <h3>Technical Documentation</h3>
-        <p>We review your technical documentation against EU AI Act requirements verifying that system design, capabilities, limitations, and intended use are properly recorded.</p>
-      </div>
-      <div class="check-card">
-        <div class="check-num">ART. 13</div>
-        <h3>Transparency & Information</h3>
-        <p>We check that users interacting with your AI agents are adequately informed including disclosure obligations and instructions for use.</p>
-      </div>
-      <div class="check-card">
-        <div class="check-num">ART. 10</div>
-        <h3>Data Governance</h3>
-        <p>We verify data quality, provenance, and governance practices for training and operational data including bias assessment and data management policies.</p>
-      </div>
+      <div class="check-card"><h3>Logging & Traceability</h3><p>Art. 12 verification...</p></div>
+      <div class="check-card"><h3>Human Oversight</h3><p>Art. 14 checks...</p></div>
+      <div class="check-card"><h3>Risk Management</h3><p>Art. 9 assessment...</p></div>
     </div>
   </div>
 </section>
 
-<!-- OUTPUT -->
-<section class="output">
-  <div class="wrap">
-    <p class="s-label">The Output</p>
-    <h2>A compliance report your legal<br/>and engineering team can act on.</h2>
-    <div class="output-layout">
-      <div class="output-list">
-        <div class="output-item">
-          <div class="output-check">
-            <svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#1A6B8A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="wrap"> 
+  <footer style="margin-top: 80px;">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div>
+          <div class="footer-brand-top">
+            <img src="logosimbolocontorni.png" alt="" height="50" style="filter:brightness(0) invert(1);"/>
+            <img src="logoscrittacontorni.png" alt="Agensure" height="50" style="filter:brightness(0) invert(1);"/>
           </div>
-          <div>
-            <h4>Compliance risk score</h4>
-            <p>Overall score across all verified EU AI Act obligations with per-article breakdown.</p>
-          </div>
+          <p class="footer-brand-tagline">Europe's AI agent trust layer.</p>
         </div>
-        <div class="output-item">
-          <div class="output-check">
-            <svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#1A6B8A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div>
-            <h4>Gap analysis</h4>
-            <p>Every missing or insufficient control, ranked by severity and enforcement risk.</p>
-          </div>
-        </div>
-        <div class="output-item">
-          <div class="output-check">
-            <svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#1A6B8A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div>
-            <h4>Remediation plan</h4>
-            <p>Concrete steps to close each gap with effort estimates and priority ordering.</p>
-          </div>
-        </div>
-        <div class="output-item">
-          <div class="output-check">
-            <svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#1A6B8A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div>
-            <h4>Continuous regulatory monitoring</h4>
-            <p>Our agentic layer tracks EU AI Act updates automatically flagging new requirements as they emerge.</p>
-          </div>
+        <div>
+          <p class="footer-brand-label">Trust layer for AI agents</p>
+          <p class="footer-brand-headline">Europe is regulating AI<br/>before <em>insuring it.</em></p>
+          <a href="#" onclick="contactUs(event)" class="footer-brand-cta">Join the waitlist →</a>
         </div>
       </div>
-      <div class="output-card">
-        <div class="label">Why it matters now</div>
-        <blockquote>"From August 2026, non-compliance means fines up to <em>3% of global turnover.</em>"</blockquote>
-        <p>The EU AI Act is not theoretical. Enforcement deadlines are live. Companies deploying high-risk AI agents need documented evidence of compliance. Agensure gives you the report, the gap analysis, and the remediation path before the regulator asks.</p>
+
+      <div class="footer-nav-card">
+        <div class="footer-nav-cols">
+          <div class="footer-nav-col">
+            <p class="footer-nav-col-label">Main</p>
+            <a href="/compliance.html">Compliance</a>
+            <a href="/insurance.html">AI Insurance</a>
+          </div>
+          <div class="footer-nav-col">
+            <p class="footer-nav-col-label">Get started</p>
+            <a href="#" onclick="contactUs(event)">Join Waitlist</a>
+            <a href="#" onclick="contactUs(event)">Contact us</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-bottom-copy">© 2026 Agensure. All rights reserved.</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
+</div>
 
-<!-- HOW IT WORKS -->
-<section class="how">
-  <div class="wrap">
-    <p class="s-label">How It Works</p>
-    <h2>Three steps. less than 24 hours. <em>Full clarity.</em></h2>
-    <div class="how-steps">
-      <div class="how-step">
-        <div class="how-step-n">01</div>
-        <h3>Submit</h3>
-        <p>Tell us about your AI agent deployment such as architecture, use case, data sources, and current documentation. We handle the rest.</p>
-      </div>
-      <div class="how-step">
-        <div class="how-step-n">02</div>
-        <h3>Audit</h3>
-        <p>Our expert team runs a structured compliance review across all relevant EU AI Act articles combining documentation analysis with technical verification.</p>
-      </div>
-      <div class="how-step">
-        <div class="how-step-n">03</div>
-        <h3>Report</h3>
-        <p>You receive a complete compliance report with risk score, gap analysis, and a prioritised remediation plan ready to share with your legal team and board.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BAND -->
-<section class="cta-band">
-  <div class="wrap">
-    <p class="s-label">Get Started</p>
-    <h2>Your competitors are already<br/>getting <em>audited.</em></h2>
-    <p>Free for early design partners. One email is all it takes to get started.</p>
-    <a href="#" onclick="contactUs(event)" class="hero-cta">Get your free audit →</a>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-left">
-    <a href="/" class="footer-logo">
-      <img src="agescrittalogo.png" alt="Agensure" height="30" style="display:block;object-fit:contain;"/>
-    </a>
-    <div class="footer-sep"></div>
-    
-    <a href="#">Privacy</a>
-  </div>
-  <div class="footer-right">© 2026 Agensure</div>
-</footer>
 <script>
   const _m = ['f','i','l','i','p','p','o','@','a','g','e','n','s','u','r','e','.','e','u'].join('');
   function contactUs(e) { if(e) e.preventDefault(); window.location.href = 'mailto:' + _m; }
