@@ -275,8 +275,8 @@
   <div class="hero">
     <h1>EU AI Act full-compliance,<br/><em>verified.</em></h1>
     <p class="hero-sub">Agensure audits your AI agent deployments against every relevant EU AI Act obligation and gives you a clear, actionable report in a matter of hours.</p>
-    <a href="mailto:founder@agensure.eu" class="hero-cta">Get your free audit →</a>
-    <p class="hero-note">Free for early design partners · founder@agensure.eu</p>
+    <a href="#" onclick="contactUs(event)" class="hero-cta">Get your free audit →</a>
+    <p class="hero-note">Free for early design partners</p>
   </div>
 </div>
 
@@ -377,7 +377,7 @@
 <section class="how">
   <div class="wrap">
     <p class="s-label">How It Works</p>
-    <h2>Three steps. Less than 24 hours. <em>Full clarity.</em></h2>
+    <h2>Three steps. less than 24 hours. <em>Full clarity.</em></h2>
     <div class="how-steps">
       <div class="how-step">
         <div class="how-step-n">01</div>
@@ -404,7 +404,7 @@
     <p class="s-label">Get Started</p>
     <h2>Your competitors are already<br/>getting <em>audited.</em></h2>
     <p>Free for early design partners. One email is all it takes to get started.</p>
-    <a href="mailto:founder@agensure.eu" class="hero-cta">Get your free audit →</a>
+    <a href="#" onclick="contactUs(event)" class="hero-cta">Get your free audit →</a>
   </div>
 </section>
 
@@ -414,10 +414,14 @@
       <img src="agescrittalogo.png" alt="Agensure" height="60" style="display:block;object-fit:contain;"/>
     </a>
     <div class="footer-sep"></div>
-    <a href="mailto:founder@agensure.eu">founder@agensure.eu</a>
+    
     <a href="#">Privacy</a>
   </div>
   <div class="footer-right">© 2026 Agensure</div>
 </footer>
+<script>
+  const _m = ['f','i','l','i','p','p','o','@','a','g','e','n','s','u','r','e','.','e','u'].join('');
+  function contactUs(e) { if(e) e.preventDefault(); window.location.href = 'mailto:' + _m; }
+</script>
 </body>
 </html>
