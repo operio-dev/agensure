@@ -224,6 +224,85 @@
     footer a:hover { color:var(--navy); }
     .footer-right { font-size:12px; color:var(--muted); }
 
+    /* SHIELD SECTION */
+    .shield-section {
+      padding: 120px 0 100px;
+      border-top: 1px solid var(--border2);
+      position: relative;
+      z-index: 1;
+    }
+
+    .shield-outer {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Pulse rings */
+    .shield-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(26,107,138,0.2);
+      animation: ringPulse 3.5s ease-out infinite;
+    }
+    .r1 { width: 200px; height: 200px; animation-delay: 0s; }
+    .r2 { width: 270px; height: 270px; animation-delay: 0.9s; }
+    .r3 { width: 340px; height: 340px; animation-delay: 1.8s; }
+
+    @keyframes ringPulse {
+      0%   { opacity: 0.6; transform: scale(0.88); }
+      70%  { opacity: 0.1; }
+      100% { opacity: 0;   transform: scale(1.08); }
+    }
+
+    /* Logo with pulse + shine */
+    .logo-animated {
+      position: relative;
+      display: inline-block;
+      width: 140px;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .logo-animated img {
+      width: 100%;
+      display: block;
+      animation: logoPulse 2.8s ease-in-out infinite;
+      filter: drop-shadow(0 0 8px rgba(26,107,138,0.2));
+    }
+
+    .logo-animated .shine {
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.55),
+        transparent
+      );
+      transform: skewX(-20deg);
+      animation: shineMove 3.5s ease-in-out infinite;
+    }
+
+    @keyframes logoPulse {
+      0%   { transform: scale(1);    filter: drop-shadow(0 0 6px rgba(26,107,138,0.15)); }
+      50%  { transform: scale(1.06); filter: drop-shadow(0 0 20px rgba(26,107,138,0.45)); }
+      100% { transform: scale(1);    filter: drop-shadow(0 0 6px rgba(26,107,138,0.15)); }
+    }
+
+    @keyframes shineMove {
+      0%   { left: -75%; }
+      40%  { left: 125%; }
+      100% { left: 125%; }
+    }
+
     @keyframes up { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
 
     @media(max-width:900px){
@@ -262,7 +341,7 @@
   <div class="hero">
     <div class="eyebrow"><span></span>Coming 2027<span></span></div>
     <h1>Insurance for deployed<br/><em>AI agents.</em></h1>
-    <p class="hero-sub">Agensure covers direct financial loss caused by verified AI agent incidents. Built for companies deploying autonomous agents in real European workflows.</p>
+    <p class="hero-sub">Agensure covers direct financial loss caused by verified AI agent incidents — built for companies deploying autonomous agents in real European workflows.</p>
     <div class="hero-pills">
       <span class="pill">Unauthorized actions</span>
       <span class="pill">Erroneous outputs</span>
@@ -282,7 +361,7 @@
       <div>
         <p class="s-label">The Problem</p>
         <h2>Once AI agents can act, small failures become <em>real business loss.</em></h2>
-        <p class="s-body" style="margin-top:16px;">Agents now approve, send, modify, and execute in real systems. A single mistake can cascade into measurable financial damage and no traditional insurer is built to cover it.</p>
+        <p class="s-body" style="margin-top:16px;">Agents now approve, send, modify, and execute in real systems. A single mistake can cascade into measurable financial damage — and no traditional insurer is built to cover it.</p>
       </div>
       <div class="problem-stats">
         <div class="stat-row">
@@ -428,9 +507,26 @@
       <div class="why-card">
         <span class="why-badge">MGA Model</span>
         <h3>Backed by Tier-1 carriers</h3>
-        <p>Agensure operates as a Managing General Agent combining our proprietary risk intelligence with the balance sheet of established European insurers.</p>
+        <p>Agensure operates as a Managing General Agent — combining our proprietary risk intelligence with the balance sheet of established European insurers (AXA, Allianz, Generali).</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- SHIELD -->
+<section class="shield-section">
+  <div class="wrap" style="text-align:center;">
+    <p class="s-label" style="margin-bottom:48px;">Europe's AI Agent Trust Layer</p>
+    <div class="shield-outer">
+      <div class="shield-ring r1"></div>
+      <div class="shield-ring r2"></div>
+      <div class="shield-ring r3"></div>
+      <div class="logo-animated">
+        <img src="shield-logo.png" alt="Agensure"/>
+        <div class="shine"></div>
+      </div>
+    </div>
+    <p style="margin-top:52px;font-size:16px;font-weight:400;color:#4A6070;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.75;">The first independent trust layer for AI agents deployed in Europe. Assess. Certify. Insure.</p>
   </div>
 </section>
 
