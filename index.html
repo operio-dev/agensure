@@ -1266,48 +1266,57 @@
 </div>
 
         <!-- PANEL 2: Insurance -->
-        <div class="product-panel" data-panel="2">
-          <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="20" y="20" width="380" height="280" rx="16" fill="rgba(255,255,255,0.6)" stroke="rgba(26,107,138,0.15)" stroke-width="1"/>
-            <!-- Pulse rings behind donut -->
-            <circle cx="210" cy="138" r="95" stroke="rgba(26,107,138,0.05)" stroke-width="1.5" style="animation:expandRing 3s ease infinite"/>
-            <circle cx="210" cy="138" r="95" stroke="rgba(26,107,138,0.04)" stroke-width="1.5" style="animation:expandRing 3s ease 1.5s infinite"/>
-            <!-- Donut track -->
-            <circle cx="210" cy="138" r="66" stroke="rgba(26,107,138,0.08)" stroke-width="18"/>
-            <!-- Donut fill animated -->
-            <circle cx="210" cy="138" r="66" stroke="#1A6B8A" stroke-width="18"
-              stroke-dasharray="310 104" stroke-dashoffset="83" stroke-linecap="round"
-              style="animation:growDonut 1.3s ease 0.3s both; transform-origin:210px 138px; transform:rotate(-90deg)"/>
-            <!-- Center label -->
-            <text x="210" y="130" text-anchor="middle" font-size="24" fill="#0D1B2E" font-family="Plus Jakarta Sans, sans-serif" font-weight="800">€50K</text>
-            <text x="210" y="150" text-anchor="middle" font-size="9" fill="rgba(26,107,138,0.65)" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" letter-spacing="0.1em">COVERAGE</text>
-            <!-- MGA badge top right -->
-            <rect x="298" y="38" width="82" height="24" rx="7" fill="rgba(26,107,138,0.1)" stroke="rgba(26,107,138,0.2)" stroke-width="1"/>
-            <text x="312" y="54" font-size="10" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">MGA Model</text>
-            <!-- Coverage tags — 2×2 grid, cleaner -->
-            <g style="animation:fadeSlideIn 0.5s ease 0.7s both">
-              <rect x="44" y="238" width="148" height="34" rx="9" fill="rgba(26,107,138,0.07)" stroke="rgba(26,107,138,0.18)" stroke-width="1"/>
-              <text x="60" y="252" font-size="9" fill="rgba(26,107,138,0.55)" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" letter-spacing="0.08em">COVERAGE 01</text>
-              <text x="60" y="265" font-size="11" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Unauthorized Actions</text>
-            </g>
-            <g style="animation:fadeSlideIn 0.5s ease 0.85s both">
-              <rect x="202" y="238" width="174" height="34" rx="9" fill="rgba(26,107,138,0.07)" stroke="rgba(26,107,138,0.18)" stroke-width="1"/>
-              <text x="218" y="252" font-size="9" fill="rgba(26,107,138,0.55)" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" letter-spacing="0.08em">COVERAGE 02</text>
-              <text x="218" y="265" font-size="11" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Erroneous Outputs</text>
-            </g>
-            <g style="animation:fadeSlideIn 0.5s ease 1.0s both">
-              <rect x="44" y="278" width="148" height="34" rx="9" fill="rgba(26,107,138,0.07)" stroke="rgba(26,107,138,0.18)" stroke-width="1"/>
-              <text x="60" y="292" font-size="9" fill="rgba(26,107,138,0.55)" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" letter-spacing="0.08em">COVERAGE 03</text>
-              <text x="60" y="305" font-size="11" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Data Breaches</text>
-            </g>
-            <g style="animation:fadeSlideIn 0.5s ease 1.15s both">
-              <rect x="202" y="278" width="174" height="34" rx="9" fill="rgba(26,107,138,0.07)" stroke="rgba(26,107,138,0.18)" stroke-width="1"/>
-              <text x="218" y="292" font-size="9" fill="rgba(26,107,138,0.55)" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" letter-spacing="0.08em">COVERAGE 04</text>
-              <text x="218" y="305" font-size="11" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Business Interruption</text>
-            </g>
-          </svg>
-        </div>
+<div class="product-panel" data-panel="2">
+  <svg viewBox="0 0 420 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- SFONDO: Aumentato height a 295 per contenere i bottoni senza tagliarli -->
+    <rect x="20" y="20" width="380" height="295" rx="16" fill="rgba(255,255,255,0.6)" stroke="rgba(26,107,138,0.15)" stroke-width="1"/>
+    
+    <!-- Pulse rings behind donut -->
+    <circle cx="210" cy="130" r="95" stroke="rgba(26,107,138,0.05)" stroke-width="1.5" style="animation:expandRing 3s ease infinite"/>
+    <circle cx="210" cy="130" r="95" stroke="rgba(26,107,138,0.04)" stroke-width="1.5" style="animation:expandRing 3s ease 1.5s infinite"/>
+    
+    <!-- Donut track -->
+    <circle cx="210" cy="130" r="66" stroke="rgba(26,107,138,0.08)" stroke-width="18"/>
+    
+    <!-- Donut fill animated -->
+    <circle cx="210" cy="130" r="66" stroke="#1A6B8A" stroke-width="18"
+      stroke-dasharray="310 104" stroke-dashoffset="83" stroke-linecap="round"
+      style="animation:growDonut 1.3s ease 0.3s both; transform-origin:210px 130px; transform:rotate(-90deg)"/>
+    
+    <!-- Center label -->
+    <text x="210" y="122" text-anchor="middle" font-size="24" fill="#0D1B2E" font-family="Plus Jakarta Sans, sans-serif" font-weight="800">€50K</text>
+    <text x="210" y="142" text-anchor="middle" font-size="9" fill="rgba(26,107,138,0.65)" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" letter-spacing="0.1em">COVERAGE</text>
+    
+    <!-- MGA badge top right -->
+    <rect x="298" y="38" width="82" height="24" rx="7" fill="rgba(26,107,138,0.1)" stroke="rgba(26,107,138,0.2)" stroke-width="1"/>
+    <text x="312" y="54" font-size="10" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">MGA Model</text>
+    
+    <!-- Coverage tags — Alzati per rientrare nella tab -->
+    <!-- Riga 1 (y alzato a 220) -->
+    <g style="animation:fadeSlideIn 0.5s ease 0.7s both">
+      <rect x="44" y="220" width="148" height="34" rx="9" fill="rgba(26,107,138,0.07)" stroke="rgba(26,107,138,0.18)" stroke-width="1"/>
+      <text x="60" y="234" font-size="9" fill="rgba(26,107,138,0.55)" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" letter-spacing="0.08em">COVERAGE 01</text>
+      <text x="60" y="247" font-size="11" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Unauthorized Actions</text>
+    </g>
+    <g style="animation:fadeSlideIn 0.5s ease 0.85s both">
+      <rect x="202" y="220" width="174" height="34" rx="9" fill="rgba(26,107,138,0.07)" stroke="rgba(26,107,138,0.18)" stroke-width="1"/>
+      <text x="218" y="234" font-size="9" fill="rgba(26,107,138,0.55)" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" letter-spacing="0.08em">COVERAGE 02</text>
+      <text x="218" y="247" font-size="11" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Erroneous Outputs</text>
+    </g>
 
+    <!-- Riga 2 (y alzato a 260) -->
+    <g style="animation:fadeSlideIn 0.5s ease 1.0s both">
+      <rect x="44" y="260" width="148" height="34" rx="9" fill="rgba(26,107,138,0.07)" stroke="rgba(26,107,138,0.18)" stroke-width="1"/>
+      <text x="60" y="274" font-size="9" fill="rgba(26,107,138,0.55)" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" letter-spacing="0.08em">COVERAGE 03</text>
+      <text x="60" y="287" font-size="11" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Data Breaches</text>
+    </g>
+    <g style="animation:fadeSlideIn 0.5s ease 1.15s both">
+      <rect x="202" y="260" width="174" height="34" rx="9" fill="rgba(26,107,138,0.07)" stroke="rgba(26,107,138,0.18)" stroke-width="1"/>
+      <text x="218" y="274" font-size="9" fill="rgba(26,107,138,0.55)" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" letter-spacing="0.08em">COVERAGE 04</text>
+      <text x="218" y="287" font-size="11" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Business Interruption</text>
+    </g>
+  </svg>
+</div>
       </div>
     </div>
   </div>
