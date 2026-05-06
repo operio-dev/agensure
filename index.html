@@ -70,7 +70,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 12px 52px;
+      padding: 22px 52px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -473,32 +473,71 @@
 
     .stat-row {
       display: flex;
-      align-items: flex-start;
-      gap: 24px;
-      padding: 28px 0;
+      flex-direction: column;
+      gap: 12px;
+      padding: 32px 0;
       border-bottom: 1px solid rgba(26,107,138,0.1);
     }
     .stat-row:first-child { border-top: 1px solid rgba(26,107,138,0.1); }
 
+    .stat-row-top {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+    }
+
     .stat-num {
-      font-size: 48px;
+      font-size: clamp(64px, 7vw, 88px);
       font-weight: 800;
       color: var(--teal);
-      letter-spacing: -0.04em;
+      letter-spacing: -0.05em;
       line-height: 1;
-      min-width: 110px;
+      font-variant-numeric: tabular-nums;
+      min-width: 0;
     }
 
     .stat-text h3 {
       font-size: 15px;
       font-weight: 700;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
+      padding-bottom: 6px;
+      color: var(--navy);
     }
 
     .stat-text p {
       font-size: 13px;
       color: #4A6070;
       line-height: 1.6;
+    }
+
+    /* Mini bar under each stat */
+    .stat-bar-wrap {
+      width: 100%;
+      height: 4px;
+      background: rgba(26,107,138,0.08);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .stat-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, rgba(26,107,138,0.4) 0%, var(--teal) 100%);
+      width: 0%;
+      transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Glitch keyframes */
+    @keyframes glitch {
+      0%,100% { clip-path: none; transform: none; }
+      20%      { clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%); transform: translateX(-3px); }
+      21%      { clip-path: none; transform: none; }
+      40%      { clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%); transform: translateX(3px); }
+      41%      { clip-path: none; transform: none; }
+      60%      { clip-path: polygon(0 10%, 100% 10%, 100% 30%, 0 30%); transform: translateX(-2px); }
+      61%      { clip-path: none; transform: none; }
+    }
+    .stat-num.glitching {
+      animation: glitch 0.4s steps(1) 1;
     }
 
     .problem-right {
@@ -542,81 +581,152 @@
       border-top: 1px solid rgba(26,107,138,0.1);
     }
 
-    .product-steps {
+    /* NEW TABBED PRODUCT LAYOUT */
+    .product-tabs {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(26,107,138,0.08);
-      border: 1px solid rgba(26,107,138,0.12);
-      border-radius: 16px;
-      overflow: hidden;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
       margin-top: 60px;
     }
 
-    .step {
-      padding: 40px 32px;
-      background: rgba(255,255,255,0.75);
-      backdrop-filter: blur(8px);
-      transition: background 0.2s;
+    .product-tab-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
-    .step:hover { background: rgba(255,255,255,0.9); }
 
-    .step-header {
+    .product-tab {
+      display: flex;
+      gap: 16px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(26,107,138,0.1);
+      cursor: pointer;
+      transition: opacity 0.2s;
+      opacity: 0.45;
+    }
+    .product-tab:first-child { border-top: 1px solid rgba(26,107,138,0.1); }
+    .product-tab.active { opacity: 1; }
+
+    .tab-progress {
+      width: 3px;
+      background: rgba(26,107,138,0.1);
+      border-radius: 3px;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tab-progress-fill {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 0%;
+      background: var(--teal);
+      border-radius: 3px;
+      transition: height 0.1s linear;
+    }
+
+    .product-tab.active .tab-progress { background: rgba(26,107,138,0.15); }
+
+    .tab-content { flex: 1; }
+
+    .tab-meta {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 24px;
+      gap: 10px;
+      margin-bottom: 10px;
     }
 
-    .step-num {
-      font-size: 13px;
+    .tab-num {
+      font-size: 11px;
       font-weight: 700;
       color: var(--muted);
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
     }
 
-    .step-badge {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 100px;
-    }
-
-    .badge-now {
-      color: var(--teal);
-      background: var(--teal-dim);
-      border: 1px solid rgba(26,107,138,0.2);
-    }
-
-    .badge-soon {
-      color: var(--gray);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(26,107,138,0.1);
-    }
-
-    .step h3 {
-      font-size: 20px;
+    .product-tab h3 {
+      font-size: 18px;
       font-weight: 800;
-      letter-spacing: -0.025em;
-      margin-bottom: 12px;
       color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
     }
 
-    .step p {
-      font-size: 14px;
+    .product-tab p {
+      font-size: 13px;
       color: #4A6070;
       line-height: 1.65;
     }
 
-    .step-price {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--teal);
-      margin-top: 20px;
-      padding: 5px 12px;
-      background: var(--teal-dim);
-      border-radius: 6px;
+    /* VISUAL PANEL */
+    .product-visual {
+      position: sticky;
+      top: 100px;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(26,107,138,0.12);
+      border-radius: 20px;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      aspect-ratio: 420 / 320;
+    }
+
+    .product-panel {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+      pointer-events: none;
+    }
+    .product-panel.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .product-visual { position: sticky; top: 100px; }
+
+    .product-panel svg { width: 100%; height: 100%; }
+
+    /* SVG Animations */
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes growBar {
+      from { width: 0; }
+      to   { width: 220px; }
+    }
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 0.7; }
+    }
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    @keyframes growDonut {
+      from { stroke-dasharray: 0 440; }
+      to   { stroke-dasharray: 330 110; }
+    }
+    @keyframes expandRing {
+      0%   { r: 85; opacity: 0.06; }
+      100% { r: 110; opacity: 0; }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(1.4); }
+    }
+
+    /* COUNT-UP */
+    .stat-num[data-target] {
+      transition: color 0.3s;
     }
 
     .why {
@@ -759,9 +869,12 @@
     }
 
     @media (max-width: 900px) {
-      nav { padding: 12px 24px; }
+      nav { padding: 18px 24px; }
       .nav-right .nav-link { display: none; }
       .nav-right .nav-cta  { display: none; }
+      .burger { display: flex; }
+      .product-tabs { grid-template-columns: 1fr; }
+      .product-visual { position: static; aspect-ratio: 420/280; }
       .burger { display: flex; }
       .hero { padding: 130px 24px 80px; }
       .wrap { padding: 0 24px; }
@@ -866,25 +979,34 @@
     <div class="problem-layout">
       <div>
         <div class="stat-row">
-          <div class="stat-num">93%</div>
-          <div class="stat-text">
-            <h3>Insurers are exiting</h3>
-            <p>Zurich, Tokio Marine, Berkshire Hathaway and many other insurance companies have all filed AI-specific exclusions. Zero financial safety net exists for autonomous agent failures.</p>
+          <div class="stat-row-top">
+            <div class="stat-num" data-target="93" data-suffix="%" data-bar="93">0%</div>
+            <div class="stat-text">
+              <h3>Insurers are exiting</h3>
+            </div>
           </div>
+          <div class="stat-bar-wrap"><div class="stat-bar-fill" data-width="93"></div></div>
+          <p style="font-size:13px;color:#4A6070;line-height:1.6;">Zurich, Tokio Marine, Berkshire Hathaway and many other insurance companies have all filed AI-specific exclusions. Zero financial safety net exists for autonomous agent failures.</p>
         </div>
         <div class="stat-row">
-          <div class="stat-num">3%</div>
-          <div class="stat-text">
-            <h3>Real board-level liability</h3>
-            <p>EU AI Act fines reach up to 3% of global annual turnover for high-risk AI deployers, enforceable from August 2026.</p>
+          <div class="stat-row-top">
+            <div class="stat-num" data-target="3" data-suffix="%" data-bar="3">0%</div>
+            <div class="stat-text">
+              <h3>Real board-level liability</h3>
+            </div>
           </div>
+          <div class="stat-bar-wrap"><div class="stat-bar-fill" data-width="3"></div></div>
+          <p style="font-size:13px;color:#4A6070;line-height:1.6;">EU AI Act fines reach up to 3% of global annual turnover for high-risk AI deployers, enforceable from August 2026.</p>
         </div>
         <div class="stat-row">
-          <div class="stat-num">0</div>
-          <div class="stat-text">
-            <h3>EU-native solutions</h3>
-            <p>The only comparable product is US-only with no EU AI Act alignment. Europe has no independent trust layer.</p>
+          <div class="stat-row-top">
+            <div class="stat-num" data-target="0" data-suffix="" data-bar="0">0</div>
+            <div class="stat-text">
+              <h3>EU-native solutions</h3>
+            </div>
           </div>
+          <div class="stat-bar-wrap"><div class="stat-bar-fill" data-width="2"></div></div>
+          <p style="font-size:13px;color:#4A6070;line-height:1.6;">The only comparable product is US-only with no EU AI Act alignment. Europe has no independent trust layer.</p>
         </div>
       </div>
       <div class="problem-right">
@@ -901,31 +1023,169 @@
     <p class="s-label">The Product</p>
     <h2>Assess. Certify. <em>Insure.</em></h2>
     <p class="s-body">One platform. Each phase builds the proprietary risk data that makes the next possible.</p>
-    <div class="product-steps">
-      <div class="step">
-        <div class="step-header">
-          <span class="step-num">01</span>
-          <span class="step-badge badge-now">Available now for FREE</span>
+
+    <div class="product-tabs">
+      <!-- LEFT: tab list -->
+      <div class="product-tab-list">
+        <div class="product-tab active" data-tab="0">
+          <div class="tab-progress"><div class="tab-progress-fill"></div></div>
+          <div class="tab-content">
+            <div class="tab-meta">
+              <span class="tab-num">01</span>
+              <span class="step-badge badge-now">Free now</span>
+            </div>
+            <h3>EU AI Act Compliance Audit</h3>
+            <p>Structured workflows, documentation analysis, and a final report with gap analysis and remediation plan.</p>
+          </div>
         </div>
-        <h3>EU AI Act Compliance Audit</h3>
-        <p>Structured workflows and documentation analysis, in-depth checklist of relevant clauses and review by an AI Compliance Legal Expert; final report with gap analysis and remediation plan</p>
-         <p style="margin-top:12px;font-size:13px;color:var(--teal);font-weight:500;">+ Powered by an agentic layer that continuously monitors EU AI Act regulatory updates — automatically flagging new compliance requirements for your organisation.</p>
+        <div class="product-tab" data-tab="1">
+          <div class="tab-progress"><div class="tab-progress-fill"></div></div>
+          <div class="tab-content">
+            <div class="tab-meta">
+              <span class="tab-num">02</span>
+              <span class="step-badge badge-soon">Q3 2026</span>
+            </div>
+            <h3>ADR Certification</h3>
+            <p>The SOC 2 for AI agents. Annual certification with continuous monitoring aligned to Art. 12 &amp; 14.</p>
+          </div>
+        </div>
+        <div class="product-tab" data-tab="2">
+          <div class="tab-progress"><div class="tab-progress-fill"></div></div>
+          <div class="tab-content">
+            <div class="tab-meta">
+              <span class="tab-num">03</span>
+              <span class="step-badge badge-soon">2027</span>
+            </div>
+            <h3>AI Agent Insurance</h3>
+            <p>Coverage for unauthorized actions, erroneous outputs, data breaches, and business interruption.</p>
+          </div>
+        </div>
       </div>
-      <div class="step">
-        <div class="step-header">
-          <span class="step-num">02</span>
-          <span class="step-badge badge-soon">Q3 2026</span>
+
+      <!-- RIGHT: illustrations -->
+      <div class="product-visual">
+
+        <!-- PANEL 0: Compliance Audit -->
+        <div class="product-panel active" data-panel="0">
+          <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background card -->
+            <rect x="20" y="20" width="380" height="280" rx="16" fill="rgba(255,255,255,0.6)" stroke="rgba(26,107,138,0.15)" stroke-width="1"/>
+            <!-- Document lines -->
+            <rect x="52" y="52" width="120" height="10" rx="4" fill="rgba(26,107,138,0.15)"/>
+            <rect x="52" y="70" width="80" height="8" rx="4" fill="rgba(26,107,138,0.08)"/>
+            <!-- Checklist items -->
+            <g class="audit-item" style="animation: fadeSlideIn 0.5s ease 0.1s both">
+              <rect x="52" y="100" width="16" height="16" rx="4" fill="rgba(26,107,138,0.12)" stroke="rgba(26,107,138,0.3)" stroke-width="1"/>
+              <path d="M56 108l3 3 6-6" stroke="#1A6B8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="76" y="104" width="100" height="8" rx="3" fill="rgba(26,107,138,0.12)"/>
+              <rect x="76" y="115" width="70" height="6" rx="3" fill="rgba(26,107,138,0.07)"/>
+            </g>
+            <g class="audit-item" style="animation: fadeSlideIn 0.5s ease 0.3s both">
+              <rect x="52" y="132" width="16" height="16" rx="4" fill="rgba(26,107,138,0.12)" stroke="rgba(26,107,138,0.3)" stroke-width="1"/>
+              <path d="M56 140l3 3 6-6" stroke="#1A6B8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="76" y="136" width="120" height="8" rx="3" fill="rgba(26,107,138,0.12)"/>
+              <rect x="76" y="147" width="85" height="6" rx="3" fill="rgba(26,107,138,0.07)"/>
+            </g>
+            <g class="audit-item" style="animation: fadeSlideIn 0.5s ease 0.5s both">
+              <rect x="52" y="164" width="16" height="16" rx="4" fill="rgba(26,107,138,0.12)" stroke="rgba(26,107,138,0.3)" stroke-width="1"/>
+              <path d="M56 172l3 3 6-6" stroke="#1A6B8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="76" y="168" width="90" height="8" rx="3" fill="rgba(26,107,138,0.12)"/>
+              <rect x="76" y="179" width="60" height="6" rx="3" fill="rgba(26,107,138,0.07)"/>
+            </g>
+            <!-- Gap analysis bar -->
+            <rect x="52" y="210" width="316" height="6" rx="3" fill="rgba(26,107,138,0.08)"/>
+            <rect x="52" y="210" width="220" height="6" rx="3" fill="#1A6B8A" class="audit-bar" style="animation: growBar 1s ease 0.7s both"/>
+            <text x="52" y="232" font-size="10" fill="rgba(26,107,138,0.6)" font-family="Plus Jakarta Sans, sans-serif" font-weight="600">Compliance score</text>
+            <text x="340" y="232" font-size="10" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">69%</text>
+            <!-- Report badge -->
+            <rect x="52" y="248" width="140" height="32" rx="8" fill="rgba(26,107,138,0.08)" stroke="rgba(26,107,138,0.2)" stroke-width="1"/>
+            <text x="72" y="268" font-size="11" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Report ready in &lt;24h</text>
+            <!-- Pulse dot -->
+            <circle cx="62" cy="264" r="4" fill="#1A6B8A" opacity="0.8" style="animation: pulse 2s ease infinite"/>
+            <!-- Art.12 / Art.14 tags -->
+            <rect x="210" y="248" width="60" height="20" rx="6" fill="rgba(26,107,138,0.1)" stroke="rgba(26,107,138,0.2)" stroke-width="1"/>
+            <text x="222" y="262" font-size="9" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">ART. 12</text>
+            <rect x="278" y="248" width="60" height="20" rx="6" fill="rgba(26,107,138,0.1)" stroke="rgba(26,107,138,0.2)" stroke-width="1"/>
+            <text x="290" y="262" font-size="9" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">ART. 14</text>
+          </svg>
         </div>
-        <h3>ADR Certification</h3>
-        <p>The SOC 2 for AI agents aligned to EU AI Act Art. 12 and Art. 14. Annual certification with continuous monitoring. Proof of compliance for customers, partners and regulators.</p>
-      </div>
-      <div class="step">
-        <div class="step-header">
-          <span class="step-num">03</span>
-          <span class="step-badge badge-soon">2027</span>
+
+        <!-- PANEL 1: ADR Certificate -->
+        <div class="product-panel" data-panel="1">
+          <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="20" width="380" height="280" rx="16" fill="rgba(255,255,255,0.6)" stroke="rgba(26,107,138,0.15)" stroke-width="1"/>
+            <!-- Outer glow rings -->
+            <circle cx="210" cy="148" r="108" stroke="rgba(26,107,138,0.06)" stroke-width="1.5" stroke-dasharray="5 5" style="animation:spinSlow 25s linear infinite"/>
+            <circle cx="210" cy="148" r="90" stroke="rgba(26,107,138,0.09)" stroke-width="1" style="animation:spinSlow 18s linear infinite reverse"/>
+            <circle cx="210" cy="148" r="72" stroke="rgba(26,107,138,0.12)" stroke-width="1"/>
+            <!-- Shield body — larger, bolder -->
+            <path d="M210 46 L148 74 L148 148 C148 190 175 224 210 236 C245 224 272 190 272 148 L272 74 Z" fill="rgba(26,107,138,0.1)" stroke="#1A6B8A" stroke-width="2"/>
+            <!-- Shield inner gradient fill -->
+            <path d="M210 58 L156 83 L156 148 C156 185 180 216 210 227 C240 216 264 185 264 148 L264 83 Z" fill="rgba(26,107,138,0.08)"/>
+            <!-- Big bold checkmark -->
+            <path d="M186 148 L204 166 L238 126" stroke="#1A6B8A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="animation:drawCheck 0.9s ease 0.3s both; stroke-dasharray:80; stroke-dashoffset:80"/>
+            <!-- ADR badge top-left -->
+            <rect x="40" y="40" width="52" height="26" rx="7" fill="#1A6B8A"/>
+            <text x="55" y="57" font-size="11" fill="white" font-family="Plus Jakarta Sans, sans-serif" font-weight="800">ADR</text>
+            <!-- Certified label -->
+            <rect x="100" y="43" width="72" height="20" rx="6" fill="rgba(26,107,138,0.08)" stroke="rgba(26,107,138,0.2)" stroke-width="1"/>
+            <text x="113" y="57" font-size="10" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Certified ✓</text>
+            <!-- Art.12 and Art.14 pills at bottom -->
+            <rect x="100" y="258" width="60" height="22" rx="7" fill="rgba(26,107,138,0.1)" stroke="rgba(26,107,138,0.25)" stroke-width="1" style="animation:fadeSlideIn 0.4s ease 0.8s both"/>
+            <text x="113" y="273" font-size="10" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Art. 12</text>
+            <rect x="170" y="258" width="60" height="22" rx="7" fill="rgba(26,107,138,0.1)" stroke="rgba(26,107,138,0.25)" stroke-width="1" style="animation:fadeSlideIn 0.4s ease 0.95s both"/>
+            <text x="183" y="273" font-size="10" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Art. 14</text>
+            <rect x="240" y="258" width="80" height="22" rx="7" fill="rgba(26,107,138,0.1)" stroke="rgba(26,107,138,0.25)" stroke-width="1" style="animation:fadeSlideIn 0.4s ease 1.1s both"/>
+            <text x="250" y="273" font-size="10" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Annual renewal</text>
+            <!-- Pulse dot on shield center -->
+            <circle cx="210" cy="148" r="6" fill="#1A6B8A" opacity="0.3" style="animation:expandRing 2s ease infinite"/>
+            <circle cx="210" cy="148" r="3" fill="#1A6B8A" opacity="0.9"/>
+          </svg>
         </div>
-        <h3>AI Agent Insurance</h3>
-        <p>Coverage for unauthorized actions, erroneous outputs, data breaches and business interruption. Underwritten using our proprietary risk dataset that no traditional carrier can replicate.</p>
+
+        <!-- PANEL 2: Insurance -->
+        <div class="product-panel" data-panel="2">
+          <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="20" width="380" height="280" rx="16" fill="rgba(255,255,255,0.6)" stroke="rgba(26,107,138,0.15)" stroke-width="1"/>
+            <!-- Pulse rings behind donut -->
+            <circle cx="210" cy="138" r="95" stroke="rgba(26,107,138,0.05)" stroke-width="1.5" style="animation:expandRing 3s ease infinite"/>
+            <circle cx="210" cy="138" r="95" stroke="rgba(26,107,138,0.04)" stroke-width="1.5" style="animation:expandRing 3s ease 1.5s infinite"/>
+            <!-- Donut track -->
+            <circle cx="210" cy="138" r="66" stroke="rgba(26,107,138,0.08)" stroke-width="18"/>
+            <!-- Donut fill animated -->
+            <circle cx="210" cy="138" r="66" stroke="#1A6B8A" stroke-width="18"
+              stroke-dasharray="310 104" stroke-dashoffset="83" stroke-linecap="round"
+              style="animation:growDonut 1.3s ease 0.3s both; transform-origin:210px 138px; transform:rotate(-90deg)"/>
+            <!-- Center label -->
+            <text x="210" y="130" text-anchor="middle" font-size="24" fill="#0D1B2E" font-family="Plus Jakarta Sans, sans-serif" font-weight="800">€50K</text>
+            <text x="210" y="150" text-anchor="middle" font-size="9" fill="rgba(26,107,138,0.65)" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" letter-spacing="0.1em">COVERAGE</text>
+            <!-- MGA badge top right -->
+            <rect x="298" y="38" width="82" height="24" rx="7" fill="rgba(26,107,138,0.1)" stroke="rgba(26,107,138,0.2)" stroke-width="1"/>
+            <text x="312" y="54" font-size="10" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">MGA Model</text>
+            <!-- Coverage tags — 2×2 grid, cleaner -->
+            <g style="animation:fadeSlideIn 0.5s ease 0.7s both">
+              <rect x="44" y="238" width="148" height="34" rx="9" fill="rgba(26,107,138,0.07)" stroke="rgba(26,107,138,0.18)" stroke-width="1"/>
+              <text x="60" y="252" font-size="9" fill="rgba(26,107,138,0.55)" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" letter-spacing="0.08em">COVERAGE 01</text>
+              <text x="60" y="265" font-size="11" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Unauthorized Actions</text>
+            </g>
+            <g style="animation:fadeSlideIn 0.5s ease 0.85s both">
+              <rect x="202" y="238" width="174" height="34" rx="9" fill="rgba(26,107,138,0.07)" stroke="rgba(26,107,138,0.18)" stroke-width="1"/>
+              <text x="218" y="252" font-size="9" fill="rgba(26,107,138,0.55)" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" letter-spacing="0.08em">COVERAGE 02</text>
+              <text x="218" y="265" font-size="11" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Erroneous Outputs</text>
+            </g>
+            <g style="animation:fadeSlideIn 0.5s ease 1.0s both">
+              <rect x="44" y="278" width="148" height="34" rx="9" fill="rgba(26,107,138,0.07)" stroke="rgba(26,107,138,0.18)" stroke-width="1"/>
+              <text x="60" y="292" font-size="9" fill="rgba(26,107,138,0.55)" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" letter-spacing="0.08em">COVERAGE 03</text>
+              <text x="60" y="305" font-size="11" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Data Breaches</text>
+            </g>
+            <g style="animation:fadeSlideIn 0.5s ease 1.15s both">
+              <rect x="202" y="278" width="174" height="34" rx="9" fill="rgba(26,107,138,0.07)" stroke="rgba(26,107,138,0.18)" stroke-width="1"/>
+              <text x="218" y="292" font-size="9" fill="rgba(26,107,138,0.55)" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" letter-spacing="0.08em">COVERAGE 04</text>
+              <text x="218" y="305" font-size="11" fill="#1A6B8A" font-family="Plus Jakarta Sans, sans-serif" font-weight="700">Business Interruption</text>
+            </g>
+          </svg>
+        </div>
+
       </div>
     </div>
   </div>
@@ -998,26 +1258,131 @@
     </a>
     <div class="footer-sep"></div>
     <a href="mailto:founder@agensure.eu">founder@agensure.eu</a>
+    <a href="#">Privacy</a>
   </div>
-  <div class="footer-right">© 2026 AGENSURE. All Rights Reserved</div>
+  <div class="footer-right">© 2026 Agensure</div>
 </footer>
 
 <script>
+  /* ── Waitlist form ── */
   function sub(e, id) {
     e.preventDefault();
     e.target.style.display = 'none';
     document.getElementById(id).style.display = 'flex';
   }
 
+  /* ── Mobile menu ── */
   function openMobileMenu() {
     document.getElementById('mobileMenu').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
-
   function closeMobileMenu() {
     document.getElementById('mobileMenu').classList.remove('open');
     document.body.style.overflow = '';
   }
+
+  /* ── Count-up on scroll with glitch + bar ── */
+  const CHARS = '0123456789';
+  function animateCount(el) {
+    const target = parseInt(el.dataset.target, 10);
+    const suffix = el.dataset.suffix || '';
+    const bar = el.closest('.stat-row')?.querySelector('.stat-bar-fill');
+    const barWidth = bar ? parseFloat(bar.dataset.width) : 0;
+
+    if (target === 0) {
+      el.textContent = '0' + suffix;
+      // tiny pulse on zero
+      el.classList.add('glitching');
+      setTimeout(() => el.classList.remove('glitching'), 400);
+      if (bar) setTimeout(() => { bar.style.width = '4%'; }, 100);
+      return;
+    }
+
+    const duration = 1600;
+    const start = performance.now();
+    let glitched = false;
+
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(ease * target);
+
+      // Glitch burst at ~60% through
+      if (progress > 0.6 && !glitched) {
+        glitched = true;
+        el.classList.add('glitching');
+        setTimeout(() => el.classList.remove('glitching'), 400);
+      }
+
+      el.textContent = current + suffix;
+      if (bar) bar.style.width = (ease * barWidth) + '%';
+
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !e.target.dataset.done) {
+        e.target.dataset.done = '1';
+        animateCount(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat-num[data-target]').forEach(el => countObserver.observe(el));
+
+  /* ── Product tabs ── */
+  const TABS_DURATION = 5000; // ms per tab
+  const tabs = document.querySelectorAll('.product-tab');
+  const panels = document.querySelectorAll('.product-panel');
+  let currentTab = 0;
+  let fillInterval = null;
+  let fillStart = null;
+
+  function activateTab(idx) {
+    tabs.forEach((t, i) => {
+      t.classList.toggle('active', i === idx);
+      t.querySelector('.tab-progress-fill').style.height = i === idx ? '0%' : '0%';
+    });
+    panels.forEach((p, i) => p.classList.toggle('active', i === idx));
+    currentTab = idx;
+  }
+
+  function startFill(idx) {
+    clearInterval(fillInterval);
+    const fill = tabs[idx].querySelector('.tab-progress-fill');
+    fill.style.height = '0%';
+    fillStart = performance.now();
+    fillInterval = setInterval(() => {
+      const elapsed = performance.now() - fillStart;
+      const pct = Math.min((elapsed / TABS_DURATION) * 100, 100);
+      fill.style.height = pct + '%';
+      if (pct >= 100) {
+        clearInterval(fillInterval);
+        const next = (currentTab + 1) % tabs.length;
+        activateTab(next);
+        startFill(next);
+      }
+    }, 16);
+  }
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => {
+      activateTab(i);
+      startFill(i);
+    });
+  });
+
+  // Start auto-cycle when product section enters viewport
+  const productObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      startFill(0);
+      productObserver.disconnect();
+    }
+  }, { threshold: 0.3 });
+  productObserver.observe(document.querySelector('.product'));
 </script>
 
 </body>
