@@ -261,7 +261,7 @@
       <span class="pill">Business interruption</span>
       <span class="pill">EU-native</span>
     </div>
-    <a href="mailto:founder@agensure.eu" class="hero-cta">Express interest →</a>
+    <a href="#" onclick="contactUs(event)" class="hero-cta">Express interest →</a>
     <p class="hero-note">Insurance launching 2027 · Start with a free compliance audit today</p>
   </div>
 </div>
@@ -441,10 +441,14 @@
       <img src="agescrittalogo.png" alt="Agensure" height="60" style="display:block;object-fit:contain;"/>
     </a>
     <div class="footer-sep"></div>
-    <a href="mailto:founder@agensure.eu">founder@agensure.eu</a>
+    <a href="/">Home</a>
     <a href="#">Privacy</a>
   </div>
   <div class="footer-right">© 2026 Agensure</div>
 </footer>
+<script>
+  const _m = ['f','i','l','i','p','p','o','@','a','g','e','n','s','u','r','e','.','e','u'].join('');
+  function contactUs(e) { if(e) e.preventDefault(); window.location.href = 'mailto:' + _m; }
+</script>
 </body>
 </html>
