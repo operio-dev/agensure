@@ -1410,12 +1410,18 @@
 </footer>
 
 <script>
-  /* ── Waitlist form ── */
-  function sub(e, id) {
-    e.preventDefault();
-    e.target.style.display = 'none';
-    document.getElementById(id).style.display = 'flex';
-  }
+ /* ── Hidden contact ── */
+const _m = ['f','i','l','i','p','p','o','@','a','g','e','n','s','u','r','e','.','e','u'].join('');
+function contactUs(e) { if(e) e.preventDefault(); window.location.href = 'mailto:' + _m; }
+
+/* ── Waitlist form ── */
+function sub(e, id) {
+  e.preventDefault();
+  const email = e.target.querySelector('input[type=email]').value;
+  window.location.href = 'mailto:' + _m + '?subject=' + encodeURIComponent('Waitlist Request') + '&body=' + encodeURIComponent('My email: ' + email);
+  e.target.style.display = 'none';
+  document.getElementById(id).style.display = 'flex';
+}
 
   /* ── Mobile menu ── */
   function openMobileMenu() {
