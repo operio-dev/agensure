@@ -348,17 +348,19 @@
   </div> <!-- Fine della hero -->
 </div> <!-- Fine della hero-outer -->
   
- <!-- FINANCIAL GUARANTEE SECTION CON SCUDO PULSANTE -->
-<section style="padding: 100px 0; background: rgba(255,255,255,0.4); border-bottom: 1px solid var(--border2);">
+<!-- SEZIONE FINANCIAL GUARANTEE (VERSIONE CORRETTA PER MOBILE) -->
+<section style="padding: 80px 0; background: rgba(255,255,255,0.4); border-bottom: 1px solid var(--border2);">
   <div class="wrap">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-      <div>
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+      
+      <!-- Colonna Testo (Si adatta da sola) -->
+      <div style="flex: 1; min-width: 320px;">
         <div style="display: inline-block; font-size: 11px; font-weight: 700; color: #fff; background: var(--teal); padding: 4px 12px; border-radius: 4px; margin-bottom: 20px;">READY FOR DEPLOYMENT</div>
         <h2 style="margin-bottom: 20px;">Certify, then <em>Guarantee.</em></h2>
         <p class="s-body">Don't let AI risk stall your sales cycle. While full insurance launches in 2027, we issue <strong>Financial Performance Guarantees</strong> today.</p>
         <p class="s-body" style="margin-top: 15px;">We certify your agent's compliance and back its performance with our balance sheet, giving your Enterprise clients the legal green light to sign.</p>
         
-        <div style="margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div style="margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px;">
           <div>
             <h4 style="font-size: 14px; color: var(--navy);">Sales Enabler</h4>
             <p style="font-size: 13px; color: var(--gray);">Remove liability friction from contracts.</p>
@@ -370,21 +372,17 @@
         </div>
       </div>
 
-      <!-- BOX DELLO SCUDO ANIMATO -->
-      <div style="background: var(--card); padding: 60px 40px; border-radius: 24px; border: 1px solid var(--border); text-align: center; backdrop-filter: blur(10px); position: relative; overflow: hidden;">
-         
-         <!-- Contenitore animazione -->
-         <div class="shield-outer" style="width: 200px; height: 200px; margin: 0 auto 30px; transform: scale(1.4);">
+      <!-- Colonna Scudo (Ora scende sotto se lo spazio finisce) -->
+      <div style="flex: 1; min-width: 320px; background: var(--card); padding: 50px 20px; border-radius: 24px; border: 1px solid var(--border); text-align: center; backdrop-filter: blur(10px); position: relative; overflow: hidden;">
+         <div class="shield-outer" style="width: 180px; height: 180px; margin: 0 auto 30px; transform: scale(1.1);">
             <div class="shield-ring r1"></div>
             <div class="shield-ring r2"></div>
             <div class="shield-ring r3"></div>
-            
-            <div class="logo-animated" style="width: 100px;">
+            <div class="logo-animated" style="width: 110px;">
                 <img src="shield-logo.png" alt="Certified" style="width: 100%; height: auto;">
                 <div class="shine"></div>
             </div>
          </div>
-
          <div style="position: relative; z-index: 2;">
             <h4 style="color: var(--navy); margin-bottom: 8px; font-weight: 800;">Agensure Certified Agent</h4>
             <p style="font-size: 13px; color: var(--gray); max-width: 280px; margin: 0 auto;">Show this badge to your customers to prove your agent is backed by a Tier-1 financial guarantee.</p>
@@ -394,6 +392,7 @@
     </div>
   </div>
 </section>
+
 <!-- PROBLEM BAND -->
 <section class="problem-band">
   <div class="wrap">
