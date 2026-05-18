@@ -117,6 +117,9 @@
     button[type=submit]:hover { background: var(--blue2); transform: translateY(-1px); }
 
     .form-note { font-size: 12px; color: var(--muted); }
+    .coming-soon-tooltip { display: none; position: absolute; background: var(--bg3); border: 1px solid rgba(59,130,246,0.2); border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.8rem; color: var(--gray); white-space: nowrap; margin-top: 8px; z-index: 10; }
+.hero-form-wrap { position: relative; }
+
     .success { display: none; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--blue); margin-bottom: 14px; }
 
     .hero-map { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
@@ -376,7 +379,9 @@
     <p class="hero-sub">Agensure stress-tests your AI agents, measures their real risk exposure, and protects your balance sheet with a contractual financial safety net.</p>
     <div class="hero-form-wrap">
       <form class="hero-form" id="f1" onsubmit="sub(event,'s1')">
-        <button type="submit">⚡ Run free flash test</button>
+        <button type="button" onclick="showTooltip()">⚡ Run free flash test</button>
+<div class="coming-soon-tooltip" id="tooltip">⚡ Available June 2026 — apply below to reserve your spot</div>
+
       </form>
       <div class="success" id="s1">
         <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="6.5" stroke="#3b82f6" stroke-width="1.4"/><path d="M4.5 7.5l2 2 4-4" stroke="#3b82f6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -824,6 +829,12 @@
     e.target.style.display = 'none';
     document.getElementById(id).style.display = 'flex';
   }
+
+  function showTooltip() {
+  const t = document.getElementById('tooltip');
+  t.style.display = 'block';
+  setTimeout(() => { t.style.display = 'none'; }, 3000);
+}
 
   function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
   function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow = ''; }
