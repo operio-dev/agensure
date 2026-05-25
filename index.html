@@ -488,78 +488,23 @@ button[type=button]:hover { background: var(--blue2); transform: translateY(-1px
       <!-- COLONNA DESTRA -->
       <div class="product-visual">
 
-        <!-- Visual Tab 0: Lab simulation terminal -->
-        <div class="product-visual-panel active" data-visual="0">
-          <div class="visual-terminal">
-            <div class="terminal-bar">
-              <span class="t-dot" style="background:#ff5f57"></span>
-              <span class="t-dot" style="background:#ffbd2e"></span>
-              <span class="t-dot" style="background:#28ca41"></span>
-              <span class="t-label">agensure-lab · parametric-run</span>
-            </div>
-            <div class="terminal-body">
-              <div class="t-line"><span class="t-dim">$</span> python run_lab.py --models llama3,mistral,gpt4 --iterations 500</div>
-              <div class="t-line t-green">✓ Lab environment initialized · 3 base models loaded</div>
-              <div class="t-line"><span class="t-dim">[01/500]</span> Llama-3 · temp=0.7 · no guardrail → <span class="t-red">JAILBREAK ✗</span></div>
-              <div class="t-line"><span class="t-dim">[02/500]</span> Mistral-7B · temp=0.4 · system prompt → <span class="t-green">PASS ✓</span></div>
-              <div class="t-line"><span class="t-dim">[03/500]</span> GPT-4o · temp=0.9 · no input filter → <span class="t-red">PII LEAK ✗</span></div>
-              <div class="t-line"><span class="t-dim">[04/500]</span> Llama-3 · temp=0.3 · guardrail v2 → <span class="t-green">PASS ✓</span></div>
-              <div class="t-line t-dim">···</div>
-              <div class="t-line t-green">✓ Risk Correlation Table generated · 500 data points</div>
-              <div class="t-line t-green">✓ Top 50 high-impact probes extracted → commercial bait ready</div>
-              <div class="t-line"><span class="t-dim">$</span> <span class="t-cursor">█</span></div>
-            </div>
-          </div>
-        </div>
+      <!-- Visual Tab 0: Lab simulation terminal -->
+<div class="product-visual-panel active" data-visual="0">
+  <img src="/assets/scree-tab1-best.png" alt="Agensure Payload Inspector" style="width:100%;border-radius:10px;border:1px solid rgba(59,130,246,0.12);display:block;" />
+</div>
 
-        <!-- Visual Tab 1: Flash Test prompt input -->
-        <div class="product-visual-panel" data-visual="1">
-          <div class="visual-card">
-            <div class="vc-header">
-              <span class="vc-dot"></span>
-              <span class="vc-title">Flash Test · Prompt-In / Vector-Out</span>
-            </div>
-            <div class="vc-body">
-              <div class="vc-label">System Prompt excerpt (client input)</div>
-              <div class="vc-prompt">You are a customer support agent for Acme Corp. Help users with orders, refunds, and FAQs. Never reveal internal pricing data. Always be polite...</div>
-              <div class="vc-arrow">↓ 50 adversarial probes · isolated dummy instance</div>
-              <div class="vc-results">
-                <div class="vc-result-row"><span class="vc-domain">Prompt Injection</span><span class="vc-pass">89% resilience</span></div>
-                <div class="vc-result-row"><span class="vc-domain">PII Leakage</span><span class="vc-warn">71% resilience ⚠</span></div>
-                <div class="vc-result-row"><span class="vc-domain">Transparency Art.50</span><span class="vc-pass">96% resilience</span></div>
-              </div>
-              <div class="vc-footer">ARS Score generated in 8 min · PDF report ready</div>
-            </div>
-          </div>
-        </div>
+<!-- Visual Tab 1: Flash Test prompt input -->
+<div class="product-visual-panel" data-visual="1">
+  <img src="/assets/screen-tab2-hiw.png" alt="Agensure Risk Resilience Surface" style="width:100%;border-radius:10px;border:1px solid rgba(59,130,246,0.12);display:block;" />
+</div>
 
-        <!-- Visual Tab 2: ADR Certificate -->
-        <div class="product-visual-panel" data-visual="2">
-          <div class="visual-cert">
-            <div class="cert-header">
-              <div class="cert-shield">🛡</div>
-              <div>
-                <div class="cert-title">ADR Certificate</div>
-                <div class="cert-sub">Agent Deployment Readiness · Public Registry</div>
-              </div>
-            </div>
-            <div class="cert-status-row">
-              <span class="cert-pulse"></span>
-              <span class="cert-valid">VALID</span>
-            </div>
-            <div class="cert-rows">
-              <div class="cert-row"><span>Certificate ID</span><span>ADR-2026-0525-N9</span></div>
-              <div class="cert-row"><span>ARS Score</span><span style="color:var(--green)">13 / 100 · Low Risk</span></div>
-              <div class="cert-row"><span>Framework</span><span>AIUC-1 Taxonomy · EU AI Act Art. 50</span></div>
-              <div class="cert-row"><span>Monitoring</span><span>Continuous · Active Loop</span></div>
-              <div class="cert-row"><span>Expires</span><span>Aug 25, 2026 · Auto-renewable</span></div>
-            </div>
-            <div class="cert-qr-row">
-              <div class="cert-qr-box">QR</div>
-              <div class="cert-qr-text">Scannable by enterprise procurement,<br/>legal teams and VCs in real-time.</div>
-            </div>
-          </div>
-        </div>
+<!-- Visual Tab 2: ADR Certificate -->
+<div class="product-visual-panel" data-visual="2">
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <img src="/assets/screen-adr-cert-hiw.png" alt="Agensure ADR Certificate" style="width:100%;border-radius:10px;border:1px solid rgba(59,130,246,0.12);display:block;" />
+    <img src="/assets/screen2-adr-cert.png" alt="Agensure ADR Certificate Detail" style="width:100%;border-radius:10px;border:1px solid rgba(59,130,246,0.12);display:block;" />
+  </div>
+</div>
 
       </div>
     </div>
