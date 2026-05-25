@@ -524,10 +524,40 @@ button[type=button]:hover { background: var(--blue2); transform: translateY(-1px
   .product-visual { display: none; }
 }
 
-.product-visual { position: sticky; top: 6rem; }
+.product-visual {
+  position: sticky;
+  top: 6rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(59,130,246,0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 480px;
+}
 
-.product-visual-panel { display: none; }
-.product-visual-panel.active { display: block; }
+.product-visual-panel {
+  display: none;
+  height: 100%;
+}
+
+.product-visual-panel.active {
+  display: block;
+  height: 100%;
+}
+
+.product-visual-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  display: block;
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+
+.product-visual-panel img:hover {
+  transform: scale(1.06);
+  transform-origin: top left;
+}
 
 /* Terminal */
 .visual-terminal {
