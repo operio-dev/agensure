@@ -1071,6 +1071,18 @@ function activateTab(idx) {
   }, { threshold: 0.3 });
   if (document.querySelector('.product')) productObserver.observe(document.querySelector('.product'));
 </script>
+  document.querySelectorAll('.product-visual-panel img').forEach(img => {
+  img.addEventListener('click', () => {
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;';
+    const big = document.createElement('img');
+    big.src = img.src;
+    big.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:10px;';
+    overlay.appendChild(big);
+    overlay.addEventListener('click', () => overlay.remove());
+    document.body.appendChild(overlay);
+  });
+});
 </body>
 </html>
 </body>
