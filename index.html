@@ -364,7 +364,7 @@ button[type=button]:hover { background: var(--blue2); transform: translateY(-1px
     <a href="#product" class="nav-link">How it works</a>
     <a href="#process" class="nav-link">Process</a>
     <a href="#faq" class="nav-link">FAQ</a>
-    <a href="#waitlist" class="nav-cta">Start free test →</a>
+    <button onclick="openFlashTest()">Start free test →</button>
   </div>
   <button class="burger" onclick="openMobileMenu()" aria-label="Open menu">
     <svg width="20" height="14" fill="none" viewBox="0 0 20 14"><path d="M0 1h20M0 7h20M0 13h20" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/></svg>
@@ -772,7 +772,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
         <div class="spots-badge">⚡ Strictly limited to Closed Beta Partners</div>
         <h3>Pricing available<br/>upon <em>application only.</em></h3>
         <p>You can't manage what you can't measure. Agensure gives your legal, engineering, and finance teams the only objective risk score for AI agents in production — and a direct path to financial coverage when our dataset is ready to back it.</p>
-        <a href="#waitlist" class="wyg-cta">Apply for Closed Beta →</a>
+        <<button onclick="openFlashTest()">Apply for Closed Beta →</button>
       </div>
     </div>
   </div>
@@ -903,7 +903,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
           <input type="text" name="company" placeholder="Company and Role*" required />
           <input type="email" name="email" placeholder="Work email*" required />
           <textarea name="prompt_excerpt" placeholder="Paste a short excerpt of your agent's System Prompt (optional)" rows="3" style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-size:0.9rem;resize:vertical;width:100%;box-sizing:border-box;"></textarea>
-          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">⚡ Apply for Closed Beta →</button>
+          <<button onclick="openFlashTest()">⚡ Apply for Closed Beta →</button>
           <p style="font-size:0.75rem;color:var(--text3);text-align:center;">Work email required. Personal addresses not accepted.</p>
         </form>
         <div class="success" id="s2" style="margin-top:1rem;">
@@ -972,7 +972,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
       <div>
         <p class="footer-brand-label">Trust layer for AI agents</p>
         <p class="footer-brand-headline">Europe is regulating AI<br/>before <em>it insures it.</em></p>
-        <a href="#waitlist" class="footer-brand-cta">Apply for closed beta →</a>
+        <button onclick="openFlashTest()">Apply for closed beta →</button>
       </div>
     </div>
     <div class="footer-nav-card">
