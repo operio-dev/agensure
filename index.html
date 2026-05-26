@@ -1046,7 +1046,7 @@ function activateTab(idx) {
     panels.forEach((p, i) => p.classList.toggle('active', i === idx));
     currentTab = idx;
   }
-  function startFill(idx) {
+function startFill(idx) {
     clearInterval(fillInterval);
     const fill = tabs[idx].querySelector('.tab-progress-fill');
     fill.style.height = '0%';
@@ -1062,19 +1062,19 @@ function activateTab(idx) {
     if (entries[0].isIntersecting) { startFill(0); productObserver.disconnect(); }
   }, { threshold: 0.3 });
   if (document.querySelector('.product')) productObserver.observe(document.querySelector('.product'));
-<script>
-document.querySelectorAll('.product-visual-panel img').forEach(img => {
-  img.addEventListener('click', () => {
-    const overlay = document.createElement('div');
-    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;';
-    const big = document.createElement('img');
-    big.src = img.src;
-    big.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:10px;';
-    overlay.appendChild(big);
-    overlay.addEventListener('click', () => overlay.remove());
-    document.body.appendChild(overlay);
+
+  document.querySelectorAll('.product-visual-panel img').forEach(img => {
+    img.addEventListener('click', () => {
+      const overlay = document.createElement('div');
+      overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;';
+      const big = document.createElement('img');
+      big.src = img.src;
+      big.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:10px;';
+      overlay.appendChild(big);
+      overlay.addEventListener('click', () => overlay.remove());
+      document.body.appendChild(overlay);
+    });
   });
-});
 </script>
 
 <!-- FLASH TEST POPUP OVERLAY -->
