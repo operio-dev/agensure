@@ -896,19 +896,14 @@ document.querySelectorAll('.product-tab').forEach(tab => {
         </ul>
         <div class="req-note"><strong>Eligibility requirement:</strong> Your company must currently deploy a production-level conversational or voice AI agent interacting with end users.</div>
       </div>
-      <div>
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;">
         <div class="spots-badge">⚡ Strictly limited seats</div>
-        <form class="beta-form" id="f2" onsubmit="sub(event,'s2')">
-          <input type="text" name="name" placeholder="First and Last name*" required />
-          <input type="text" name="company" placeholder="Company and Role*" required />
-          <input type="email" name="email" placeholder="Work email*" required />
-          <textarea name="prompt_excerpt" placeholder="Paste a short excerpt of your agent's System Prompt (optional)" rows="3" style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-size:0.9rem;resize:vertical;width:100%;box-sizing:border-box;"></textarea>
-          <button onclick="openFlashTest()" class="btn-primary">⚡ Apply for Closed Beta →</button>
-          <p style="font-size:0.75rem;color:var(--text3);text-align:center;">Work email required. Personal addresses not accepted.</p>
-        </form>
-        <div class="success" id="s2" style="margin-top:1rem;">
-          <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="6.5" stroke="#3b82f6" stroke-width="1.4"/><path d="M4.5 7.5l2 2 4-4" stroke="#3b82f6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Application received. We'll be in touch within 24h.
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;width:100%;box-sizing:border-box;">
+          <div style="font-size:40px;margin-bottom:12px;">🛡</div>
+          <h3 style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;">Run your free Flash Test</h3>
+          <p style="font-size:13px;color:var(--gray);line-height:1.6;margin-bottom:24px;">3-step configuration · 10 minutes · PDF report delivered within 24h</p>
+          <button onclick="openFlashTest()" class="btn-primary" style="width:100%;justify-content:center;">⚡ Apply for Closed Beta →</button>
+          <p style="font-size:0.75rem;color:var(--text3);text-align:center;margin-top:12px;">Work email required. Personal addresses not accepted.</p>
         </div>
       </div>
     </div>
