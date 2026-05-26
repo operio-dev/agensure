@@ -364,7 +364,7 @@ button[type=button]:hover { background: var(--blue2); transform: translateY(-1px
     <a href="#product" class="nav-link">How it works</a>
     <a href="#process" class="nav-link">Process</a>
     <a href="#faq" class="nav-link">FAQ</a>
-    <button onclick="openFlashTest()">Start free test →</button>
+    <button onclick="openFlashTest()" class="btn-primary">Start free test →</button>
   </div>
   <button class="burger" onclick="openMobileMenu()" aria-label="Open menu">
     <svg width="20" height="14" fill="none" viewBox="0 0 20 14"><path d="M0 1h20M0 7h20M0 13h20" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/></svg>
@@ -382,7 +382,7 @@ button[type=button]:hover { background: var(--blue2); transform: translateY(-1px
     <p class="hero-sub">Agensure runs continuous adversarial probing against your AI agent endpoints to certify compliance with the EU AI Act — the only framework specifically regulating AI agent behavior. We calculate real behavioral failure probabilities, map financial exposure, and build the parametric dataset that makes European AI agents enterprise-ready and insurable.</p>
     <div class="hero-form-wrap">
       <form class="hero-form" id="f1" onsubmit="sub(event,'s1')">
-        <button type="button" onclick="showTooltip()">⚡ Run a 10-Min Flash Test</button>
+        <button type="button" onclick="openFlashTest()" class="btn-primary">⚡ Run a 10-Min Flash Test</button>
 <div class="coming-soon-tooltip" id="tooltip">⚡ Available June 2026</div>
 
       </form>
@@ -772,7 +772,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
         <div class="spots-badge">⚡ Strictly limited to Closed Beta Partners</div>
         <h3>Pricing available<br/>upon <em>application only.</em></h3>
         <p>You can't manage what you can't measure. Agensure gives your legal, engineering, and finance teams the only objective risk score for AI agents in production — and a direct path to financial coverage when our dataset is ready to back it.</p>
-        <<button onclick="openFlashTest()">Apply for Closed Beta →</button>
+        <button onclick="openFlashTest()" class="btn-primary">Apply for Closed Beta →</button>
       </div>
     </div>
   </div>
@@ -903,7 +903,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
           <input type="text" name="company" placeholder="Company and Role*" required />
           <input type="email" name="email" placeholder="Work email*" required />
           <textarea name="prompt_excerpt" placeholder="Paste a short excerpt of your agent's System Prompt (optional)" rows="3" style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-size:0.9rem;resize:vertical;width:100%;box-sizing:border-box;"></textarea>
-          <<button onclick="openFlashTest()">⚡ Apply for Closed Beta →</button>
+          <button onclick="openFlashTest()" class="btn-primary">⚡ Apply for Closed Beta →</button>
           <p style="font-size:0.75rem;color:var(--text3);text-align:center;">Work email required. Personal addresses not accepted.</p>
         </form>
         <div class="success" id="s2" style="margin-top:1rem;">
@@ -972,7 +972,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
       <div>
         <p class="footer-brand-label">Trust layer for AI agents</p>
         <p class="footer-brand-headline">Europe is regulating AI<br/>before <em>it insures it.</em></p>
-        <button onclick="openFlashTest()">Apply for closed beta →</button>
+        <button onclick="openFlashTest()" class="btn-primary">Apply for Closed Beta →</button>
       </div>
     </div>
     <div class="footer-nav-card">
