@@ -1333,24 +1333,6 @@ document.getElementById('contact-overlay').addEventListener('click', function(e)
 });
 document.getElementById('contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
-  const email = this.querySelector('input[name="email"]').value;
-  const blocked = ['gmail.com','yahoo.com','hotmail.com','outlook.com','icloud.com','protonmail.com','live.com','yahoo.it','libero.it','virgilio.it','tiscali.it','hotmail.it'];
-  const domain = email.split('@')[1]?.toLowerCase();
-  if (blocked.includes(domain)) {
-    const input = this.querySelector('input[name="email"]');
-    input.style.borderColor = '#f43f5e';
-    let msg = document.getElementById('contact-email-error');
-    if (!msg) {
-      msg = document.createElement('p');
-      msg.id = 'contact-email-error';
-      msg.style.cssText = 'font-size:11px;color:#f43f5e;margin-top:4px;';
-      input.parentNode.appendChild(msg);
-    }
-    msg.textContent = 'Personal email addresses are not accepted. Please use your work email.';
-    return;
-  }
-  const err = document.getElementById('contact-email-error');
-  if (err) err.remove();
   const btn = this.querySelector('button[type=submit]');
   btn.textContent = 'Sending...';
   btn.disabled = true;
