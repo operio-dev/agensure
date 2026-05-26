@@ -1096,16 +1096,12 @@ function startFill(idx) {
   });
 </script>
 
- !-- FLASH TEST POPUP OVERLAY -->
+ <!-- FLASH TEST POPUP OVERLAY -->
+<div id="flash-test-overlay" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;overflow-y:auto;">
+  <div style="max-width:680px;width:100%;margin:0 auto;background:#0f1318;border:1px solid rgba(59,130,246,0.15);border-radius:20px;padding:32px;position:relative;">
 
-  <div style="max-width:680px;margin:0 auto;background:#0f1318;border:1px solid rgba(59,130,246,0.15);border-radius:20px;padding:32px;position:relative;">
-<div id="flash-test-overlay" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px;"
-  <div style="max-width:680px;margin:0 auto;background:#0f1318;border:1px solid rgba(59,130,246,0.15);border-radius:20px;padding:32px;position:relative;">
-
-    <!-- Close button -->
     <button onclick="closeFlashTest()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;width:32px;height:32px;color:#8896a8;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
 
-    <!-- Header -->
     <div style="margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(59,130,246,0.1);">
       <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:100px;padding:4px 12px;margin-bottom:12px;">
         <span style="width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 2s infinite;display:inline-block;"></span>
@@ -1115,11 +1111,10 @@ function startFill(idx) {
       <p style="font-size:13px;color:#8896a8;margin:0;">Zero-Access configuration. We do not require production API keys or cloud access.</p>
     </div>
 
-    <!-- Step indicator -->
     <div id="step-indicator" style="display:flex;gap:8px;margin-bottom:28px;">
-      <div class="step-dot" id="dot-0" style="flex:1;height:3px;border-radius:3px;background:#3b82f6;transition:background 0.3s;"></div>
-      <div class="step-dot" id="dot-1" style="flex:1;height:3px;border-radius:3px;background:rgba(59,130,246,0.2);transition:background 0.3s;"></div>
-      <div class="step-dot" id="dot-2" style="flex:1;height:3px;border-radius:3px;background:rgba(59,130,246,0.2);transition:background 0.3s;"></div>
+      <div id="dot-0" style="flex:1;height:3px;border-radius:3px;background:#3b82f6;transition:background 0.3s;"></div>
+      <div id="dot-1" style="flex:1;height:3px;border-radius:3px;background:rgba(59,130,246,0.2);transition:background 0.3s;"></div>
+      <div id="dot-2" style="flex:1;height:3px;border-radius:3px;background:rgba(59,130,246,0.2);transition:background 0.3s;"></div>
     </div>
 
     <form action="https://formspree.io/f/xlgvpzqw" method="POST" id="flash-test-form">
@@ -1129,7 +1124,6 @@ function startFill(idx) {
         <div style="margin-bottom:20px;">
           <span style="font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;color:#4a5568;">01 · Agent Architecture & Capabilities</span>
         </div>
-
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
           <div>
             <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Base Model</label>
@@ -1155,7 +1149,6 @@ function startFill(idx) {
             </select>
           </div>
         </div>
-
         <div>
           <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:8px;">Autonomous Actions (Tooling)</label>
           <div style="background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:10px;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
@@ -1177,7 +1170,6 @@ function startFill(idx) {
             </label>
           </div>
         </div>
-
         <button type="button" onclick="goToStep(2)" style="margin-top:24px;width:100%;background:#3b82f6;color:#fff;border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;">
           Continue → Adversarial Target
         </button>
@@ -1188,23 +1180,17 @@ function startFill(idx) {
         <div style="margin-bottom:20px;">
           <span style="font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;color:#4a5568;">02 · Adversarial Target Payload</span>
         </div>
-
         <div>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
             <label style="font-size:12px;font-weight:500;color:#e8edf5;">System Prompt or Core Instructions</label>
             <span style="font-size:10px;font-family:monospace;color:#4a5568;background:#0a0c10;border:1px solid rgba(59,130,246,0.1);padding:2px 8px;border-radius:4px;">PROMPT-IN / VECTOR-OUT</span>
           </div>
-          <textarea name="system_prompt" required rows="8" placeholder="Paste an excerpt of your agent's system prompt or baseline configuration rules here. We will load this into our isolated dummy test container and run the top 50 adversarial probes against it..." style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:10px;padding:12px;font-size:12px;font-family:monospace;color:#10b981;outline:none;resize:vertical;line-height:1.7;box-sizing:border-box;" onfocus="this.style.borderColor='rgba(16,185,129,0.4)'" onblur="this.style.borderColor='rgba(59,130,246,0.15)'"></textarea>
+          <textarea name="system_prompt" required rows="8" placeholder="Paste an excerpt of your agent's system prompt or baseline configuration rules here. We will load this into our isolated dummy test container and run the top 50 adversarial probes against it..." style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:10px;padding:12px;font-size:12px;font-family:monospace;color:#10b981;outline:none;resize:vertical;line-height:1.7;box-sizing:border-box;"></textarea>
           <p style="font-size:11px;color:#4a5568;margin-top:6px;">No production keys required. This text is loaded into an isolated dummy instance on our servers.</p>
         </div>
-
         <div style="display:flex;gap:10px;margin-top:24px;">
-          <button type="button" onclick="goToStep(1)" style="flex:1;background:rgba(255,255,255,0.05);color:#8896a8;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px;font-size:13px;cursor:pointer;">
-            ← Back
-          </button>
-          <button type="button" onclick="goToStep(3)" style="flex:2;background:#3b82f6;color:#fff;border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;">
-            Continue → Report Delivery
-          </button>
+          <button type="button" onclick="goToStep(1)" style="flex:1;background:rgba(255,255,255,0.05);color:#8896a8;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px;font-size:13px;cursor:pointer;">← Back</button>
+          <button type="button" onclick="goToStep(3)" style="flex:2;background:#3b82f6;color:#fff;border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;">Continue → Report Delivery</button>
         </div>
       </div>
 
@@ -1213,7 +1199,6 @@ function startFill(idx) {
         <div style="margin-bottom:20px;">
           <span style="font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;color:#4a5568;">03 · Report Delivery & Qualification</span>
         </div>
-
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
           <div>
             <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Company Website</label>
@@ -1230,112 +1215,26 @@ function startFill(idx) {
             </select>
           </div>
         </div>
-
         <div>
           <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Work Email</label>
           <input type="email" name="email" required placeholder="cto@company.com" style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:9px 12px;font-size:13px;color:#e8edf5;outline:none;box-sizing:border-box;">
         </div>
-
         <input type="hidden" name="_subject" value="New Flash Test Request — Agensure">
-
         <div style="display:flex;gap:10px;margin-top:24px;">
-          <button type="button" onclick="goToStep(2)" style="flex:1;background:rgba(255,255,255,0.05);color:#8896a8;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px;font-size:13px;cursor:pointer;">
-            ← Back
-          </button>
-          <button type="submit" style="flex:2;background:#10b981;color:#fff;border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:700;cursor:pointer;letter-spacing:0.02em;">
-            ⚡ Execute Flash Test →
-          </button>
+          <button type="button" onclick="goToStep(2)" style="flex:1;background:rgba(255,255,255,0.05);color:#8896a8;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px;font-size:13px;cursor:pointer;">← Back</button>
+          <button type="submit" style="flex:2;background:#10b981;color:#fff;border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:700;cursor:pointer;letter-spacing:0.02em;">⚡ Execute Flash Test →</button>
         </div>
-
-        <!-- Success message -->
-<div id="flash-success" style="display:none;margin-top:24px;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.25);border-radius:16px;padding:32px 24px;text-align:center;">
-  <div style="width:56px;height:56px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:24px;">✓</div>
-  <div style="font-size:18px;font-weight:700;color:#10b981;letter-spacing:-0.02em;margin-bottom:8px;">Flash Test Request Received</div>
-  <div style="font-size:13px;color:#8896a8;line-height:1.6;max-width:340px;margin:0 auto;">Your configuration has been submitted. We will run the adversarial audit on your agent and send the <strong style="color:#e8edf5;">PDF Risk Report</strong> to your work email within <strong style="color:#e8edf5;">24 hours</strong>.</div>
-  <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(16,185,129,0.1);font-size:11px;font-family:monospace;color:#4a5568;">agensure.eu · AI Underwriting Infrastructure</div>
-</div>
+        <div id="flash-success" style="display:none;margin-top:24px;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.25);border-radius:16px;padding:32px 24px;text-align:center;">
+          <div style="width:56px;height:56px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:24px;">✓</div>
+          <div style="font-size:18px;font-weight:700;color:#10b981;letter-spacing:-0.02em;margin-bottom:8px;">Flash Test Request Received</div>
+          <div style="font-size:13px;color:#8896a8;line-height:1.6;max-width:340px;margin:0 auto;">Your configuration has been submitted. We will run the adversarial audit and send the <strong style="color:#e8edf5;">PDF Risk Report</strong> to your work email within <strong style="color:#e8edf5;">24 hours</strong>.</div>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(16,185,129,0.1);font-size:11px;font-family:monospace;color:#4a5568;">agensure.eu · AI Underwriting Infrastructure</div>
+        </div>
       </div>
 
     </form>
   </div>
 </div>
-
-<script>
-function openFlashTest() {
-  document.getElementById('flash-test-overlay').style.display = 'block';
-  document.body.style.overflow = 'hidden';
-  goToStep(1);
-}
-
-function closeFlashTest() {
-  document.getElementById('flash-test-overlay').style.display = 'none';
-  document.body.style.overflow = '';
-}
-
-function goToStep(n) {
-  document.querySelectorAll('.flash-step').forEach(s => s.style.display = 'none');
-  document.getElementById('step-' + n).style.display = 'block';
-  ['dot-0','dot-1','dot-2'].forEach((id, i) => {
-    document.getElementById(id).style.background = i < n ? '#3b82f6' : 'rgba(59,130,246,0.2)';
-  });
-}
-
-// Close on backdrop click
-document.getElementById('flash-test-overlay').addEventListener('click', function(e) {
-  if (e.target === this) closeFlashTest();
-});
-
-document.getElementById('flash-test-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  // Block personal emails
-  const email = this.querySelector('input[name="email"]').value;
-  const blocked = ['gmail.com','yahoo.com','hotmail.com','outlook.com','icloud.com','protonmail.com','live.com'];
-  const domain = email.split('@')[1]?.toLowerCase();
-  if (blocked.includes(domain)) {
-    const emailInput = this.querySelector('input[name="email"]');
-    emailInput.style.borderColor = '#f43f5e';
-    let msg = document.getElementById('email-error');
-    if (!msg) {
-      msg = document.createElement('p');
-      msg.id = 'email-error';
-      msg.style.cssText = 'font-size:11px;color:#f43f5e;margin-top:4px;';
-      emailInput.parentNode.appendChild(msg);
-    }
-    msg.textContent = 'Personal email addresses are not accepted. Please use your work email.';
-    return;
-  }
-
-  // Clear error if present
-  const err = document.getElementById('email-error');
-  if (err) err.remove();
-  this.querySelector('input[name="email"]').style.borderColor = 'rgba(59,130,246,0.15)';
-
-  // Submit
-  const btn = this.querySelector('button[type=submit]');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-
-  fetch('https://formspree.io/f/xlgvpzqw', {
-    method: 'POST',
-    body: new FormData(this),
-    headers: { 'Accept': 'application/json' }
-  }).then(r => {
-    if (r.ok) {
-      document.getElementById('flash-success').style.display = 'block';
-      btn.style.display = 'none';
-    } else {
-      btn.textContent = '⚡ Execute Flash Test →';
-      btn.disabled = false;
-      alert('Something went wrong. Please try again.');
-    }
-  }).catch(() => {
-    btn.textContent = '⚡ Execute Flash Test →';
-    btn.disabled = false;
-    alert('Connection error. Please try again.');
-  });
-});
-</script>
 
 <!-- CONTACT POPUP -->
 <div id="contact-overlay" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px;">
@@ -1361,10 +1260,68 @@ document.getElementById('flash-test-form').addEventListener('submit', function(e
 </div>
 
 <script>
+function openFlashTest() {
+  document.getElementById('flash-test-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  goToStep(1);
+}
+function closeFlashTest() {
+  document.getElementById('flash-test-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function goToStep(n) {
+  document.querySelectorAll('.flash-step').forEach(s => s.style.display = 'none');
+  document.getElementById('step-' + n).style.display = 'block';
+  ['dot-0','dot-1','dot-2'].forEach((id, i) => {
+    document.getElementById(id).style.background = i < n ? '#3b82f6' : 'rgba(59,130,246,0.2)';
+  });
+}
+document.getElementById('flash-test-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeFlashTest();
+});
+document.getElementById('flash-test-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = this.querySelector('input[name="email"]').value;
+  const blocked = ['gmail.com','yahoo.com','hotmail.com','outlook.com','icloud.com','protonmail.com','live.com'];
+  const domain = email.split('@')[1]?.toLowerCase();
+  if (blocked.includes(domain)) {
+    const emailInput = this.querySelector('input[name="email"]');
+    emailInput.style.borderColor = '#f43f5e';
+    let msg = document.getElementById('email-error');
+    if (!msg) {
+      msg = document.createElement('p');
+      msg.id = 'email-error';
+      msg.style.cssText = 'font-size:11px;color:#f43f5e;margin-top:4px;';
+      emailInput.parentNode.appendChild(msg);
+    }
+    msg.textContent = 'Personal email addresses are not accepted. Please use your work email.';
+    return;
+  }
+  const err = document.getElementById('email-error');
+  if (err) err.remove();
+  const btn = this.querySelector('button[type=submit]');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  fetch('https://formspree.io/f/xlgvpzqw', {
+    method: 'POST',
+    body: new FormData(this),
+    headers: { 'Accept': 'application/json' }
+  }).then(r => {
+    if (r.ok) {
+      document.getElementById('flash-success').style.display = 'block';
+      btn.style.display = 'none';
+    } else {
+      btn.textContent = '⚡ Execute Flash Test →';
+      btn.disabled = false;
+    }
+  }).catch(() => {
+    btn.textContent = '⚡ Execute Flash Test →';
+    btn.disabled = false;
+  });
+});
 function contactUs(e) {
   if(e) e.preventDefault();
-  const overlay = document.getElementById('contact-overlay');
-  overlay.style.display = 'flex';
+  document.getElementById('contact-overlay').style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
 function closeContact() {
@@ -1378,4 +1335,31 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const email = this.querySelector('input[name="email"]').value;
   const blocked = ['gmail.com','yahoo.com','hotmail.com','outlook.com','icloud.com','protonmail.com','live.com'];
-  const domain = email.split('@')[1]?.toLower
+  const domain = email.split('@')[1]?.toLowerCase();
+  if (blocked.includes(domain)) {
+    this.querySelector('input[name="email"]').style.borderColor = '#f43f5e';
+    return;
+  }
+  const btn = this.querySelector('button[type=submit]');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  fetch('https://formspree.io/f/xlgvpzqw', {
+    method: 'POST',
+    body: new FormData(this),
+    headers: { 'Accept': 'application/json' }
+  }).then(r => {
+    if (r.ok) {
+      document.getElementById('contact-success').style.display = 'block';
+      document.getElementById('contact-form').style.display = 'none';
+    } else {
+      btn.textContent = 'Send message →';
+      btn.disabled = false;
+    }
+  }).catch(() => {
+    btn.textContent = 'Send message →';
+    btn.disabled = false;
+  });
+});
+</script>
+</body>
+</html>
