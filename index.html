@@ -1039,12 +1039,11 @@ document.querySelectorAll('.product-tab').forEach(tab => {
   let currentTab = 0, fillInterval = null, fillStart = null;
 
 function activateTab(idx) {
-    tabs.forEach((t, i) => { t.classList.toggle('active', i === idx); t.querySelector('.tab-progress-fill').style.height = '0%'; });
+    tabs.forEach((t, i) => { 
+      t.classList.toggle('active', i === idx); 
+      t.querySelector('.tab-progress-fill').style.height = '0%'; 
+    });
     panels.forEach((p, i) => p.classList.toggle('active', i === idx));
-    // Sync visual panels
-    document.querySelectorAll('.product-visual-panel').forEach(p => p.classList.remove('active'));
-    const visual = document.querySelector(`.product-visual-panel[data-visual="${idx}"]`);
-    if (visual) visual.classList.add('active');
     currentTab = idx;
   }
   function startFill(idx) {
