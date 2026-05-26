@@ -1265,9 +1265,25 @@ function openFlashTest() {
   document.body.style.overflow = 'hidden';
   goToStep(1);
 }
-function closeFlashTest() {
-  document.getElementById('flash-test-overlay').style.display = 'none';
-  document.body.style.overflow = '';
+function openFlashTest() {
+  const loader = document.createElement('div');
+  loader.id = 'flash-loader';
+  loader.style.cssText = 'position:fixed;inset:0;z-index:10001;background:rgba(0,0,0,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;';
+  loader.innerHTML = `
+    <div style="font-size:11px;font-family:monospace;color:#10b981;letter-spacing:0.15em;text-transform:uppercase;">Initializing Flash Test...</div>
+    <div style="width:240px;height:3px;background:rgba(59,130,246,0.15);border-radius:3px;overflow:hidden;">
+      <div id="loader-bar" style="height:100%;width:0%;background:#3b82f6;border-radius:3px;transition:width 2s ease;"></div>
+    </div>
+    <div style="font-size:10px;font-family:monospace;color:#4a5568;">Loading adversarial probe engine...</div>
+  `;
+  document.body.appendChild(loader);
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => { document.getElementById('loader-bar').style.width = '100%'; }, 50);
+  setTimeout(() => {
+    loader.remove();
+    document.getElementById('flash-test-overlay').style.display = 'flex';
+    goToStep(1);
+  }, 2200);
 }
 function goToStep(n) {
   document.querySelectorAll('.flash-step').forEach(s => s.style.display = 'none');
