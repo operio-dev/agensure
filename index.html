@@ -1261,11 +1261,6 @@ function startFill(idx) {
 
 <script>
 function openFlashTest() {
-  document.getElementById('flash-test-overlay').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-  goToStep(1);
-}
-function openFlashTest() {
   const loader = document.createElement('div');
   loader.id = 'flash-loader';
   loader.style.cssText = 'position:fixed;inset:0;z-index:10001;background:rgba(0,0,0,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;';
@@ -1285,16 +1280,41 @@ function openFlashTest() {
     goToStep(1);
   }, 2200);
 }
+
+function closeFlashTest() {
+  document.getElementById('flash-test-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+  const loader = document.getElementById('flash-loader');
+  if (loader) loader.remove();
+}
+
 function goToStep(n) {
+  if (n === 2) {
+    const model = document.querySelector('select[name="base_model"]').value;
+    const scope = document.querySelector('select[name="agent_scope"]').value;
+    if (!model || !scope) {
+      alert('Please select both Base Model and Operational Scope before continuing.');
+      return;
+    }
+  }
+  if (n === 3) {
+    const prompt = document.querySelector('textarea[name="system_prompt"]').value.trim();
+    if (prompt.length < 20) {
+      alert('Please paste at least a short excerpt of your System Prompt before continuing.');
+      return;
+    }
+  }
   document.querySelectorAll('.flash-step').forEach(s => s.style.display = 'none');
   document.getElementById('step-' + n).style.display = 'block';
   ['dot-0','dot-1','dot-2'].forEach((id, i) => {
     document.getElementById(id).style.background = i < n ? '#3b82f6' : 'rgba(59,130,246,0.2)';
   });
 }
+
 document.getElementById('flash-test-overlay').addEventListener('click', function(e) {
   if (e.target === this) closeFlashTest();
 });
+
 document.getElementById('flash-test-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const email = this.querySelector('input[name="email"]').value;
