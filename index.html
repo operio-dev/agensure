@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Agensure</title>
   <link rel="icon" type="image/png" href="/Logosimbolofavicon.png?v=1">
-  <meta name="description" content="Agensure stress-tests your AI agents with continuous adversarial probing, generates your Agensure Risk Score, and outputs EU AI Act Article 50 compliance reports."/>
+  <meta name="description" content="Agensure stress-tests your AI agents with continuous adversarial probing, generates your Agensure Risk Score, and gives enterprise buyers verifiable proof your agents are safe to deploy."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -92,12 +92,12 @@ body {
 
     .deadline-banner {
       display: inline-flex; align-items: center; gap: 8px;
-      background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(245,158,11,0.08));
-      border: 1px solid rgba(239,68,68,0.25); border-radius: 100px;
-      padding: 6px 16px; font-size: 12px; font-weight: 600; color: #fca5a5;
+      background: linear-gradient(135deg, rgba(79,142,247,0.1), rgba(99,102,241,0.08));
+      border: 1px solid rgba(79,142,247,0.25); border-radius: 100px;
+      padding: 6px 16px; font-size: 12px; font-weight: 600; color: #93b4f5;
       margin-bottom: 36px; opacity: 0; animation: up 0.7s ease 0.1s forwards;
     }
-    .deadline-dot { width: 6px; height: 6px; border-radius: 50%; background: #ef4444; animation: blink 2s ease-in-out infinite; }
+    .deadline-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); animation: blink 2s ease-in-out infinite; }
     @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
 
     h1 { font-size: clamp(34px, 4.8vw, 64px); font-weight: 600; line-height: 1.0; letter-spacing: -0.045em; max-width: 820px; margin-bottom: 28px; opacity: 0; animation: up 0.7s ease 0.25s forwards; color: #ffffff; }
@@ -387,9 +387,9 @@ nav .btn-primary { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
     <img src="europemapnight.avif" alt=""/>
   </div>
   <div class="hero">
-    <div class="deadline-banner"><div class="deadline-dot"></div>EU AI Act Art. 50 Enforceable August 2, 2026 </div>
+    <div class="deadline-banner"><div class="deadline-dot"></div>Enterprise buyers now demand verified AI agents · EU AI Act Art. 50 live Aug 2, 2026</div>
     <h1>Your AI Agents are a<br/><em>liability.</em><br/>We make them enterprise-ready.</h1>
-    <p class="hero-sub">Continuous adversarial probing. Real failure rates. The only risk score that makes your AI agents insurable.</p>
+    <p class="hero-sub">Continuous adversarial probing. Real failure rates. The independent risk score and certificate your enterprise clients can trust before they sign.</p>
     <div class="hero-form-wrap">
       <form class="hero-form" id="f1" onsubmit="sub(event,'s1')">
         <button type="button" onclick="openFlashTest()" class="btn-primary">⚡ Run a 10-Min Flash Test</button>
@@ -407,7 +407,7 @@ nav .btn-primary { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <span class="marquee-item">EU AI Act Article 50</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Enterprise Procurement Trust</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Adversarial Crash Testing</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">ADR Certificate</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Agensure Risk Score Engine</span><span class="marquee-dot">◆</span>
@@ -420,7 +420,7 @@ nav .btn-primary { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
     <span class="marquee-item">Financial Blast Radius</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Continuous Probing Engine</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">MITRE ATLAS Mapping</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">EU AI Act Article 50</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Enterprise Procurement Trust</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Adversarial Crash Testing</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">ADR Certificate</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">AIUC-1 Standard</span><span class="marquee-dot">◆</span>
@@ -456,7 +456,7 @@ nav .btn-primary { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
 
 <div class="wrap" style="position:relative;z-index:2;">
 <p style="font-size:21px;font-weight:300;color:var(--gray);line-height:1.8;max-width:720px;margin:0 auto;text-align:center;letter-spacing:-0.01em;">
-Agensure stress-tests your AI agents with continuous adversarial probing, measures their real behavioral failure probability, generates the first verifiable risk score in Europe based on the AIUC-1 standard, and builds the parametric dataset to make them enterprise-compliant and financially insurable.
+Agensure stress-tests your AI agents with continuous adversarial probing, measures their real behavioral failure probability, and generates a verifiable risk score and readiness certificate — the independent proof your enterprise clients, procurement teams and, in time, insurers need to trust an agent in production.
 </p>
 </div>
 </section>
@@ -560,13 +560,13 @@ draw();
     <div class="problem-grid">
       <div class="problem-card">
         <div class="problem-icon">1</div>
-        <h3>The Article 50 Liability Trap</h3>
-        <p>If your agent cedes to an adversarial jailbreak and mimics human behavior or fails mandatory disclosures, it directly violates the EU AI Act starting August 2, 2026. Non-compliance exposes your company to sanzioni up to €15M or 3% of global turnover.</p>
+        <h3>The Enterprise Trust Gap</h3>
+        <p>When your agent can be pushed off-script by a crafted input, your enterprise clients' procurement and security teams have no way to verify it's safe — and increasingly they won't sign until they can. Independent verification is becoming the document that unblocks the deal.</p>
       </div>
       <div class="problem-card">
         <div class="problem-icon">2</div>
-        <h3>Direct Financial Exposure</h3>
-        <p>An automated prompt injection attack can hijack your customer-facing bot, forcing it to authorize fake transactions, pricing overrides, or unapproved refunds that legally commit your company. Traditional cyber insurance explicitly excludes these autonomous software liabilities today.</p>
+        <h3>Direct Financial &amp; Brand Exposure</h3>
+        <p>An automated prompt injection attack can hijack your customer-facing bot, forcing it to authorize fake transactions, pricing overrides, or unapproved refunds that legally commit your company — or to say something that damages your brand. Traditional cyber insurance explicitly excludes these autonomous software liabilities today.</p>
       </div>
       <div class="problem-card">
         <div class="problem-icon">3</div>
@@ -582,8 +582,8 @@ draw();
 <section class="product" id="product">
   <div class="wrap">
     <p class="s-label">How It Works</p>
-    <h2>The Continuous Probing Engine.<br/><em>Continuous Security Equals Automated Compliance</em></h2>
-    <p class="s-body">We don't do static paperwork or once-a-year GRC questionnaires. Our zero-integration engine attacks your production AI endpoints with automated adversarial vectors, measures real failure rates, and maps every vulnerability to its EU AI Act Article 50 implication.</p>
+    <h2>The Continuous Probing Engine.<br/><em>Continuous Security Equals Verifiable Trust</em></h2>
+    <p class="s-body">We don't do static paperwork or once-a-year GRC questionnaires. Our zero-integration engine attacks your production AI endpoints with automated adversarial vectors, measures real failure rates, and turns the result into proof your clients and procurement teams can verify.</p>
     <div class="product-tabs">
       <div class="product-tab-list">
         <div class="product-tab active" data-tab="0">
@@ -591,7 +591,7 @@ draw();
           <div class="tab-content">
             <div class="tab-meta"><span class="tab-num">01</span><span class="step-badge badge-now">Lab Layer (The Moat)</span></div>
             <h3>Behavioral Adversarial Probing</h3>
-            <p>We personal-fund millions of parallelized adversarial simulations in our laboratory across core open-source and commercial models. This creates the first centralized Parametric Dataset in Europe, allowing us to mathematically isolate model vulnerabilities and satisfy reinsurance carrier standards from day one.</p>
+            <p>We run large-scale parallelized adversarial simulations in our laboratory across core open-source and commercial models, building a centralized Parametric Dataset that lets us isolate model-level vulnerabilities and lay the actuarial groundwork reinsurers will eventually underwrite against.</p>
           </div>
         </div>
         <div class="product-tab" data-tab="1">
@@ -607,7 +607,7 @@ draw();
           <div class="tab-content">
             <div class="tab-meta"><span class="tab-num">03</span><span class="step-badge badge-soon">Phase 2</span></div>
             <h3>Dynamic ADR Certificate</h3>
-            <p>Once your agent passes our audit and hits the target safety threshold, we issue the Agensure ADR (Agent Deployment Readiness) Certificate. It features a unique QR code linking to a real-time public verification page. Your enterprise clients, procurement officers, and VCs can verify your active compliance instantly.</p>
+            <p>Once your agent passes our audit and hits the target safety threshold, we issue the Agensure ADR (Agent Deployment Readiness) Certificate. It features a unique QR code linking to a real-time public verification page. Your enterprise clients, procurement officers, and VCs can verify your active status instantly.</p>
           </div>
         </div>
       </div>
@@ -857,21 +857,21 @@ document.querySelectorAll('.product-tab').forEach(tab => {
         <div><div class="step-day">Day 1-2</div><div class="step-num-big">02</div><div class="free-badge">First Result</div></div>
         <div class="step-content">
           <h3>Full Report & Validation</h3>
-          <p>We generate your comprehensive PDF Risk Report with a complete domain breakdown. You review the empirical failures, verify structural vulnerabilities, and map your precise legal exposure under the EU AI Act.</p>
+          <p>We generate your comprehensive PDF Risk Report with a complete domain breakdown. You review the empirical failures, verify structural vulnerabilities, and map your precise exposure across security, scope and disclosure.</p>
         </div>
       </div>
       <div class="step">
         <div><div class="step-day">Day 3–30</div><div class="step-num-big">03</div><div class="free-badge">Beta</div></div>
         <div class="step-content">
           <h3>Sandbox Continuous Probing</h3>
-          <p>A temporary dashboard activates an automated weekly cron job running the 50 optimized probes per domain. This ensures that daily prompt micro-releases or silent foundation model updates do not introduce sudden regulatory vulnerabilities.</p>
+          <p>A temporary dashboard activates an automated weekly cron job running the 50 optimized probes per domain. This ensures that daily prompt micro-releases or silent foundation model updates do not introduce sudden behavioral vulnerabilities.</p>
         </div>
       </div>
       <div class="step">
         <div><div class="step-day">Product Public</div><div class="step-num-big">05</div><div class="free-badge">Full-working MVP Launch</div></div>
         <div class="step-content">
           <h3>SaaS Activation & Insurance Roadmap</h3>
-          <p>After Public Launch, the commercial automated software subscription activates. You secure priority access to the Financial Liability Insurance pool as soon as our insurance capacity updates go live.</p>
+          <p>After Public Launch, the commercial automated software subscription activates. You secure priority access to our future Financial Liability Insurance capacity as soon as it goes live.</p>
           <div class="step-options">
             <div class="step-option"><strong>→ ADR Certificate:</strong> We issue your Agensure ADR Certificate: digitally verified proof that your agent has passed our full audit process. Valid for 90 days, renewable via continuous monitoring.</div>
             <div class="step-option"><strong>→ Continuous Probing & Monitoring Subscription LOI:</strong>Once we bring expected results, we commit giving you access to a special Beta Partners offer for the probing & monitoring subscription once the public launch officially begins. Design Partners who sign the LOI get priority access to the Financial Guarantee when the dataset is ready to back it.</div>
@@ -890,11 +890,11 @@ document.querySelectorAll('.product-tab').forEach(tab => {
     <div class="wyg-grid">
       <div class="wyg-list">
         <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Free 10-minute Flash Test via System Prompt input — no API keys or production access required</p></div>
-        <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Comprehensive PDF Risk Report with ARS Score and Article 50 domain breakdown</p></div>
+        <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Comprehensive PDF Risk Report with ARS Score and full behavioral domain breakdown</p></div>
         <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>30 days of continuous behavioral monitoring via weekly automated probe loops</p></div>
         <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Dynamic ADR Certificate with live public QR verification page</p></div>
         <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Preferred early-adopter pricing locked in before institutional round closes</p></div>
-        <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Priority access to the €1,000,000 Financial Liability Insurance pool at MGA activation</p></div>
+        <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Priority access to our Financial Liability Insurance capacity when the MGA layer activates</p></div>
       </div>
       <div class="wyg-card">
         <div class="spots-badge">⚡ Strictly limited to Closed Beta Partners</div>
@@ -923,7 +923,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
       <div class="privacy-visual">
         <div><span class="ok">✓ INGESTED</span>  client_system_prompt_text</div>
         <div><span class="ok">✓ SENT</span>  agensure_ars_score: 24</div>
-        <div><span class="ok">✓ SENT</span>  agensure_compliance_badge: VALID</div>
+        <div><span class="ok">✓ SENT</span>  agensure_readiness_badge: VALID</div>
         <div style="margin-top:0.5rem;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.5rem;"><span class="block">✗ BLOCKED</span> raw_customer_database_access</div>
         <div><span class="block">✗ BLOCKED</span> production_api_keys</div>
         <div><span class="block">✗ BLOCKED</span> user_pii_logs</div>
@@ -967,22 +967,22 @@ document.querySelectorAll('.product-tab').forEach(tab => {
     <div class="why-inner">
       <div class="why-left">
         <p class="s-label">Why Now</p>
-        <p class="s-body">Three tectonicforces converging at once.</p>
-        <div class="deadline">Aug<em>2026.</em></div>
+        <p class="s-body">Three tectonic forces converging at once.</p>
+        <div class="deadline">Now<em>2026.</em></div>
       </div>
       <div>
         <div class="why-item">
           <span class="why-n">01</span>
           <div>
-            <h3>August 2026 Legal Deadline</h3>
-            <p>EU AI Act Article 50 obligations apply from August 2, 2026. Companies deploying conversational agents that interact with European users face fines up to €15M or 3% of global turnover.</p>
+            <h3>Enterprise Procurement Is Tightening</h3>
+            <p>Enterprise and regulated buyers increasingly block AI deployments until behavioral safety is independently verified. Self-attestation no longer clears security review — and that gate is what stalls deals today, regardless of any deadline.</p>
           </div>
         </div>
         <div class="why-item">
           <span class="why-n">02</span>
           <div>
             <h3>Insurers Are Fleeing the Market</h3>
-            <p>Traditional insurers carriers are explicitly excluding AI agent risk from standard cyber policies because they cannot quantify non-deterministic software-behavior. The liability gap has never been wider.</p>
+            <p>Traditional carriers are explicitly excluding AI agent risk from standard cyber policies because they cannot quantify non-deterministic software behavior. The liability gap has never been wider.</p>
           </div>
         </div>
         <div class="why-item">
@@ -995,8 +995,8 @@ document.querySelectorAll('.product-tab').forEach(tab => {
         <div class="why-item">
   <span class="why-n">04</span>
   <div>
-    <h3>Focused on Article 50 by design</h3>
-    <p>Article 50 is the only mandate enforcing this August. High-risk frameworks (Articles 9, 12, 14, 15) have been delayed to 2027-2028. We deliberately use this window: we build our proprietary parametric dataset on Article 50 now, so that when high-risk deadlines hit, we own the dominant data infrastructure to underwrite those markets too</p>
+    <h3>Regulation is the tailwind, not the only driver</h3>
+    <p>EU AI Act Article 50 transparency obligations apply from August 2, 2026; the heavier high-risk frameworks (Articles 9, 12, 14, 15) follow in 2027–2028. We use this window deliberately: we build our proprietary parametric dataset now, so that as those deadlines arrive we already own the dominant data infrastructure to underwrite those markets too.</p>
   </div>
 </div>
       </div>
@@ -1013,14 +1013,14 @@ document.querySelectorAll('.product-tab').forEach(tab => {
       <div>
         <p class="s-label">Closed Beta — June 2026</p>
         <h2>Stop guessing.<br/><em>Stress-test your AI agents today.</em></h2>
-        <p style="color:var(--gray);font-size:0.95rem;line-height:1.7;margin-top:1rem;">We are onboarding <strong style="color:var(--text);">selected European B2B AI Agents providers</strong> as Closed Beta Partners before we officially go live. Secure your spot before the August 2, 2026 enforcement deadline.</p>
+        <p style="color:var(--gray);font-size:0.95rem;line-height:1.7;margin-top:1rem;">We are onboarding <strong style="color:var(--text);">selected European B2B AI Agents providers</strong> as Closed Beta Partners before we officially go live. Get an independent readiness check your own enterprise clients can trust — and lock in early-partner terms.</p>
         <ul class="beta-list">
           <li>Free 10-minute Flash Test via System Prompt input. No API keys required</li>
-          <li>Comprehensive PDF Risk Report with ARS Score and Article 50 domain breakdown</li>
+          <li>Comprehensive PDF Risk Report with ARS Score and full behavioral domain breakdown</li>
           <li>30 days of continuous behavioral monitoring via weekly automated probe loops</li>
           <li>Dynamic ADR Certificate with live public QR verification page</li>
           <li>Preferred early-adopter pricing locked in before round closes</li>
-          <li>Priority access to the Financial Liability Insurance pool at activation</li>
+          <li>Priority access to our Financial Liability Insurance capacity when it activates</li>
         </ul>
         <div class="req-note"><strong>Eligibility requirement:</strong> Your company must currently deploy a production-level conversational or voice AI agent interacting with end users.</div>
       </div>
@@ -1049,15 +1049,15 @@ document.querySelectorAll('.product-tab').forEach(tab => {
       </div>
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">Is this a real insurance policy?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Not yet — and we are transparent about that. Our current offering is a risk scoring and certification service. Full embedded AI agent insurance via our MGA model with Tier-1 European carriers is on our roadmap for Year 2. Closed Beta partners receive priority access to the €1,000,000 Financial Liability Insurance pool when that capacity activates.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Not yet — and we are transparent about that. Our current offering is a risk scoring and certification service. Full embedded AI agent insurance, via an MGA model working with established European carriers, is on our roadmap for Year 2+. Closed Beta partners receive priority access to that Financial Liability Insurance capacity when it activates.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">What is Article 50 and why does it matter now?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Article 50 of the EU AI Act requires any company deploying AI agents that interact with users to disclose their AI nature, maintain output integrity, and meet transparency obligations. Enforcement starts August 2, 2026. Non-compliance exposes you to fines up to €15M or 3% of global turnover. Unlike other AI Act articles delayed to 2027-2028, Article 50 is enforcing now.</div></div>
+        <button class="faq-question" onclick="toggleFaq(this)">Why does this matter now if I'm not high-risk under the EU AI Act?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Because the strongest driver today is commercial, not regulatory. Enterprise clients increasingly require independent proof that your agent is safe before they sign or expand — and a manipulated agent can authorize a wrong transaction, leak data, or damage your brand regardless of how it's classified. Article 50 transparency obligations apply from August 2, 2026 (with fines up to €15M or 3% of global turnover), but for most deployers the day-to-day value of Agensure is unblocking enterprise deals and protecting brand and revenue.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">How is Agensure different from a standard compliance tool?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Standard compliance tools check documentation and self-reported configurations. We actively attack your agent with adversarial probe vectors calibrated on the AIUC-1 framework — the same methodology used to unlock the first AI agent insurance coverage at Lloyd's of London. Compliance is not a form you fill. It is a crash test you pass.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Standard compliance tools check documentation and self-reported configurations. We actively attack your agent with adversarial probe vectors calibrated on the AIUC-1 framework — the emerging industry standard for AI agent assurance. Compliance is not a form you fill. It is a crash test you pass.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">What is the 70/30 Risk Split?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
@@ -1065,15 +1065,15 @@ document.querySelectorAll('.product-tab').forEach(tab => {
       </div>
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">What is the ADR Certificate?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">The Agensure ADR (Agent Deployment Readiness) Certificate is issued once your agent passes our full audit and reaches the safety threshold for your risk profile. It features a unique QR code linking to a real-time public verification page showing VALID or SUSPENDED status. Enterprise clients, procurement officers, and VCs can verify your compliance instantly — without asking you for documentation.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">The Agensure ADR (Agent Deployment Readiness) Certificate is issued once your agent passes our full audit and reaches the safety threshold for your risk profile. It features a unique QR code linking to a real-time public verification page showing VALID or SUSPENDED status. Enterprise clients, procurement officers, and VCs can verify your status instantly — without asking you for documentation.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">Does my existing cyber insurance cover AI agents?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
         <div class="faq-answer"><div class="faq-answer-inner">Almost certainly not. Traditional cyber and E&amp;O policies were written before autonomous agents existed. Most major carriers have now filed explicit AI exclusions. Your current policy very likely does not cover damage caused by an AI agent acting autonomously — prompt injection attacks, unauthorized tool execution, data exfiltration triggered by adversarial input. This is the coverage gap Agensure is built to close.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">Do you only test for Article 50?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">In the MVP phase yes — Article 50 is the only EU AI Act obligation enforcing August 2026, and our probe domains cover every behavioral angle it mandates. Our roadmap expands to Articles 9, 12, 14, and 15 as their deadlines approach in 2027-2028. Every probe we run today is already mapped to a specific Article 50 obligation, so the compliance output is always normatively grounded.</div></div>
+        <button class="faq-question" onclick="toggleFaq(this)">What do you test for today?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Our probe domains cover the full behavioral attack surface — prompt injection, data exfiltration, scope and action violations, and transparency/disclosure resilience. These map directly to what enterprise security reviews look for, and to EU AI Act Article 50 transparency obligations enforcing in August 2026. Our roadmap expands to the high-risk frameworks (Articles 9, 12, 14, 15) as their deadlines approach in 2027–2028.</div></div>
       </div>
     </div>
   </div>
@@ -1110,568 +1110,3 @@ document.querySelectorAll('.product-tab').forEach(tab => {
           <a href="#waitlist">Apply for beta</a>
           <a href="javascript:void(0)" onclick="contactUs(event)">Contact us</a>
         </div>
-        <div class="footer-nav-col">
-          <p class="footer-nav-col-label">Company</p>
-          <a href="#faq">FAQ</a>
-          <a href="#team">Team</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span class="footer-bottom-copy">© 2026 AGENSURE All rights reserved.</span>
-        <div class="footer-bottom-links">
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-  const _m = ['f','i','l','i','p','p','o','@','a','g','e','n','s','u','r','e','.','e','u'].join('');
-  function contactUs(e) { if(e) e.preventDefault(); const overlay = document.getElementById('contact-overlay'); overlay.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
-
-  function sub(e, id) {
-    e.preventDefault();
-    const inputs = e.target.querySelectorAll('input');
-    const name = inputs[0].value;
-    const email = e.target.querySelector('input[type=email]').value;
-    const blocked = ['gmail','yahoo','hotmail','outlook','icloud','libero','virgilio','tiscali','protonmail','gmx','web'];
-    const domain = email.split('@')[1]?.split('.')[0]?.toLowerCase();
-    if (blocked.includes(domain)) { alert('Please use your work email address.'); return; }
-    window.location.href = 'mailto:' + _m + '?subject=' + encodeURIComponent('Beta Application') + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email);
-    e.target.style.display = 'none';
-    document.getElementById(id).style.display = 'flex';
-  }
-
-  function showTooltip() {
-  const t = document.getElementById('tooltip');
-  t.style.display = 'block';
-  setTimeout(() => { t.style.display = 'none'; }, 3000);
-}
-
-  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
-  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow = ''; }
-
-  function toggleFaq(btn) {
-    const item = btn.parentElement;
-    const answer = item.querySelector('.faq-answer');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(el => { el.classList.remove('open'); el.querySelector('.faq-answer').style.maxHeight = '0'; });
-    if (!isOpen) { item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
-  }
-
-  // stat counter removed — new problem section uses cards
-
-  const TABS_DURATION = 5000;
-  const tabs = document.querySelectorAll('.product-tab');
-  const panels = document.querySelectorAll('.product-visual-panel');
-  let currentTab = 0, fillInterval = null, fillStart = null;
-
-function activateTab(idx) {
-    tabs.forEach((t, i) => { 
-      t.classList.toggle('active', i === idx); 
-      t.querySelector('.tab-progress-fill').style.height = '0%'; 
-    });
-    panels.forEach((p, i) => p.classList.toggle('active', i === idx));
-    currentTab = idx;
-  }
-function startFill(idx) {
-    clearInterval(fillInterval);
-    const fill = tabs[idx].querySelector('.tab-progress-fill');
-    fill.style.height = '0%';
-    fillStart = performance.now();
-    fillInterval = setInterval(() => {
-      const pct = Math.min(((performance.now() - fillStart) / TABS_DURATION) * 100, 100);
-      fill.style.height = pct + '%';
-      if (pct >= 100) { clearInterval(fillInterval); const next = (currentTab + 1) % tabs.length; activateTab(next); startFill(next); }
-    }, 16);
-  }
-  tabs.forEach((tab, i) => tab.addEventListener('click', () => { activateTab(i); startFill(i); }));
-  const productObserver = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) { startFill(0); productObserver.disconnect(); }
-  }, { threshold: 0.3 });
-  if (document.querySelector('.product')) productObserver.observe(document.querySelector('.product'));
-
-  document.querySelectorAll('.product-visual-panel img').forEach(img => {
-    img.addEventListener('click', () => {
-      const overlay = document.createElement('div');
-      overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;';
-      const big = document.createElement('img');
-      big.src = img.src;
-      big.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:10px;';
-      overlay.appendChild(big);
-      overlay.addEventListener('click', () => overlay.remove());
-      document.body.appendChild(overlay);
-    });
-  });
-</script>
-
- <!-- FLASH TEST POPUP OVERLAY -->
-<div id="flash-test-overlay" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;overflow-y:auto;">
-  <div style="max-width:680px;width:100%;margin:0 auto;background:#0f1318;border:1px solid rgba(59,130,246,0.15);border-radius:20px;padding:32px;position:relative;">
-
-    <button onclick="closeFlashTest()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;width:32px;height:32px;color:#8896a8;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
-
-    <div style="margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(59,130,246,0.1);">
-      <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:100px;padding:4px 12px;margin-bottom:12px;">
-        <span style="width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 2s infinite;display:inline-block;"></span>
-        <span style="font-size:11px;font-family:monospace;color:#10b981;letter-spacing:0.1em;">EU AI Act Art. 50 · Pre-Underwriting Scan</span>
-      </div>
-      <h2 style="font-size:22px;font-weight:800;color:#e8edf5;letter-spacing:-0.02em;margin:0 0 6px;">5-Min Automated Risk & Safety Telemetry</h2>
-      <p style="font-size:13px;color:#8896a8;margin:0;">Zero-Integration configuration. Provide model parameters to calculate your behavioral risk profile.</p>
-    </div>
-
-    <div id="step-indicator" style="display:flex;gap:8px;margin-bottom:28px;">
-      <div id="dot-0" style="flex:1;height:3px;border-radius:3px;background:#3b82f6;transition:background 0.3s;"></div>
-      <div id="dot-1" style="flex:1;height:3px;border-radius:3px;background:rgba(59,130,246,0.2);transition:background 0.3s;"></div>
-      <div id="dot-2" style="flex:1;height:3px;border-radius:3px;background:rgba(59,130,246,0.2);transition:background 0.3s;"></div>
-    </div>
-
-    <form action="https://formspree.io/f/xlgvpzqw" method="POST" id="flash-test-form">
-
-      <!-- STEP 1 -->
-      <div id="step-1" class="flash-step">
-        <div style="margin-bottom:20px;">
-          <span style="font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;color:#4a5568;">01 · Model Governance & Operational Scope</span>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
-          <div>
-            <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Foundation Model Base</label>
-            <select name="base_model" required style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:9px 12px;font-size:13px;color:#e8edf5;outline:none;">
-              <option value="" disabled selected>Select model core</option>
-              <option value="gpt-4">OpenAI GPT-4 / GPT-4o Class</option>
-              <option value="claude">Anthropic Claude 3 / 3.5 Class</option>
-              <option value="llama-3">Meta Llama 3 / Open Weights</option>
-              <option value="mistral">Mistral AI / Mixtral Core</option>
-              <option value="qwen">Qwen / Gemma / Local Stack</option>
-              <option value="other">Other / Fine-tuned Core</option>
-            </select>
-          </div>
-
-          <div>
-            <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Inference Deployment</label>
-            <select name="model_deployment" required style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:9px 12px;font-size:13px;color:#e8edf5;outline:none;">
-              <option value="" disabled selected>Select infrastructure</option>
-              <option value="public-cloud">Public Cloud API (Managed Service)</option>
-              <option value="private-cloud">Private Cloud Instance (Dedicated VPC)</option>
-              <option value="self-hosted">Self-Hosted / Private GPU Node</option>
-            </select>
-          </div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
-          <div>
-            <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Agent Operational Scope</label>
-            <select name="agent_scope" required style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:9px 12px;font-size:13px;color:#e8edf5;outline:none;">
-              <option value="" disabled selected>Select agent function</option>
-              <option value="customer-support">Customer Support / Ticket Routing</option>
-              <option value="ecommerce">E-commerce Assistant & Checkout</option>
-              <option value="sales">Sales & Lead Gen Automation</option>
-              <option value="voice">Autonomous Voice Agent</option>
-              <option value="other">Other Conversational Flow</option>
-            </select>
-          </div>
-
-          <div>
-            <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Data Sensitivity Level</label>
-            <select name="data_sensitivity" required style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:9px 12px;font-size:13px;color:#e8edf5;outline:none;">
-              <option value="" disabled selected>Select target data</option>
-              <option value="public">Public Data Only / General FAQ</option>
-              <option value="internal">Internal Systems / CRM Logs / Basic PII</option>
-              <option value="confidential">Confidential Records / Financial / KYC Stores</option>
-            </select>
-          </div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
-          <div>
-            <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Active Security Layer</label>
-            <select name="safety_guardrails" required style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:9px 12px;font-size:13px;color:#e8edf5;outline:none;">
-              <option value="" disabled selected>Select protection layer</option>
-              <option value="ai-powered">AI Powered Defense (LlamaGuard / Dual-LLM)</option>
-              <option value="advanced-filtering">Advanced Semantic Filtering & Interceptors</option>
-              <option value="basic-validation">Basic Input Validation / Static Regex</option>
-              <option value="none">No Active Guardrails / Pure Prompt Reliant</option>
-            </select>
-          </div>
-
-          <div>
-            <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Human Oversight Level (HITL)</label>
-            <select name="human_oversight" required style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:9px 12px;font-size:13px;color:#e8edf5;outline:none;">
-              <option value="" disabled selected>Select oversight policy</option>
-              <option value="full-trace">Full Trace + Real-Time Human Validation</option>
-              <option value="key-steps">Human Validation for Critical Actions Only</option>
-              <option value="outcomes-only">Review of Agent Outcomes Post-Execution</option>
-              <option value="none">Fully Autonomous Loop (No Intervention)</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:8px;">Autonomous Action Authority (Tooling & Blast Radius)</label>
-
-          <div style="background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:10px;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-            <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#8896a8;cursor:pointer;">
-              <input type="checkbox" name="tools[]" value="no-tools" style="margin-top:2px;accent-color:#10b981;">
-              No tool access (Static text only)
-            </label>
-
-            <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#8896a8;cursor:pointer;">
-              <input type="checkbox" name="tools[]" value="financial" style="margin-top:2px;accent-color:#10b981;">
-              Financial execution (Refunds, overrides)
-            </label>
-
-            <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#8896a8;cursor:pointer;">
-              <input type="checkbox" name="tools[]" value="db-write" style="margin-top:2px;accent-color:#10b981;">
-              Full Read-Write Database Access
-            </label>
-
-            <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#8896a8;cursor:pointer;">
-              <input type="checkbox" name="tools[]" value="crm-read" style="margin-top:2px;accent-color:#10b981;">
-              CRM / Restricted PII Access
-            </label>
-          </div>
-        </div>
-
-        <button type="button" onclick="goToStep(2)" style="margin-top:24px;width:100%;background:#3b82f6;color:#fff;border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;">
-          Continue → Adversarial Target
-        </button>
-      </div>
-
-      <!-- STEP 2 -->
-      <div id="step-2" class="flash-step" style="display:none;">
-        <div style="margin-bottom:20px;">
-          <span style="font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;color:#4a5568;">02 · Adversarial Target Payload</span>
-        </div>
-
-        <div style="margin-bottom:18px;">
-          <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:8px;">
-            System Prompt or Core Instructions
-          </label>
-
-          <textarea 
-            name="system_prompt" 
-            rows="8" 
-            placeholder="Paste your system prompt, agent rules, or orchestration logic..."
-            style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:10px;padding:14px;font-size:13px;color:#e8edf5;outline:none;resize:vertical;font-family:monospace;"
-          ></textarea>
-        </div>
-
-        <div style="margin-bottom:20px;padding:14px;border-radius:10px;background:rgba(59,130,246,0.05);border:1px solid rgba(59,130,246,0.12);">
-          <div style="font-size:11px;font-family:monospace;color:#3b82f6;letter-spacing:0.08em;margin-bottom:6px;">
-            PROMPT-IN / VECTOR-OUT
-          </div>
-
-          <p style="font-size:12px;color:#8896a8;line-height:1.6;margin:0;">
-            Zero-knowledge isolation. Raw strings are evaluated against our lab dataset on secure temporary nodes.
-          </p>
-        </div>
-
-        <div style="display:flex;gap:12px;margin-top:24px;">
-          <button type="button" onclick="goToStep(1)" style="flex:1;background:transparent;color:#8896a8;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;">
-            ← Back
-          </button>
-
-          <button type="button" onclick="goToStep(3)" style="flex:1;background:#3b82f6;color:#fff;border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;">
-            Continue → Report Delivery
-          </button>
-        </div>
-      </div>
-
-      <!-- STEP 3 -->
-      <div id="step-3" class="flash-step" style="display:none;">
-        <div style="margin-bottom:20px;">
-          <span style="font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;color:#4a5568;">03 · Report Delivery & Qualification</span>
-        </div>
-
-        <div style="margin-bottom:16px;">
-          <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Company Website</label>
-
-          <input 
-            type="url"
-            name="company_website"
-            required
-            placeholder="https://yourcompany.com"
-            style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:10px 12px;font-size:13px;color:#e8edf5;outline:none;"
-          >
-        </div>
-
-        <div style="margin-bottom:16px;">
-          <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Your Corporate Role</label>
-
-          <select 
-            name="role" 
-            required
-            style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:10px 12px;font-size:13px;color:#e8edf5;outline:none;"
-          >
-            <option value="" disabled selected>Select position</option>
-            <option value="cto">CTO / CISO / VP Eng</option>
-            <option value="founder">Founder / CEO</option>
-            <option value="architect">Lead AI Architect / Developer</option>
-            <option value="product">Product / Operations Lead</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <div style="margin-bottom:20px;">
-          <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Work Email</label>
-
-          <input 
-            type="email"
-            name="email"
-            required
-            placeholder="name@company.com"
-            style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:10px 12px;font-size:13px;color:#e8edf5;outline:none;"
-          >
-
-          <p style="font-size:11px;color:#8896a8;margin-top:8px;line-height:1.5;">
-            Your visual Critical Risk PDF and ARS score breakdown will be compiled and delivered within 24 hours.
-          </p>
-        </div>
-
-        <div style="display:flex;gap:12px;">
-          <button type="button" onclick="goToStep(2)" style="flex:1;background:transparent;color:#8896a8;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;">
-            ← Back
-          </button>
-
-          <button type="submit" style="flex:1;background:#10b981;color:#fff;border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:700;cursor:pointer;">
-            ⚡ Execute Risk Scan →
-          </button>
-        </div>
-      </div>
-
-    </form>
-  </div>
-</div>
-
-<script>
-let currentStep = 1;
-
-function openFlashTest() {
-  document.getElementById('flash-test-overlay').style.display = 'flex';
-}
-
-function closeFlashTest() {
-  document.getElementById('flash-test-overlay').style.display = 'none';
-}
-
-function goToStep(step) {
-  document.querySelectorAll('.flash-step').forEach(el => {
-    el.style.display = 'none';
-  });
-
-  document.getElementById('step-' + step).style.display = 'block';
-
-  for (let i = 0; i < 3; i++) {
-    document.getElementById('dot-' + i).style.background =
-      i < step
-        ? '#3b82f6'
-        : 'rgba(59,130,246,0.2)';
-  }
-
-  currentStep = step;
-}
-
-document.getElementById('flash-test-form').addEventListener('submit', function() {
-  const button = this.querySelector('button[type="submit"]');
-
-  button.innerHTML = 'Processing...';
-  button.disabled = true;
-});
-
-window.addEventListener('click', function(e) {
-  const overlay = document.getElementById('flash-test-overlay');
-
-  if (e.target === overlay) {
-    closeFlashTest();
-  }
-});
-</script>
-
-<style>
-@keyframes pulse {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 0.5;
-    transform: scale(1.15);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@media (max-width: 640px) {
-  #flash-test-overlay > div {
-    padding: 22px !important;
-  }
-
-  #step-1 > div[style*="grid-template-columns:1fr 1fr"],
-  #step-3 > div[style*="display:flex;gap:12px"],
-  #step-2 > div[style*="display:flex;gap:12px"] {
-    display: block !important;
-  }
-}
-</style>
-
-<!-- CONTACT POPUP -->
-<div id="contact-overlay" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px;">
-  <div style="max-width:420px;width:100%;background:#0f1318;border:1px solid rgba(59,130,246,0.15);border-radius:16px;padding:28px;position:relative;">
-    <button onclick="closeContact()" style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;width:28px;height:28px;color:#8896a8;font-size:14px;cursor:pointer;">✕</button>
-    <div style="margin-bottom:20px;">
-      <div style="font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;color:#4a5568;margin-bottom:8px;">Contact</div>
-      <h3 style="font-size:18px;font-weight:700;color:#e8edf5;margin:0 0 6px;">Get in touch</h3>
-      <p style="font-size:13px;color:#8896a8;margin:0;">We'll get back to you within 24 hours.</p>
-    </div>
-    <form id="contact-form" style="display:flex;flex-direction:column;gap:12px;">
-      <input type="email" name="email" required placeholder="Work email*" style="background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:10px 14px;font-size:13px;color:#e8edf5;outline:none;width:100%;box-sizing:border-box;">
-      <textarea name="message" required rows="4" placeholder="Your message*" style="background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:10px 14px;font-size:13px;color:#e8edf5;outline:none;width:100%;box-sizing:border-box;resize:vertical;font-family:inherit;"></textarea>
-      <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Send message →</button>
-      <p style="font-size:11px;color:#4a5568;text-align:center;margin:0;">Work email required.</p>
-    </form>
-    <div id="contact-success" style="display:none;text-align:center;padding:20px 0;">
-      <div style="font-size:32px;margin-bottom:12px;">✓</div>
-      <div style="font-size:15px;font-weight:600;color:#10b981;">Message received</div>
-      <div style="font-size:12px;color:#8896a8;margin-top:6px;">We'll be in touch within 24 hours.</div>
-    </div>
-  </div>
-</div>
-
-<script>
-function openFlashTest() {
-  const loader = document.createElement('div');
-  loader.id = 'flash-loader';
-  loader.style.cssText = 'position:fixed;inset:0;z-index:10001;background:rgba(0,0,0,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;';
-  loader.innerHTML = `
-    <div style="font-size:11px;font-family:monospace;color:#10b981;letter-spacing:0.15em;text-transform:uppercase;">Initializing Flash Test...</div>
-    <div style="width:240px;height:3px;background:rgba(59,130,246,0.15);border-radius:3px;overflow:hidden;">
-      <div id="loader-bar" style="height:100%;width:0%;background:#3b82f6;border-radius:3px;transition:width 2s ease;"></div>
-    </div>
-    <div style="font-size:10px;font-family:monospace;color:#4a5568;">Loading adversarial probe engine...</div>
-  `;
-  document.body.appendChild(loader);
-  document.body.style.overflow = 'hidden';
-  setTimeout(() => { document.getElementById('loader-bar').style.width = '100%'; }, 50);
-  setTimeout(() => {
-    loader.remove();
-    document.getElementById('flash-test-overlay').style.display = 'flex';
-    goToStep(1);
-  }, 2200);
-}
-
-function closeFlashTest() {
-  document.getElementById('flash-test-overlay').style.display = 'none';
-  document.body.style.overflow = '';
-  const loader = document.getElementById('flash-loader');
-  if (loader) loader.remove();
-}
-
-function goToStep(n) {
-  if (n === 2) {
-    const model = document.querySelector('select[name="base_model"]').value;
-    const scope = document.querySelector('select[name="agent_scope"]').value;
-    if (!model || !scope) {
-      alert('Please select both Base Model and Operational Scope before continuing.');
-      return;
-    }
-  }
-  if (n === 3) {
-    const prompt = document.querySelector('textarea[name="system_prompt"]').value.trim();
-    if (prompt.length < 20) {
-      alert('Please paste at least a short excerpt of your System Prompt before continuing.');
-      return;
-    }
-  }
-  document.querySelectorAll('.flash-step').forEach(s => s.style.display = 'none');
-  document.getElementById('step-' + n).style.display = 'block';
-  ['dot-0','dot-1','dot-2'].forEach((id, i) => {
-    document.getElementById(id).style.background = i < n ? '#3b82f6' : 'rgba(59,130,246,0.2)';
-  });
-}
-
-document.getElementById('flash-test-overlay').addEventListener('click', function(e) {
-  if (e.target === this) closeFlashTest();
-});
-
-document.getElementById('flash-test-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const email = this.querySelector('input[name="email"]').value;
-  const blocked = ['gmail.com','yahoo.com','hotmail.com','outlook.com','icloud.com','protonmail.com','live.com'];
-  const domain = email.split('@')[1]?.toLowerCase();
-  if (blocked.includes(domain)) {
-    const emailInput = this.querySelector('input[name="email"]');
-    emailInput.style.borderColor = '#f43f5e';
-    let msg = document.getElementById('email-error');
-    if (!msg) {
-      msg = document.createElement('p');
-      msg.id = 'email-error';
-      msg.style.cssText = 'font-size:11px;color:#f43f5e;margin-top:4px;';
-      emailInput.parentNode.appendChild(msg);
-    }
-    msg.textContent = 'Personal email addresses are not accepted. Please use your work email.';
-    return;
-  }
-  const err = document.getElementById('email-error');
-  if (err) err.remove();
-  const btn = this.querySelector('button[type=submit]');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  fetch('https://formspree.io/f/xlgvpzqw', {
-    method: 'POST',
-    body: new FormData(this),
-    headers: { 'Accept': 'application/json' }
-  }).then(r => {
-    if (r.ok) {
-      document.getElementById('flash-success').style.display = 'block';
-      btn.style.display = 'none';
-    } else {
-      btn.textContent = '⚡ Execute Flash Test →';
-      btn.disabled = false;
-    }
-  }).catch(() => {
-    btn.textContent = '⚡ Execute Flash Test →';
-    btn.disabled = false;
-  });
-});
-function contactUs(e) {
-  if(e) e.preventDefault();
-  document.getElementById('contact-overlay').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-function closeContact() {
-  document.getElementById('contact-overlay').style.display = 'none';
-  document.body.style.overflow = '';
-}
-document.getElementById('contact-overlay').addEventListener('click', function(e) {
-  if (e.target === this) closeContact();
-});
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const btn = this.querySelector('button[type=submit]');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  fetch('https://formspree.io/f/xlgvpzqw', {
-    method: 'POST',
-    body: new FormData(this),
-    headers: { 'Accept': 'application/json' }
-  }).then(r => {
-    if (r.ok) {
-      document.getElementById('contact-success').style.display = 'block';
-      document.getElementById('contact-form').style.display = 'none';
-    } else {
-      btn.textContent = 'Send message →';
-      btn.disabled = false;
-    }
-  }).catch(() => {
-    btn.textContent = 'Send message →';
-    btn.disabled = false;
-  });
-});
-</script>
-</body>
-</html>
