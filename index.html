@@ -361,7 +361,6 @@ nav .btn-primary { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
   <a href="#process" class="mobile-link" onclick="closeMobileMenu()">Process</a>
   <a href="#faq" class="mobile-link" onclick="closeMobileMenu()">FAQ</a>
   <a href="#team" class="mobile-link" onclick="closeMobileMenu()">Team</a>
-  <button onclick="openFlashTest()" class="btn-primary">Apply for Closed Beta →</button>
 </div>
 
 <nav>
@@ -388,17 +387,16 @@ nav .btn-primary { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
   </div>
   <div class="hero">
     <div class="deadline-banner"><div class="deadline-dot"></div>Enterprise buyers now demand verified AI agents</div>
-    <h1>Your AI Agents are a<br/><em>liability.</em><br/>We make them enterprise-ready.</h1>
-    <p class="hero-sub">Continuous adversarial probing. Real failure rates. The independent risk score and certificate your enterprise clients can trust before they sign.</p>
+    <h1>Offensive Security for<br/><em>AI Agents.</em><br/>Delivered as-a-Service.</h1>
+    <p class="hero-sub">Our AI runs adversarial attacks against your AI agent the way a real attacker would: prompt injection, data exfiltration, tool misuse, scope violations. You get a clear report on where it breaks, a remediation checklist, and an independent certificate you can show your customers.</p>
     <div class="hero-form-wrap">
       <form class="hero-form" id="f1" onsubmit="sub(event,'s1')">
-        <button type="button" onclick="openFlashTest()" class="btn-primary">⚡ Run a 10-Min Flash Test</button>
-<div class="coming-soon-tooltip" id="tooltip">⚡ Available June 2026</div>
+        <button type="button" onclick="openFlashTest()" class="btn-primary">⚡ Run a Free Flash Test</button>
 
       </form>
       <div class="success" id="s1">
         <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="6.5" stroke="#3b82f6" stroke-width="1.4"/><path d="M4.5 7.5l2 2 4-4" stroke="#3b82f6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        You're on the list. We'll be in touch within 24h.
+        We'll be in touch within 24h.
       </div>
     </div>
   </div>
@@ -407,22 +405,18 @@ nav .btn-primary { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <span class="marquee-item">Enterprise Procurement Trust</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Adversarial Crash Testing</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">ADR Certificate</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Scope Violations</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Tool Misuse</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Safety Certificate</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Agensure Risk Score Engine</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Parametric Risk Dataset</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Zero-Integration Architecture</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Prompt Injection Testing</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Financial Blast Radius</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Continuous Probing Engine</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">MITRE ATLAS Mapping</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Enterprise Procurement Trust</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Adversarial Crash Testing</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">ADR Certificate</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Parametric Risk Dataset</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Financial Blast Radius</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Continuous Probing Engine</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Continuous Testing</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">OWASP Agentic</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Scope Violations</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Data Exfiltration</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Safety Certificate</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Continuous Testing</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">MITRE ATLAS Mapping</span><span class="marquee-dot">◆</span>
   </div>
 </div>
@@ -549,59 +543,57 @@ draw();
 <section class="problem" id="problem">
   <div class="wrap">
     <p class="s-label">The Problem</p>
-    <h2>Why standard prompts and static guardrails<br/><em>fail under pressure.</em></h2>
+    <h2>An AI agent is a live attack surface traditional testing<br/><em>never touches.</em></h2>
     <p class="section-sub"> Your tech team configures system prompts and basic filters. But LLMs are probabilistic, non-deterministic engines. Standard barriers are structurally fragile under adversarial attacks.</p>
     <div class="problem-grid">
       <div class="problem-card">
         <div class="problem-icon">1</div>
-        <h3>The Enterprise Trust Gap</h3>
-        <p>When your agent can be pushed off-script by a crafted input, your enterprise clients' procurement and security teams have no way to verify it's safe, and increasingly they won't sign until they can. Independent verification is becoming the document that unblocks the deal.</p>
+        <h3>Agents act, and can be manipulated</h3>
+        <p>Prompt injection, tool misuse, agent-to-agent exploits, data exfiltration. None of these show up in unit tests or a traditional pentest. They show up in production, or in front of a customer's security team.</p>
       </div>
       <div class="problem-card">
         <div class="problem-icon">2</div>
-        <h3>Direct Financial &amp; Brand Exposure</h3>
-        <p>An automated prompt injection attack can hijack your customer-facing bot, forcing it to authorize fake transactions, pricing overrides, or unapproved refunds that legally commit your company or to say something that damages your brand.</p>
+        <h3>The surface changes daily</h3>
+        <p>Models update, tools get wired in, prompts get edited. A test that passed Monday can fail Friday. Point-in-time security expires the moment the agent changes.</p>
       </div>
       <div class="problem-card">
         <div class="problem-icon">3</div>
-        <h3>The Data Drift Vulnerability</h3>
-        <p>Relying on snapshot security evaluations creates a lethal gap. AI risk is dynamic. Silent model updates from foundation providers can suddenly alter behavioral safety bounds without your developers knowing, leaving inputs and PII exposed.</p>
+        <h3>Your customers increasingly ask for proof</h3>
+        <p>When you sell or deploy an agent, security reviews want evidence it's safe. Self-attestation no longer clears the bar.</p>
       </div>
     </div>
-    <div class="quote-block">&ldquo;If your conversational agent causes a financial or regulatory breach, you - as the deploying company - are 100% liable.&rdquo;</div>
-  </div>
 </section>
 
 <!-- HOW IT WORKS / PRODUCT TABS -->
 <section class="product" id="product">
   <div class="wrap">
     <p class="s-label">How It Works</p>
-    <h2>The Continuous Probing Engine.<br/><em>Continuous Security Equals Verifiable Trust</em></h2>
-    <p class="s-body">We don't do static paperwork or once-a-year GRC questionnaires. Our zero-integration engine attacks your production AI endpoints with automated adversarial vectors, measures real failure rates, and turns the result into proof your clients and procurement teams can verify.</p>
+    <h2>AI attacks your AI.<br/><em>You get the proof.</em></h2>
+    <p class="s-body">Our engine, built on specialized adversarial research, studies your agent and autonomously generates attack chains tuned to its architecture, tools, and data access. We run the attacks, measure where it breaks, and turn the result into proof your customers and security reviewers can verify. You don't run anything, we deliver the result.</p>
     <div class="product-tabs">
       <div class="product-tab-list">
         <div class="product-tab active" data-tab="0">
           <div class="tab-progress"><div class="tab-progress-fill"></div></div>
           <div class="tab-content">
-            <div class="tab-meta"><span class="tab-num">01</span><span class="step-badge badge-now">Lab Layer (The Moat)</span></div>
-            <h3>Behavioral Adversarial Probing</h3>
-            <p>We run large-scale parallelized adversarial simulations in our laboratory across core open-source and commercial models, building a centralized dataset that lets us isolate model-level vulnerabilities and sharpen our scoring over time.</p>
+            <div class="tab-meta"><span class="tab-num">01</span><span class="step-badge badge-now">Free</span></div>
+            <h3>Request the test</h3>
+            <p>You request a test for your agent. A quick setup connects it, then our AI runs adversarial attacks against it the way a real attacker would: prompt injection, data exfiltration, tool misuse, scope violations. We show you how many critical, high, and medium issues we found, at no cost.</p>
           </div>
         </div>
         <div class="product-tab" data-tab="1">
           <div class="tab-progress"><div class="tab-progress-fill"></div></div>
           <div class="tab-content">
-            <div class="tab-meta"><span class="tab-num">02</span><span class="step-badge badge-soon">MVP Layer</span></div>
-            <h3>Zero-Integration Probing</h3>
-            <p>No SDK, no cloud architecture access, and zero legal friction. The engine interrogates your agent via standard external API connection. We execute targeted adversarial loops covering prompt injection, data exfiltration, scope action violation, and transparency disclosure resilience.</p>
+            <div class="tab-meta"><span class="tab-num">02</span><span class="step-badge badge-now">Report</span></div>
+            <h3>See where it breaks</h3>
+            <p>You see the severity counts for free. The full report, with what each vulnerability is, where it is, and how to fix it, is unlocked when you want the details. Every finding ships with reproduction steps and is mapped to OWASP Agentic, MITRE ATLAS, and the EU AI Act.</p>
           </div>
         </div>
         <div class="product-tab" data-tab="2">
           <div class="tab-progress"><div class="tab-progress-fill"></div></div>
           <div class="tab-content">
-            <div class="tab-meta"><span class="tab-num">03</span><span class="step-badge badge-soon">Phase 2</span></div>
-            <h3>Dynamic ADR Certificate</h3>
-            <p>Once your agent passes our audit and hits the target safety threshold, we issue the Agensure ADR (Agent Deployment Readiness) Certificate. It features a unique QR code linking to a real-time public verification page. Your enterprise clients, procurement officers, and VCs can verify your active status instantly.</p>
+            <div class="tab-meta"><span class="tab-num">03</span><span class="step-badge badge-now">Certificate</span></div>
+            <h3>Prove it</h3>
+            <p>Once your agent passes the safety threshold, we issue the Agensure ADR (Agent Deployment Readiness) Certificate. It features a unique QR code linking to a real-time public verification page, plus an embeddable badge. Your customers, partners, and auditors can verify your status instantly.</p>
           </div>
         </div>
       </div>
@@ -611,18 +603,18 @@ draw();
 
       <!-- Visual Tab 0 -->
 <div class="product-visual-panel active" data-visual="0">
-  <img src="screen-tab1-best.png" alt="Agensure Payload Inspector" style="width:100%;height:auto;border-radius:10px;border:1px solid rgba(59,130,246,0.12);display:block;" />
+  <img src="screen-tab1-best.png" alt="Agensure attack engine" style="width:100%;height:auto;border-radius:10px;border:1px solid rgba(59,130,246,0.12);display:block;" />
 </div>
 
 <!-- Visual Tab 1 -->
 <div class="product-visual-panel" data-visual="1">
-  <img src="screen-tab2.png" alt="Agensure Risk Resilience Surface" style="width:100%;height:auto;border-radius:10px;border:1px solid rgba(59,130,246,0.12);display:block;" />
+  <img src="screen-tab2.png" alt="Agensure findings report" style="width:100%;height:auto;border-radius:10px;border:1px solid rgba(59,130,246,0.12);display:block;" />
 </div>
 
 <!-- Visual Tab 2 -->
 <div class="product-visual-panel" data-visual="2">
   <div style="display:flex;flex-direction:column;gap:8px;">
-    <img src="aadr.PNG" alt="Agensure ADR Certificate Detail" style="width:100%;height:auto;border-radius:10px;border:1px solid rgba(59,130,246,0.12);display:block;" />
+    <img src="aadr.PNG" alt="Agensure ADR Certificate" style="width:100%;height:auto;border-radius:10px;border:1px solid rgba(59,130,246,0.12);display:block;" />
   </div>
 </div>
 
@@ -675,105 +667,6 @@ draw();
   transform: scale(1.06);
   transform-origin: top left;
 }
-
-/* Terminal */
-.visual-terminal {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  background: #0d1117;
-}
-.terminal-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 14px;
-  background: #161b22;
-  border-bottom: 1px solid #30363d;
-}
-.t-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-.t-label { font-size: 10px; color: #8b949e; font-family: monospace; margin-left: 6px; }
-.terminal-body { padding: 14px 16px; font-family: monospace; font-size: 11px; line-height: 1.9; }
-.t-line { color: #c9d1d9; }
-.t-dim { color: #8b949e; }
-.t-green { color: #3fb950; }
-.t-red { color: #f85149; }
-.t-cursor { animation: blink 1s step-end infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-
-/* Flash Test Card */
-.visual-card {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  background: var(--card);
-}
-.vc-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  border-bottom: 1px solid var(--border);
-  font-size: 11px;
-  color: var(--text2);
-}
-.vc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); display: inline-block; }
-.vc-title { font-size: 11px; font-family: monospace; }
-.vc-body { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
-.vc-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); }
-.vc-prompt {
-  font-size: 11px;
-  font-family: monospace;
-  color: var(--text2);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 10px 12px;
-  line-height: 1.6;
-}
-.vc-arrow { font-size: 11px; color: var(--text3); text-align: center; }
-.vc-results { display: flex; flex-direction: column; gap: 6px; }
-.vc-result-row { display: flex; justify-content: space-between; font-size: 11px; padding: 6px 10px; background: var(--surface); border-radius: 5px; }
-.vc-domain { color: var(--text2); }
-.vc-pass { color: var(--green); font-family: monospace; }
-.vc-warn { color: #f59e0b; font-family: monospace; }
-.vc-footer { font-size: 10px; color: var(--text3); text-align: center; font-family: monospace; }
-
-/* ADR Certificate */
-.visual-cert {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 20px;
-  background: var(--card);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.cert-header { display: flex; align-items: center; gap: 10px; }
-.cert-shield { font-size: 24px; }
-.cert-title { font-size: 13px; font-weight: 600; }
-.cert-sub { font-size: 10px; color: var(--text3); font-family: monospace; margin-top: 2px; }
-.cert-status-row { display: flex; align-items: center; gap: 8px; }
-.cert-pulse {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 0 0 rgba(16,185,129,0.4);
-  animation: pulse 2s infinite;
-  display: inline-block;
-}
-.cert-valid { font-size: 18px; font-weight: 700; color: var(--green); letter-spacing: 2px; }
-.cert-rows { display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--border); padding-top: 12px; }
-.cert-row { display: flex; justify-content: space-between; font-size: 11px; }
-.cert-row span:first-child { color: var(--text3); }
-.cert-row span:last-child { color: var(--text2); font-family: monospace; text-align: right; }
-.cert-qr-row { display: flex; align-items: center; gap: 10px; border-top: 1px solid var(--border); padding-top: 12px; }
-.cert-qr-box {
-  width: 44px; height: 44px; border: 1px solid var(--border);
-  border-radius: 6px; display: flex; align-items: center;
-  justify-content: center; font-size: 10px; color: var(--text3);
-  font-family: monospace; flex-shrink: 0;
-}
-.cert-qr-text { font-size: 10px; color: var(--text3); line-height: 1.5; }
 </style>
 
 <script>
