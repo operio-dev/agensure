@@ -1125,6 +1125,69 @@ document.querySelectorAll('.product-tab').forEach(tab => {
   </div>
 </section>
 
+  <!-- TRUST CENTER -->
+<section class="trust" id="trust">
+  <div class="wrap">
+    <p class="s-label">Trust</p>
+    <h2>We're a security company.<br/><em>We hold ourselves to the standard we hold you to.</em></h2>
+    <p class="s-body">We test AI agents for a living, so we apply the same discipline to our own environment and to how we handle what you share with us.</p>
+
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">🛡</div>
+        <h3>Built by an offensive security team</h3>
+        <p>Our engine is built on specialized adversarial research. We know how agents fail because breaking them is what we do.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🔒</div>
+        <h3>Least-privilege by default</h3>
+        <p>We collect only what an engagement needs, and access is scoped to the task. Your customers' data and production keys are never in scope.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📋</div>
+        <h3>Evidence over assertion</h3>
+        <p>Every finding we report is reproducible. You can verify it yourself, not take our word for it.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🔐</div>
+        <h3>Isolated and time-limited</h3>
+        <p>Testing runs in an isolated environment. Engagement data is encrypted and retained only as long as needed to deliver your report.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+@media (max-width: 900px) {
+  .trust-grid { grid-template-columns: 1fr; }
+}
+.trust-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: var(--card);
+}
+.trust-icon {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+.trust-item h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.trust-item p {
+  font-size: 0.88rem;
+  color: var(--text2);
+  margin: 0;
+}
+</style>
+
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="wrap">
