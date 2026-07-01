@@ -865,6 +865,105 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 }
 </style>
 
+  <!-- CONTINUOUS -->
+<section class="continuous" id="continuous">
+  <div class="wrap">
+    <div class="continuous-box">
+      <div class="continuous-left">
+        <p class="s-label">Continuous</p>
+        <h2>A test that passes today<br/><em>can fail tomorrow.</em></h2>
+        <p class="s-body">Models get updated by their providers. Tools get wired in. Prompts get edited. Every one of these changes can open a vulnerability that wasn't there at your last test. A point-in-time check expires the moment your agent changes.</p>
+        <p class="s-body" style="margin-top:14px;">We re-run the attacks on a regular cadence, so your certificate reflects what your agent does today, not what it did at sign-off. When something breaks, you know before your customers do.</p>
+      </div>
+      <div class="continuous-visual">
+        <div class="cv-timeline">
+          <div class="cv-event">
+            <div class="cv-dot cv-pass"></div>
+            <div class="cv-text"><span class="cv-date">Mon</span><span class="cv-label">Agent passes · certificate VALID</span></div>
+          </div>
+          <div class="cv-event">
+            <div class="cv-dot cv-change"></div>
+            <div class="cv-text"><span class="cv-date">Wed</span><span class="cv-label">Model provider ships silent update</span></div>
+          </div>
+          <div class="cv-event">
+            <div class="cv-dot cv-fail"></div>
+            <div class="cv-text"><span class="cv-date">Wed</span><span class="cv-label">Re-test catches new vulnerability</span></div>
+          </div>
+          <div class="cv-event">
+            <div class="cv-dot cv-pass"></div>
+            <div class="cv-text"><span class="cv-date">Thu</span><span class="cv-label">You patch · certificate restored</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.continuous-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  background: var(--card);
+}
+@media (max-width: 900px) {
+  .continuous-box { grid-template-columns: 1fr; padding: 1.75rem; }
+}
+
+/* Timeline visual */
+.cv-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.cv-event {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+  padding-bottom: 24px;
+}
+.cv-event:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 14px;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+.cv-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+  z-index: 1;
+}
+.cv-pass { background: #3fb950; }
+.cv-change { background: #f59e0b; }
+.cv-fail { background: #f85149; }
+.cv-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cv-date {
+  font-size: 0.72rem;
+  color: var(--text3);
+  font-family: monospace;
+  text-transform: uppercase;
+}
+.cv-label {
+  font-size: 0.88rem;
+  color: var(--text2);
+}
+</style>
+
 <!-- PROCESS -->
 <section class="process" id="process">
   <div class="wrap">
