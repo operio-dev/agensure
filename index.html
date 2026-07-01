@@ -726,7 +726,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 </section>
 
  <!-- REPORT -->
-  <section class="report" id="report">
+   <section class="report" id="report">
   <div class="wrap">
     <p class="s-label">The Report</p>
     <h2>A report your team can act on.<br/><em>Not a 60-page consulting deliverable.</em></h2>
@@ -771,8 +771,9 @@ document.querySelectorAll('.product-tab').forEach(tab => {
           <div class="report-check">✓</div>
           <p>Every finding mapped to OWASP Agentic, MITRE ATLAS, NIST AI RMF, and the EU AI Act</p>
         </div>
+        
         <div class="report-cta">
-          <a href="/Agensure-AI-Agent-PenTest-Sample-Report.pdf" download="Agensure-AI-Agent-PenTest-Sample-Report.pdf" class="btn-secondary">Download Sample Report</a>
+          <a href="/Agensure-AI-Agent-PenTest-Sample-Report.pdf" download="Agensure-AI-Agent-PenTest-Sample-Report.pdf" class="btn-secondary report-download-btn">Download Sample Report</a>
         </div>
       </div>
 
@@ -781,6 +782,12 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 </section>
 
 <style>
+/* 1. DISTANZIAMENTO GENERALE DELLA SEZIONE (Risolve il problema del testo attaccato) */
+.report {
+  padding: 6rem 0; /* Crea spazio vuoto sopra e sotto a tutta la sezione report */
+  border-bottom: 1px solid var(--border); /* Opzionale: una linea sottile di divisione prima di Continuous */
+}
+
 .report-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -788,8 +795,28 @@ document.querySelectorAll('.product-tab').forEach(tab => {
   align-items: center;
   margin-top: 2.5rem;
 }
+
 @media (max-width: 900px) {
   .report-grid { grid-template-columns: 1fr; }
+  .report { padding: 4rem 0; } /* Spazio ottimizzato per il telefono */
+  .report-cta { text-align: center; margin-top: 2rem; }
+}
+
+/* 2. TRASFORMAZIONE DEL LINK IN UN VERO BOTTONE SOLIDO */
+.report-download-btn {
+  display: inline-block !important;
+  padding: 12px 24px !important;
+  background: var(--text) !important; /* Forza lo sfondo del bottone standard del sito */
+  color: var(--bg) !important;       /* Forza il testo chiaro dentro il bottone */
+  border-radius: 6px !important;
+  text-decoration: none !important;  /* Elimina la linea blu da scritte */
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  transition: opacity 0.2s;
+}
+
+.report-download-btn:hover {
+  opacity: 0.9;
 }
 
 /* Placeholder report blurred */
@@ -860,6 +887,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
   margin-top: 24px;
 }
 </style>
+
 
 
 <!-- CONTINUOUS -->
