@@ -918,7 +918,23 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 .report-cta {
   margin-top: 24px;
 }
-
+.report-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text, #e6edf3);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 22px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.report-btn:hover {
+  border-color: #3b82f6;
+  background: var(--card);
+}
 /* ===== SAMPLE FINDING CARD ===== */
 .finding-card{
   --fc-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
