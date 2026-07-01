@@ -726,7 +726,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 </section>
 
  <!-- REPORT -->
-   <section class="report" id="report">
+    <section class="report" id="report">
   <div class="wrap">
     <p class="s-label">The Report</p>
     <h2>A report your team can act on.<br/><em>Not a 60-page consulting deliverable.</em></h2>
@@ -782,10 +782,12 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 </section>
 
 <style>
-/* 1. DISTANZIAMENTO GENERALE DELLA SEZIONE (Risolve il problema del testo attaccato) */
+/* DISTANZIAMENTO E SICUREZZA PER NON FAR ATTACCARE I CONTORNI DI CONTINUOUS */
 .report {
-  padding: 6rem 0; /* Crea spazio vuoto sopra e sotto a tutta la sezione report */
-  border-bottom: 1px solid var(--border); /* Opzionale: una linea sottile di divisione prima di Continuous */
+  padding-top: 4rem;
+  padding-bottom: 6rem; /* Aumentato massicciamente: questo spinge via il riquadro di Continuous verso il basso */
+  display: block;
+  width: 100%;
 }
 
 .report-grid {
@@ -798,18 +800,21 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 
 @media (max-width: 900px) {
   .report-grid { grid-template-columns: 1fr; }
-  .report { padding: 4rem 0; } /* Spazio ottimizzato per il telefono */
+  .report { 
+    padding-top: 3rem;
+    padding-bottom: 5rem; /* Cuscinetto di sicurezza per il mobile */
+  }
   .report-cta { text-align: center; margin-top: 2rem; }
 }
 
-/* 2. TRASFORMAZIONE DEL LINK IN UN VERO BOTTONE SOLIDO */
+/* GRAFICA DEL BOTTONE (Prende lo stile scuro del sito) */
 .report-download-btn {
   display: inline-block !important;
   padding: 12px 24px !important;
-  background: var(--text) !important; /* Forza lo sfondo del bottone standard del sito */
-  color: var(--bg) !important;       /* Forza il testo chiaro dentro il bottone */
+  background: var(--text, #111) !important; /* Colore scuro di default del template */
+  color: var(--bg, #fff) !important;       /* Testo bianco */
   border-radius: 6px !important;
-  text-decoration: none !important;  /* Elimina la linea blu da scritte */
+  text-decoration: none !important;
   font-weight: 500 !important;
   font-size: 0.9rem !important;
   transition: opacity 0.2s;
@@ -887,6 +892,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
   margin-top: 24px;
 }
 </style>
+
 
 
 
