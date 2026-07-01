@@ -684,40 +684,40 @@ document.querySelectorAll('.product-tab').forEach(tab => {
   <!-- ARS METHODOLOGY -->
 <section class="why">
   <div class="wrap">
-    <p class="s-label">One Proprietary Risk Score</p>
-    <h2>The <em> Agensure Risk Score (ARS)</em><br/>Framework</h2>
+    <p class="s-label">One Clear Risk Score</p>
+    <h2>The <em>Agensure Risk Score</em><br/>Framework</h2>
     <div class="why-inner">
       <div class="why-left">
-        <p class="s-body">A single, predictive number from 1 to 100. Calibrated on the 70/30 engineering rule.</p>
+        <p class="s-body">A single, clear number from 1 to 100 that tells you how your agent holds up under attack, and what to fix first.</p>
         <div class="deadline">ARS<em>1 to 100.</em></div>
       </div>
       <div>
         <div class="why-item">
           <span class="why-n">01</span>
           <div>
-            <h3>The 70/30 Risk Split</h3>
-            <p>We formalize LLM physics: 70% of the vulnerability is intrinsic to the base model (mapped in our laboratory), while 30% represents the delta introduced by your specific system prompt. We test the text of your prompt against our baseline to calculate an immediate, mathematically sound risk profile.</p>
+            <h3>How your agent behaves under attack</h3>
+            <p>Our engine attacks your agent across multiple risk domains and measures exactly how many attacks succeed in making it drift, leak data, or break its rules. Every failure is reproducible, so you can verify it yourself.</p>
           </div>
         </div>
         <div class="why-item">
           <span class="why-n">02</span>
           <div>
-            <h3>Behavioral Failure Rate</h3>
-            <p>Our adversarial suite attacks your endpoint across five distinct risk domains. We measure exactly how many probes force the model to drift, leak data, or break role rules. Every failure is reproducible and verifiable in your logs.</p>
+            <h3>Model and configuration, tested together</h3>
+            <p>Part of an agent's risk comes from the underlying model, part from your specific system prompt and setup. We test both together, so the score reflects your real agent, not a generic benchmark.</p>
           </div>
         </div>
         <div class="why-item">
           <span class="why-n">03</span>
           <div>
-            <h3>Operational Risk Level</h3>
-            <p>We factor in the operational authority your bot holds. A standard customer support chatbot and an agent connected to transaction APIs carry identical 70% model baselines, but carry vastly different operational risks. We calculate the score accordingly.</p>
+            <h3>Weighted by what your agent can do</h3>
+            <p>A support chatbot and an agent wired to transaction APIs carry very different real-world risk, even on the same model. We weight the score by the operational authority your agent actually holds.</p>
           </div>
         </div>
         <div class="why-item">
           <span class="why-n">04</span>
           <div>
-            <h3>Security Transparency</h3>
-            <p>The exact probe vectors and their deployment sequence remain proprietary to prevent adversarial exploitation. Much like Moody's or S&P, we publish the rigorous methodological framework and the resulting score, protecting the security of your system.</p>
+            <h3>Transparent method, protected vectors</h3>
+            <p>We publish the methodology behind the score, so it's clear how it's calculated. The exact attack vectors and their sequence stay proprietary, to keep them from being gamed.</p>
           </div>
         </div>
       </div>
@@ -729,38 +729,38 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 <section class="process" id="process">
   <div class="wrap">
     <p class="s-label">The Process</p>
-    <h2>From First Probe to<br/><em>Commercial Launch.</em></h2>
-    <p style="font-size: 0.78rem; color: var(--text3); margin-top: 0.5rem; font-style: italic;">Free exclusively for our Closed Beta Partners.</p>
+    <h2>From first test to<br/><em>verified certificate.</em></h2>
+    <p style="font-size: 0.78rem; color: var(--text3); margin-top: 0.5rem; font-style: italic;">Your first test is free.</p>
     <div class="steps">
       <div class="step">
-        <div><div class="step-day">Day 0</div><div class="step-num-big">01</div><div class="free-badge">Zero-Access</div></div>
+        <div><div class="step-day">Day 0</div><div class="step-num-big">01</div><div class="free-badge">Free</div></div>
         <div class="step-content">
-          <h3>Flash Test</h3>
-          <p>You paste an excerpt of your System Prompt into our secure form. Our engine runs the top 50 highest-success-rate probes extracted from our laboratory data on an isolated dummy instance. You get your initial Agensure Risk Score in under 10 minutes. No production access required.</p>
+          <h3>Free Test</h3>
+          <p>You request a test for your agent. A quick setup connects it to our engine, which runs adversarial attacks against it: prompt injection, data exfiltration, tool misuse, scope violations. You get your initial Agensure Risk Score and the count of issues we found, at no cost.</p>
         </div>
       </div>
       <div class="step">
-        <div><div class="step-day">Day 1-2</div><div class="step-num-big">02</div><div class="free-badge">First Result</div></div>
+        <div><div class="step-day">Day 1-2</div><div class="step-num-big">02</div><div class="free-badge">Report</div></div>
         <div class="step-content">
-          <h3>Full Report & Validation</h3>
-          <p>We generate your comprehensive PDF Risk Report with a complete domain breakdown. You review the empirical failures, verify structural vulnerabilities, and map your precise exposure across security, scope and disclosure.</p>
+          <h3>Full Report & Remediation</h3>
+          <p>You unlock the full report: every vulnerability, where it is, reproduction steps, and a concrete remediation checklist. You review the empirical failures and see exactly what to fix, mapped to OWASP Agentic, MITRE ATLAS, and the EU AI Act.</p>
         </div>
       </div>
       <div class="step">
-        <div><div class="step-day">Day 3–30</div><div class="step-num-big">03</div><div class="free-badge">Beta</div></div>
+        <div><div class="step-day">Ongoing</div><div class="step-num-big">03</div><div class="free-badge">Continuous</div></div>
         <div class="step-content">
-          <h3>Sandbox Continuous Probing</h3>
-          <p>A temporary dashboard activates an automated weekly cron job running the 50 optimized probes per domain. This ensures that daily prompt micro-releases or silent foundation model updates do not introduce sudden behavioral vulnerabilities.</p>
+          <h3>Continuous Testing</h3>
+          <p>We re-run the attacks on a regular cadence, so daily prompt changes or silent foundation-model updates don't introduce new vulnerabilities without you knowing. A test that passed today can fail tomorrow, and we catch it.</p>
         </div>
       </div>
       <div class="step">
-        <div><div class="step-day">Product Public</div><div class="step-num-big">05</div><div class="free-badge">Full-working MVP Launch</div></div>
+        <div><div class="step-day">On pass</div><div class="step-num-big">04</div><div class="free-badge">Certificate</div></div>
         <div class="step-content">
-          <h3>SaaS Activation</h3>
-          <p>After Public Launch, the commercial automated software subscription activates.</p>
+          <h3>ADR Certificate</h3>
+          <p>Once your agent passes the safety threshold, we issue your Agensure ADR Certificate: verified proof that your agent has been tested. Valid for 90 days, renewed through continuous monitoring.</p>
           <div class="step-options">
-            <div class="step-option"><strong>→ ADR Certificate:</strong> We issue your Agensure ADR Certificate: digitally verified proof that your agent has passed our full audit process. Valid for 90 days, renewable via continuous monitoring.</div>
-            <div class="step-option"><strong>→ Continuous Probing & Monitoring Subscription LOI:</strong> Once we bring expected results, we commit giving you access to a special Beta Partners offer for the probing & monitoring subscription once the public launch officially begins. Design Partners who sign the LOI get priority access to the Financial Guarantee when the dataset is ready to back it.</div>
+            <div class="step-option"><strong>→ Public verification:</strong> Each certificate features a unique QR code linking to a real-time public page showing VALID or SUSPENDED status. Your customers, partners, and auditors can verify it instantly.</div>
+            <div class="step-option"><strong>→ Embeddable badge:</strong> A security badge you can add to your website, hosted and verified by Agensure, so anyone can confirm your agent has been assessed.</div>
           </div>
         </div>
       </div>
@@ -768,21 +768,21 @@ document.querySelectorAll('.product-tab').forEach(tab => {
   </div>
 </section>
 
-<!-- PRICING & CLOSING WIDGET -->
+<!-- PRICING -->
 <section class="what-you-get">
   <div class="wrap">
-    <p class="s-label">Pricing & Availability</p>
-    <h2>Tailored Enterprise Coverage.<br/><em>Available upon application.</em></h2>
+    <p class="s-label">Pricing</p>
+    <h2>Free test.<br/><em>Pay only to unlock the report.</em></h2>
     <div class="wyg-grid">
       <div class="wyg-list">
-        <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Free 10-minute Flash Test via System Prompt input. No API keys or production access required</p></div>
-        <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Comprehensive PDF Risk Report with ARS Score and full behavioral domain breakdown</p></div>
-        <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>30 days of continuous behavioral monitoring via weekly automated probe loops</p></div>
-        <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Dynamic ADR Certificate with live public QR verification page</p></div>
-        <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Preferred early-adopter pricing locked in before institutional round closes</p></div>
+        <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>The test is free. You always see how many critical, high, and medium issues we found, at no cost.</p></div>
+        <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>You only pay to unlock the full report: what each vulnerability is, where it is, and how to fix it.</p></div>
+        <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Pricing scales with your company size and is capped per engagement. No surprise invoice.</p></div>
+        <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>The full report includes a remediation checklist and a re-test after you fix.</p></div>
+        <div class="wyg-item"><div class="wyg-check"><svg width="10" height="10" fill="none" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>On pass, your ADR Certificate with a live public QR verification page.</p></div>
       </div>
       <div class="wyg-card">
-        <p>You can't manage what you can't measure. Agensure gives your legal, engineering, and finance teams the only objective risk score for AI agents in production — and a direct path to financial coverage when our dataset is ready to back it.</p>
+        <p>You see where your agent breaks before you pay a cent. Unlock the details only when you want them, at a price that scales with your size and never goes above a fixed cap. <br/><br/><strong>Full pricing available on request.</strong></p>
       </div>
     </div>
   </div>
@@ -794,17 +794,17 @@ document.querySelectorAll('.product-tab').forEach(tab => {
     <div class="privacy-box">
       <div>
         <p class="s-label">Privacy Architecture</p>
-        <h2>Zero-Access Architecture<br/><em>Your production data never leaves your environment.</em></h2>
-        <p class="s-body" style="margin-top:14px;">Agensure operates on a strict Prompt-In / Vector-Out data isolation layer.</p>
+        <h2>Isolated by design.<br/><em>Your production data never leaves your environment.</em></h2>
+        <p class="s-body" style="margin-top:14px;">We test in an isolated environment. You scope exactly what's in bounds, and destructive actions are never executed blind.</p>
         <div class="privacy-tags">
-          <span class="privacy-tag">✓ Zero-knowledge scoring model</span>
-          <span class="privacy-tag">✓ No SDK installation required</span>
-          <span class="privacy-tag">✓ Approved for B2B procurement verification</span>
+          <span class="privacy-tag">✓ Isolated test environment</span>
+          <span class="privacy-tag">✓ You scope what's in bounds</span>
+          <span class="privacy-tag">✓ Built for B2B security reviews</span>
         </div>
       </div>
       <div class="privacy-visual">
-        <div><span class="ok">✓ INGESTED</span>  client_system_prompt_text</div>
-        <div><span class="ok">✓ SENT</span>  agensure_ars_score: 24</div>
+        <div><span class="ok">✓ INGESTED</span>  agent_configuration</div>
+        <div><span class="ok">✓ SENT</span>  agensure_risk_score: 24</div>
         <div><span class="ok">✓ SENT</span>  agensure_readiness_badge: VALID</div>
         <div style="margin-top:0.5rem;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.5rem;"><span class="block">✗ BLOCKED</span> raw_customer_database_access</div>
         <div><span class="block">✗ BLOCKED</span> production_api_keys</div>
@@ -849,15 +849,15 @@ document.querySelectorAll('.product-tab').forEach(tab => {
     <div class="why-inner">
       <div class="why-left">
         <p class="s-label">Why Now</p>
-        <p class="s-body">Three tectonic forces converging at once.</p>
+        <p class="s-body">Four forces converging at once.</p>
         <div class="deadline">Now<em>2026.</em></div>
       </div>
       <div>
         <div class="why-item">
           <span class="why-n">01</span>
           <div>
-            <h3>Enterprise Procurement Is Tightening</h3>
-            <p>Enterprise and regulated buyers increasingly block AI deployments until behavioral safety is independently verified. Self-attestation no longer clears security review and that gate is what stalls deals today, regardless of any deadline.</p>
+            <h3>Buyers now ask for proof</h3>
+            <p>Enterprise and regulated buyers increasingly block AI deployments until an agent's safety is independently verified. Self-attestation no longer clears a security review, and that gate is what stalls deals today.</p>
           </div>
         </div>
         <div class="why-item">
@@ -870,17 +870,17 @@ document.querySelectorAll('.product-tab').forEach(tab => {
         <div class="why-item">
           <span class="why-n">03</span>
           <div>
-            <h3>The agentic B2B Wave is Here</h3>
-            <p>Every software enterprise is shifting toward autonomous agentic models for Customer Support, E-Commerce and Sales Automation. Autonomous action is the product. Someone has to verify it's safe before a breach occurs.</p>
+            <h3>The agentic B2B wave is here</h3>
+            <p>Every software company is shifting toward autonomous agents for customer support, e-commerce, and sales. Autonomous action is the product. Someone has to verify it's safe before a breach occurs.</p>
           </div>
         </div>
         <div class="why-item">
-  <span class="why-n">04</span>
-  <div>
-    <h3>Regulation is the tailwind, not the only driver</h3>
-    <p>EU AI Act Article 50 transparency obligations apply from August 2, 2026; the heavier high-risk frameworks (Articles 9, 12, 14, 15) follow in 2027–2028. We use this window deliberately: we build our proprietary parametric dataset now, so that as those deadlines arrive we already own the dominant data infrastructure.</p>
-  </div>
-</div>
+          <span class="why-n">04</span>
+          <div>
+            <h3>Regulation is a tailwind</h3>
+            <p>EU AI Act transparency obligations apply from August 2026, with heavier high-risk frameworks following in 2027–2028. As those deadlines approach, independent testing of AI agents moves from nice-to-have to expected.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -890,40 +890,39 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 <section class="faq" id="faq">
   <div class="wrap">
     <p class="s-label">FAQ</p>
-    <h2>Questions from legal and<br/>procurement <em>teams.</em></h2>
+    <h2>Questions from engineering and<br/>security <em>teams.</em></h2>
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">Do I need to give you access to my systems?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">No. The Flash Test only requires a short excerpt of your agent's System Prompt: plain text, pasted into our secure form. No API keys, no cloud access, no production environment exposure. We load your prompt into an isolated dummy instance on our infrastructure and run the probes there. Your production systems are never touched.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">We test in an isolated environment, never against your live production systems. A quick setup connects your agent so we can run the attacks safely. You scope exactly what's in bounds, and destructive actions are simulated or approval-gated, never executed blind. Your customers' data is never touched.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">Is this a real insurance policy?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Not yet, and we are transparent about that. Our current offering is a risk scoring and certification service. Full embedded AI agent insurance, via an MGA model working with established European carriers, is on our roadmap for Year 2+. Closed Beta partners receive priority access to that Financial Liability Insurance capacity when it activates.</div></div>
+        <button class="faq-question" onclick="toggleFaq(this)">What do you actually test for?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">The full behavioral attack surface of an AI agent: prompt injection, data exfiltration, scope and action violations, tool misuse, and transparency resilience. These map directly to what enterprise security reviews look for, and to frameworks like OWASP Agentic, MITRE ATLAS, and the EU AI Act.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">Why does this matter now if I'm not high-risk under the EU AI Act?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Because the strongest driver today is commercial, not regulatory. Enterprise clients increasingly require independent proof that your agent is safe before they sign or expand and a manipulated agent can authorize a wrong transaction, leak data, or damage your brand regardless of how it's classified. Article 50 transparency obligations apply from August 2, 2026 (with fines up to €15M or 3% of global turnover), but for most deployers the day-to-day value of Agensure is unblocking enterprise deals and protecting brand and revenue.</div></div>
+        <button class="faq-question" onclick="toggleFaq(this)">Why does this matter if I'm not high-risk under the EU AI Act?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Because the strongest driver today is commercial, not regulatory. Enterprise clients increasingly require independent proof that your agent is safe before they sign or expand, and a manipulated agent can authorize a wrong transaction, leak data, or damage your brand regardless of how it's classified. EU AI Act transparency obligations add to this from August 2026, but for most teams the day-to-day value is unblocking deals and protecting brand and revenue.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">How is Agensure different from a standard compliance tool?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Standard compliance tools check documentation and self-reported configurations. We actively attack your agent with adversarial probe vectors calibrated on the AIUC-1 framework which is the emerging industry standard for AI agent assurance. Compliance is not a form you fill. It is a crash test you pass.</div></div>
+        <button class="faq-question" onclick="toggleFaq(this)">How is this different from a standard compliance tool?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Standard compliance tools check documentation and self-reported configurations. We actively attack your agent with adversarial techniques, the way a real attacker would, and show you what actually breaks. Compliance is not a form you fill. It's a test you pass.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">What is the 70/30 Risk Split?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">70% of your agent's vulnerability is intrinsic to the base model you are using (GPT-4, Mistral, Llama, etc.) and is constant regardless of your configuration. We map this baseline in our internal laboratory. The remaining 30% is determined by your specific System Prompt and tooling setup. In the Flash Test, we calculate that delta against our pre-compiled baseline to generate your personalized Agensure Risk Score in under 10 minutes.</div></div>
+        <button class="faq-question" onclick="toggleFaq(this)">How is the Agensure Risk Score calculated?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">It's a single number from 1 to 100 based on how your agent holds up under attack. We factor in the underlying model, your specific system prompt and setup, and the operational authority your agent holds, an agent wired to transaction APIs carries more real-world risk than a support chatbot on the same model. Every failure behind the score is reproducible, so you can verify it yourself.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">What is the ADR Certificate?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">The Agensure ADR (Agent Deployment Readiness) Certificate is issued once your agent passes our full audit and reaches the safety threshold for your risk profile. It features a unique QR code linking to a real-time public verification page showing VALID or SUSPENDED status. Enterprise clients, procurement officers, and VCs can verify your status instantly without asking you for documentation.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">The Agensure ADR (Agent Deployment Readiness) Certificate is issued once your agent passes our test and reaches the safety threshold for your risk profile. It features a unique QR code linking to a real-time public verification page showing VALID or SUSPENDED status. Your customers, partners, and auditors can verify your status instantly without asking you for documentation.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">What do you test for today?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Our probe domains cover the full behavioral attack surface: prompt injection, data exfiltration, scope and action violations, and transparency/disclosure resilience. These map directly to what enterprise security reviews look for, and to EU AI Act Article 50 transparency obligations enforcing in August 2026. Our roadmap expands to the high-risk frameworks (Articles 9, 12, 14, 15) as their deadlines approach in 2027–2028.</div></div>
+        <button class="faq-question" onclick="toggleFaq(this)">How long does it take, and what do I get?<span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">After setup, you get your initial risk score and the count of issues we found at no cost. If you want the details, you unlock the full report with every vulnerability, reproduction steps, and a remediation checklist. On pass, you get your ADR Certificate with a public verification page and an embeddable badge.</div></div>
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- FOOTER — identical structure to old -->
 <footer>
