@@ -725,6 +725,146 @@ document.querySelectorAll('.product-tab').forEach(tab => {
   </div>
 </section>
 
+  <!-- THE REPORT -->
+<section class="report" id="report">
+  <div class="wrap">
+    <p class="s-label">The Report</p>
+    <h2>A report your team can act on.<br/><em>Not a 60-page consulting deliverable.</em></h2>
+    <p class="s-body">You see how many issues we found for free. Unlock the full report when you want the details: every vulnerability, where it is, how to reproduce it, and exactly how to fix it.</p>
+
+    <div class="report-grid">
+
+      <!-- COLONNA SINISTRA: immagine report blurred (placeholder) -->
+      <div class="report-visual">
+        <!-- PLACEHOLDER: qui andrà l'immagine del report blurred (conteggi visibili + dettagli sfocati + lucchetto) -->
+        <div class="report-blurred-placeholder">
+          <div class="rb-counts">
+            <div class="rb-count rb-critical"><span class="rb-num">3</span><span class="rb-label">Critical</span></div>
+            <div class="rb-count rb-high"><span class="rb-num">4</span><span class="rb-label">High</span></div>
+            <div class="rb-count rb-medium"><span class="rb-num">5</span><span class="rb-label">Medium</span></div>
+          </div>
+          <div class="rb-locked">
+            <div class="rb-blur-line"></div>
+            <div class="rb-blur-line"></div>
+            <div class="rb-blur-line short"></div>
+            <div class="rb-lock">🔒 Unlock full report</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLONNA DESTRA: cosa contiene -->
+      <div class="report-contents">
+        <div class="report-item">
+          <div class="report-check">✓</div>
+          <p>Vulnerability name and exact location</p>
+        </div>
+        <div class="report-item">
+          <div class="report-check">✓</div>
+          <p>Reproduction steps and proof of concept</p>
+        </div>
+        <div class="report-item">
+          <div class="report-check">✓</div>
+          <p>Severity rating (CVSS) and framework tags</p>
+        </div>
+        <div class="report-item">
+          <div class="report-check">✓</div>
+          <p>Concrete fix instructions and a remediation checklist</p>
+        </div>
+        <div class="report-item">
+          <div class="report-check">✓</div>
+          <p>Every finding mapped to OWASP Agentic, MITRE ATLAS, NIST AI RMF, and the EU AI Act</p>
+        </div>
+        <div class="report-cta">
+          <!-- PLACEHOLDER: il link href andrà al PDF del sample report quando pronto -->
+          <a href="#" class="btn-secondary">View a sample report</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.report-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+@media (max-width: 900px) {
+  .report-grid { grid-template-columns: 1fr; }
+}
+
+/* Placeholder report blurred */
+.report-blurred-placeholder {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  background: var(--card);
+}
+.rb-counts {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.rb-count {
+  flex: 1;
+  border-radius: 8px;
+  padding: 16px 12px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+.rb-num { display: block; font-size: 1.8rem; font-weight: 700; }
+.rb-label { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; color: var(--text3); }
+.rb-critical .rb-num { color: #f85149; }
+.rb-high .rb-num { color: #f59e0b; }
+.rb-medium .rb-num { color: #3b82f6; }
+.rb-locked {
+  position: relative;
+  border-radius: 8px;
+  padding: 20px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.rb-blur-line {
+  height: 12px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  filter: blur(3px);
+}
+.rb-blur-line.short { width: 60%; }
+.rb-lock {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text2);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* Report contents */
+.report-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.report-check {
+  color: #3b82f6;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.report-item p {
+  font-size: 0.9rem;
+  color: var(--text2);
+  margin: 0;
+}
+.report-cta {
+  margin-top: 24px;
+}
+</style>
+
 <!-- PROCESS -->
 <section class="process" id="process">
   <div class="wrap">
