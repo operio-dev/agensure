@@ -782,7 +782,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 
     </div>
 
-    <!-- ===== SAMPLE FINDING CARD (nuovo) ===== -->
+    <!-- ===== SAMPLE FINDING CARD ===== -->
     <p class="fc-intro">What a finding looks like</p>
     <div class="finding-card">
 
@@ -838,6 +838,9 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 </section>
 
 <style>
+/* stacco verticale della sezione, uguale alle altre */
+.report { padding: 5.5rem 0; }
+
 .report-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -917,16 +920,17 @@ document.querySelectorAll('.product-tab').forEach(tab => {
   margin-top: 24px;
 }
 
-/* ===== SAMPLE FINDING CARD (nuovo) ===== */
+/* ===== SAMPLE FINDING CARD ===== */
 .finding-card{
   --fc-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   border: 1px solid var(--border);
   border-radius: 14px;
   background: var(--card);
   overflow: hidden;
+  margin-bottom: 0;
 }
 .fc-intro{
-  margin: 3.5rem 0 1rem 2px;
+  margin: 2.75rem 0 1rem 2px;
   font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--text3); font-family: var(--fc-mono, monospace);
 }
@@ -1007,6 +1011,9 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 </section>
 
 <style>
+/* stacco verticale della sezione, uguale alle altre */
+.continuous { padding: 5.5rem 0; }
+
 .continuous-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
