@@ -1226,7 +1226,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
   </div>
 </section>
 
-<!-- FOOTER — identical structure to old -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -1235,11 +1235,11 @@ document.querySelectorAll('.product-tab').forEach(tab => {
           <img src="Logosimbolo.png" alt="Agensure" height="50" style="display:block;object-fit:contain;filter:brightness(0) invert(1);"/>
           <img src="logoscrittacontorni.png" alt="Agensure" height="50" style="display:block;object-fit:contain;filter:brightness(0) invert(1);"/>
         </div>
-        <p class="footer-brand-tagline">Europe's AI agent trust layer.</p>
+        <p class="footer-brand-tagline">Offensive security for AI agents.</p>
       </div>
       <div>
         <p class="footer-brand-label">The independent test and certificate for AI agents</p>
-        <p class="footer-brand-headline">The independent trust layer<br/>that <em>gets AI agents safe & signed off.</em></p>
+        <p class="footer-brand-headline">We pen-test your AI agents<br/>so you can <em>prove they're safe.</em></p>
       </div>
     </div>
     <div class="footer-nav-card">
@@ -1248,6 +1248,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
           <p class="footer-nav-col-label">Product</p>
           <a href="#product">How it works</a>
           <a href="#process">Process</a>
+          <a href="#report">The report</a>
         </div>
         <div class="footer-nav-col">
           <p class="footer-nav-col-label">Get started</p>
@@ -1270,26 +1271,12 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 
 <script>
   const _m = ['f','i','l','i','p','p','o','@','a','g','e','n','s','u','r','e','.','e','u'].join('');
-  function contactUs(e) { if(e) e.preventDefault(); const overlay = document.getElementById('contact-overlay'); overlay.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
-
-  function sub(e, id) {
-    e.preventDefault();
-    const inputs = e.target.querySelectorAll('input');
-    const name = inputs[0].value;
-    const email = e.target.querySelector('input[type=email]').value;
-    const blocked = ['gmail','yahoo','hotmail','outlook','icloud','libero','virgilio','tiscali','protonmail','gmx','web'];
-    const domain = email.split('@')[1]?.split('.')[0]?.toLowerCase();
-    if (blocked.includes(domain)) { alert('Please use your work email address.'); return; }
-    window.location.href = 'mailto:' + _m + '?subject=' + encodeURIComponent('Beta Application') + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email);
-    e.target.style.display = 'none';
-    document.getElementById(id).style.display = 'flex';
-  }
 
   function showTooltip() {
-  const t = document.getElementById('tooltip');
-  t.style.display = 'block';
-  setTimeout(() => { t.style.display = 'none'; }, 3000);
-}
+    const t = document.getElementById('tooltip');
+    t.style.display = 'block';
+    setTimeout(() => { t.style.display = 'none'; }, 3000);
+  }
 
   function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
   function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow = ''; }
@@ -1302,24 +1289,25 @@ document.querySelectorAll('.product-tab').forEach(tab => {
     if (!isOpen) { item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
   }
 
-  // stat counter removed — new problem section uses cards
-
   const TABS_DURATION = 5000;
   const tabs = document.querySelectorAll('.product-tab');
   const panels = document.querySelectorAll('.product-visual-panel');
   let currentTab = 0, fillInterval = null, fillStart = null;
 
-function activateTab(idx) {
-    tabs.forEach((t, i) => { 
-      t.classList.toggle('active', i === idx); 
-      t.querySelector('.tab-progress-fill').style.height = '0%'; 
+  function activateTab(idx) {
+    tabs.forEach((t, i) => {
+      t.classList.toggle('active', i === idx);
+      const fill = t.querySelector('.tab-progress-fill');
+      if (fill) fill.style.height = '0%';
     });
     panels.forEach((p, i) => p.classList.toggle('active', i === idx));
     currentTab = idx;
   }
-function startFill(idx) {
+
+  function startFill(idx) {
     clearInterval(fillInterval);
     const fill = tabs[idx].querySelector('.tab-progress-fill');
+    if (!fill) return;
     fill.style.height = '0%';
     fillStart = performance.now();
     fillInterval = setInterval(() => {
@@ -1328,7 +1316,9 @@ function startFill(idx) {
       if (pct >= 100) { clearInterval(fillInterval); const next = (currentTab + 1) % tabs.length; activateTab(next); startFill(next); }
     }, 16);
   }
+
   tabs.forEach((tab, i) => tab.addEventListener('click', () => { activateTab(i); startFill(i); }));
+
   const productObserver = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) { startFill(0); productObserver.disconnect(); }
   }, { threshold: 0.3 });
@@ -1348,7 +1338,7 @@ function startFill(idx) {
   });
 </script>
 
- <!-- FLASH TEST POPUP OVERLAY -->
+<!-- REQUEST TEST POPUP OVERLAY -->
 <div id="flash-test-overlay" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;overflow-y:auto;">
   <div style="max-width:680px;width:100%;margin:0 auto;background:#0f1318;border:1px solid rgba(59,130,246,0.15);border-radius:20px;padding:32px;position:relative;">
 
@@ -1357,10 +1347,10 @@ function startFill(idx) {
     <div style="margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(59,130,246,0.1);">
       <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:100px;padding:4px 12px;margin-bottom:12px;">
         <span style="width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 2s infinite;display:inline-block;"></span>
-        <span style="font-size:11px;font-family:monospace;color:#10b981;letter-spacing:0.1em;">Agent Risk & Safety Scan</span>
+        <span style="font-size:11px;font-family:monospace;color:#10b981;letter-spacing:0.1em;">Request a Free Test</span>
       </div>
-      <h2 style="font-size:22px;font-weight:800;color:#e8edf5;letter-spacing:-0.02em;margin:0 0 6px;">5-Min Automated Risk & Safety Telemetry</h2>
-      <p style="font-size:13px;color:#8896a8;margin:0;">Zero-Integration configuration. Provide model parameters to calculate your behavioral risk profile.</p>
+      <h2 style="font-size:22px;font-weight:800;color:#e8edf5;letter-spacing:-0.02em;margin:0 0 6px;">Find out where your AI agent breaks</h2>
+      <p style="font-size:13px;color:#8896a8;margin:0;">Tell us about your agent so we can scope the test. We follow up to connect it and run the attacks.</p>
     </div>
 
     <div id="step-indicator" style="display:flex;gap:8px;margin-bottom:28px;">
@@ -1374,7 +1364,7 @@ function startFill(idx) {
       <!-- STEP 1 -->
       <div id="step-1" class="flash-step">
         <div style="margin-bottom:20px;">
-          <span style="font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;color:#4a5568;">01 · Model Governance & Operational Scope</span>
+          <span style="font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;color:#4a5568;">01 · Model & Operational Scope</span>
         </div>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
@@ -1451,7 +1441,7 @@ function startFill(idx) {
         </div>
 
         <div>
-          <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:8px;">Autonomous Action Authority (Tooling & Blast Radius)</label>
+          <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:8px;">Autonomous Action Authority (what your agent can do)</label>
 
           <div style="background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:10px;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
             <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#8896a8;cursor:pointer;">
@@ -1477,14 +1467,14 @@ function startFill(idx) {
         </div>
 
         <button type="button" onclick="goToStep(2)" style="margin-top:24px;width:100%;background:#3b82f6;color:#fff;border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;">
-          Continue → Adversarial Target
+          Continue → Agent Details
         </button>
       </div>
 
       <!-- STEP 2 -->
       <div id="step-2" class="flash-step" style="display:none;">
         <div style="margin-bottom:20px;">
-          <span style="font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;color:#4a5568;">02 · Adversarial Target Payload</span>
+          <span style="font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;color:#4a5568;">02 · Agent Details</span>
         </div>
 
         <div style="margin-bottom:18px;">
@@ -1492,9 +1482,9 @@ function startFill(idx) {
             System Prompt or Core Instructions
           </label>
 
-          <textarea 
-            name="system_prompt" 
-            rows="8" 
+          <textarea
+            name="system_prompt"
+            rows="8"
             placeholder="Paste your system prompt, agent rules, or orchestration logic..."
             style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:10px;padding:14px;font-size:13px;color:#e8edf5;outline:none;resize:vertical;font-family:monospace;"
           ></textarea>
@@ -1502,11 +1492,11 @@ function startFill(idx) {
 
         <div style="margin-bottom:20px;padding:14px;border-radius:10px;background:rgba(59,130,246,0.05);border:1px solid rgba(59,130,246,0.12);">
           <div style="font-size:11px;font-family:monospace;color:#3b82f6;letter-spacing:0.08em;margin-bottom:6px;">
-            PROMPT-IN / VECTOR-OUT
+            ISOLATED & CONFIDENTIAL
           </div>
 
           <p style="font-size:12px;color:#8896a8;line-height:1.6;margin:0;">
-            Zero-knowledge isolation. Raw strings are evaluated against our lab dataset on secure temporary nodes.
+            Anything you share is evaluated in an isolated environment. We can sign an NDA before you send sensitive details.
           </p>
         </div>
 
@@ -1516,7 +1506,7 @@ function startFill(idx) {
           </button>
 
           <button type="button" onclick="goToStep(3)" style="flex:1;background:#3b82f6;color:#fff;border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;">
-            Continue → Report Delivery
+            Continue → Delivery
           </button>
         </div>
       </div>
@@ -1524,13 +1514,13 @@ function startFill(idx) {
       <!-- STEP 3 -->
       <div id="step-3" class="flash-step" style="display:none;">
         <div style="margin-bottom:20px;">
-          <span style="font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;color:#4a5568;">03 · Report Delivery & Qualification</span>
+          <span style="font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:0.15em;color:#4a5568;">03 · Delivery & Qualification</span>
         </div>
 
         <div style="margin-bottom:16px;">
           <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Company Website</label>
 
-          <input 
+          <input
             type="url"
             name="company_website"
             required
@@ -1542,8 +1532,8 @@ function startFill(idx) {
         <div style="margin-bottom:16px;">
           <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Your Corporate Role</label>
 
-          <select 
-            name="role" 
+          <select
+            name="role"
             required
             style="width:100%;background:#0a0c10;border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:10px 12px;font-size:13px;color:#e8edf5;outline:none;"
           >
@@ -1559,7 +1549,7 @@ function startFill(idx) {
         <div style="margin-bottom:20px;">
           <label style="display:block;font-size:12px;font-weight:500;color:#e8edf5;margin-bottom:6px;">Work Email</label>
 
-          <input 
+          <input
             type="email"
             name="email"
             required
@@ -1568,7 +1558,7 @@ function startFill(idx) {
           >
 
           <p style="font-size:11px;color:#8896a8;margin-top:8px;line-height:1.5;">
-            Your visual Critical Risk PDF and ARS score breakdown will be compiled and delivered within 24 hours.
+            We review your agent and follow up within 24 hours to scope the test and get it connected.
           </p>
         </div>
 
@@ -1578,89 +1568,21 @@ function startFill(idx) {
           </button>
 
           <button type="submit" style="flex:1;background:#10b981;color:#fff;border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:700;cursor:pointer;">
-            ⚡ Execute Risk Scan →
+            Request Free Test →
           </button>
         </div>
       </div>
 
     </form>
+
+    <div id="flash-success" style="display:none;text-align:center;padding:24px 0;">
+      <div style="font-size:32px;margin-bottom:12px;">✓</div>
+      <div style="font-size:15px;font-weight:600;color:#10b981;">Request received</div>
+      <div style="font-size:12px;color:#8896a8;margin-top:6px;">We'll be in touch within 24 hours to scope your test.</div>
+    </div>
+
   </div>
 </div>
-
-<script>
-let currentStep = 1;
-
-function openFlashTest() {
-  document.getElementById('flash-test-overlay').style.display = 'flex';
-}
-
-function closeFlashTest() {
-  document.getElementById('flash-test-overlay').style.display = 'none';
-}
-
-function goToStep(step) {
-  document.querySelectorAll('.flash-step').forEach(el => {
-    el.style.display = 'none';
-  });
-
-  document.getElementById('step-' + step).style.display = 'block';
-
-  for (let i = 0; i < 3; i++) {
-    document.getElementById('dot-' + i).style.background =
-      i < step
-        ? '#3b82f6'
-        : 'rgba(59,130,246,0.2)';
-  }
-
-  currentStep = step;
-}
-
-document.getElementById('flash-test-form').addEventListener('submit', function() {
-  const button = this.querySelector('button[type="submit"]');
-
-  button.innerHTML = 'Processing...';
-  button.disabled = true;
-});
-
-window.addEventListener('click', function(e) {
-  const overlay = document.getElementById('flash-test-overlay');
-
-  if (e.target === overlay) {
-    closeFlashTest();
-  }
-});
-</script>
-
-<style>
-@keyframes pulse {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 0.5;
-    transform: scale(1.15);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@media (max-width: 640px) {
-  #flash-test-overlay > div {
-    padding: 22px !important;
-  }
-
-  #step-1 > div[style*="grid-template-columns:1fr 1fr"],
-  #step-3 > div[style*="display:flex;gap:12px"],
-  #step-2 > div[style*="display:flex;gap:12px"] {
-    display: block !important;
-  }
-}
-</style>
 
 <!-- CONTACT POPUP -->
 <div id="contact-overlay" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px;">
@@ -1685,17 +1607,34 @@ window.addEventListener('click', function(e) {
   </div>
 </div>
 
+<style>
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.15); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 640px) {
+  #flash-test-overlay > div { padding: 22px !important; }
+  #step-1 > div[style*="grid-template-columns:1fr 1fr"],
+  #step-3 > div[style*="display:flex;gap:12px"],
+  #step-2 > div[style*="display:flex;gap:12px"] {
+    display: block !important;
+  }
+}
+</style>
+
 <script>
 function openFlashTest() {
   const loader = document.createElement('div');
   loader.id = 'flash-loader';
   loader.style.cssText = 'position:fixed;inset:0;z-index:10001;background:rgba(0,0,0,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;';
   loader.innerHTML = `
-    <div style="font-size:11px;font-family:monospace;color:#10b981;letter-spacing:0.15em;text-transform:uppercase;">Initializing Flash Test...</div>
+    <div style="font-size:11px;font-family:monospace;color:#10b981;letter-spacing:0.15em;text-transform:uppercase;">Preparing your request...</div>
     <div style="width:240px;height:3px;background:rgba(59,130,246,0.15);border-radius:3px;overflow:hidden;">
       <div id="loader-bar" style="height:100%;width:0%;background:#3b82f6;border-radius:3px;transition:width 2s ease;"></div>
     </div>
-    <div style="font-size:10px;font-family:monospace;color:#4a5568;">Loading adversarial probe engine...</div>
+    <div style="font-size:10px;font-family:monospace;color:#4a5568;">Loading test configuration...</div>
   `;
   document.body.appendChild(loader);
   document.body.style.overflow = 'hidden';
@@ -1770,17 +1709,18 @@ document.getElementById('flash-test-form').addEventListener('submit', function(e
     headers: { 'Accept': 'application/json' }
   }).then(r => {
     if (r.ok) {
+      this.style.display = 'none';
       document.getElementById('flash-success').style.display = 'block';
-      btn.style.display = 'none';
     } else {
-      btn.textContent = '⚡ Execute Flash Test →';
+      btn.textContent = 'Request Free Test →';
       btn.disabled = false;
     }
   }).catch(() => {
-    btn.textContent = '⚡ Execute Flash Test →';
+    btn.textContent = 'Request Free Test →';
     btn.disabled = false;
   });
-});
+}, false);
+
 function contactUs(e) {
   if(e) e.preventDefault();
   document.getElementById('contact-overlay').style.display = 'flex';
@@ -1816,5 +1756,6 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   });
 });
 </script>
+
 </body>
 </html>
