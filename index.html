@@ -435,11 +435,12 @@ nav .btn-primary { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
           <div><div class="hv-cert-t">ADR Certificate</div><div class="hv-cert-s">Verified &middot; Valid</div></div>
         </div>
 
-        <div class="hv-float hv-float-3">
+<div class="hv-float hv-float-3">
           <div class="hv-fw-lbl">Mapped to</div>
-          <div class="hv-fw-chips"><span>OWASP ASI</span><span>MITRE ATLAS</span><span>EU AI Act</span></div>
+          <div class="hv-fw-chips">
+            <span>OWASP ASI</span><span>MITRE ATLAS</span><span>NIST AI RMF</span><span>ISO 42001</span><span>EU AI Act</span><span>AIUC-1</span>
+          </div>
         </div>
-      </div>
 
     </div>
   </div>
@@ -485,9 +486,9 @@ nav .btn-primary { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
 .hv-cert-badge{ width:30px; height:30px; border-radius:8px; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.35); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .hv-cert-t{ font-size:12px; font-weight:700; color:#fff; }
 .hv-cert-s{ font-size:10px; color:var(--green); font-family:var(--mono); margin-top:2px; }
-.hv-float-3{ bottom:-24px; left:-22px; animation:floaty 6.5s ease-in-out infinite 0.3s; }
+.hv-float-3{ top:calc(100% - 10px); left:-8px; max-width:340px; animation:floaty 6.5s ease-in-out infinite 0.3s; }
 .hv-fw-lbl{ font-size:9px; color:var(--text2); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:7px; }
-.hv-fw-chips{ display:flex; gap:6px; }
+.hv-fw-chips{ display:flex; flex-wrap:wrap; gap:6px; }
 .hv-fw-chips span{ font-family:var(--mono); font-size:10px; color:var(--text); background:rgba(79,142,247,0.1); border:1px solid rgba(79,142,247,0.2); border-radius:5px; padding:3px 7px; }
 
 @keyframes floaty{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-9px); } }
