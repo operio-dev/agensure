@@ -380,26 +380,126 @@ nav .btn-primary { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
 </nav>
 
 
+<!-- Calendly (ideale: <link> nel <head>, <script> prima di </body>, ma qui funziona lo stesso) -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
 <!-- HERO -->
 <div class="hero-outer">
   <div class="hero-map" aria-hidden="true">
     <img src="europemapnight.avif" alt=""/>
   </div>
   <div class="hero">
-    <h1>Offensive Security for<br/><em>AI Agents.</em><br/>Delivered as-a-Service.</h1>
-    <p class="hero-sub">Our AI runs adversarial attacks against your AI agent the way a real attacker would: prompt injection, data exfiltration, tool misuse, scope violations. You get a clear report on where it breaks, a remediation checklist, and an independent certificate you can show your customers.</p>
-    <div class="hero-form-wrap">
-      <form class="hero-form" id="f1" onsubmit="sub(event,'s1')">
-        <button type="button" onclick="openFlashTest()" class="btn-primary">⚡ Run a Free Flash Test</button>
+    <div class="hero-grid">
 
-      </form>
-      <div class="success" id="s1">
-        <svg width="15" height="15" fill="none" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="6.5" stroke="#3b82f6" stroke-width="1.4"/><path d="M4.5 7.5l2 2 4-4" stroke="#3b82f6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        We'll be in touch within 24h.
+      <div class="hero-left">
+        <div class="hero-badge"><span class="dot"></span> EU-native adversarial testing for AI agents</div>
+        <h1>Offensive Security for<br/><em>AI Agents.</em><br/>Delivered as-a-Service.</h1>
+        <p class="hero-sub">Our AI runs adversarial attacks against your agent the way a real attacker would: prompt injection, data exfiltration, tool misuse, scope violations. You get a clear report on where it breaks, a remediation checklist, and an independent certificate you can show your customers.</p>
+
+        <div class="hero-cta">
+          <button type="button" onclick="openFlashTest()" class="btn-primary">⚡ Run a Free Flash Test</button>
+        </div>
+        <div class="hero-cta hero-cta-secondary">
+          <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/filippo-agensure/30min'});return false;" class="btn-outline">Book a demo</a>
+          <a href="/sample-report" class="btn-outline">View sample report</a>
+        </div>
       </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hv-card">
+          <div class="hv-card-head">
+            <div>
+              <div class="hv-eyebrow">Agensure Report</div>
+              <div class="hv-agent">Support Agent</div>
+            </div>
+            <div class="hv-live"><span class="d"></span> Live</div>
+          </div>
+          <div class="hv-frow"><span class="hv-dot crit"></span><span class="hv-fname">Indirect prompt injection</span><span class="hv-code">ASI01</span></div>
+          <div class="hv-frow"><span class="hv-dot high"></span><span class="hv-fname">Tool misuse via chaining</span><span class="hv-code">ASI02</span></div>
+          <div class="hv-frow"><span class="hv-dot high"></span><span class="hv-fname">Sensitive data disclosure</span><span class="hv-code">ASI06</span></div>
+          <div class="hv-frow"><span class="hv-dot med"></span><span class="hv-fname">Human approval bypass</span><span class="hv-code">ASI09</span></div>
+          <div class="hv-frow"><span class="hv-dot med"></span><span class="hv-fname">Model fingerprinting</span><span class="hv-code">ASI03</span></div>
+        </div>
+
+        <div class="hv-float hv-float-1">
+          <svg width="60" height="60" viewBox="0 0 84 84">
+            <circle cx="42" cy="42" r="33" fill="none" stroke="rgba(79,142,247,0.15)" stroke-width="8"/>
+            <circle cx="42" cy="42" r="33" fill="none" stroke="#ef4444" stroke-width="8" stroke-linecap="round" stroke-dasharray="157.6 207.3" transform="rotate(-90 42 42)"/>
+            <text x="42" y="49" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#ffffff">76</text>
+          </svg>
+          <div><div class="hv-score-lbl">Agensure Risk Score</div><div class="hv-score-band">Critical</div></div>
+        </div>
+
+        <div class="hv-float hv-float-2">
+          <div class="hv-cert-badge"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-7" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="hv-cert-t">ADR Certificate</div><div class="hv-cert-s">Verified &middot; Valid</div></div>
+        </div>
+
+        <div class="hv-float hv-float-3">
+          <div class="hv-fw-lbl">Mapped to</div>
+          <div class="hv-fw-chips"><span>OWASP ASI</span><span>MITRE ATLAS</span><span>EU AI Act</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
+
+<style>
+/* ===== HERO: layout 2 colonne + visual ===== */
+.hero{ display:flex; flex-direction:column; justify-content:center; align-items:stretch; max-width:1240px; margin:0 auto; padding:150px 52px 90px; min-height:100vh; text-align:left; }
+.hero-grid{ display:grid; grid-template-columns:1.02fr 0.98fr; gap:56px; align-items:center; width:100%; }
+.hero-left{ opacity:0; animation:up 0.7s ease 0.2s forwards; }
+
+.hero-badge{ display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg, rgba(79,142,247,0.1), rgba(99,102,241,0.08)); border:1px solid rgba(79,142,247,0.25); border-radius:100px; padding:6px 14px; font-size:12px; font-weight:600; color:#93b4f5; margin-bottom:26px; }
+.hero-badge .dot{ width:6px; height:6px; border-radius:50%; background:var(--blue); animation:blink 2s ease-in-out infinite; }
+
+.hero-left h1{ max-width:560px; margin-bottom:24px; opacity:1; animation:none; }
+.hero-left .hero-sub{ max-width:520px; margin-bottom:34px; opacity:1; animation:none; }
+
+.hero-cta{ display:flex; gap:12px; flex-wrap:wrap; }
+.hero-cta-secondary{ margin-top:14px; }
+.hero-cta .btn-primary{ font-size:0.95rem; padding:0.8rem 1.5rem; }
+.hero-cta .btn-outline{ font-size:0.9rem; padding:0.8rem 1.4rem; }
+
+/* ===== HERO VISUAL: report mockup + tre tab fluttuanti ===== */
+.hero-visual{ position:relative; opacity:0; animation:up 0.8s ease 0.45s forwards; }
+.hv-card{ position:relative; z-index:1; background:rgba(255,255,255,0.035); border:1px solid rgba(79,142,247,0.14); border-radius:18px; padding:22px 22px 12px; backdrop-filter:blur(8px); box-shadow:0 40px 70px -28px rgba(0,0,0,0.6); }
+.hv-card-head{ display:flex; justify-content:space-between; align-items:flex-start; padding-bottom:15px; border-bottom:1px solid rgba(79,142,247,0.1); margin-bottom:8px; }
+.hv-eyebrow{ font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--blue); }
+.hv-agent{ font-size:15px; font-weight:700; color:#fff; margin-top:4px; }
+.hv-live{ display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:10px; color:var(--green); text-transform:uppercase; letter-spacing:0.1em; }
+.hv-live .d{ width:6px; height:6px; border-radius:50%; background:var(--green); animation:pulse 2s ease-in-out infinite; }
+.hv-frow{ display:flex; align-items:center; gap:11px; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.04); font-size:13px; color:var(--text); }
+.hv-frow:last-child{ border-bottom:none; }
+.hv-dot{ width:8px; height:8px; border-radius:2px; flex-shrink:0; }
+.hv-dot.crit{ background:#ef4444; } .hv-dot.high{ background:#f59e0b; } .hv-dot.med{ background:var(--blue); }
+.hv-fname{ flex:1; }
+.hv-code{ font-family:var(--mono); font-size:11px; color:var(--text2); }
+
+.hv-float{ position:absolute; z-index:2; background:rgba(9,13,24,0.9); border:1px solid rgba(79,142,247,0.22); border-radius:14px; padding:12px 15px; backdrop-filter:blur(12px); box-shadow:0 24px 44px -16px rgba(0,0,0,0.7); }
+.hv-float-1{ top:-28px; right:-22px; display:flex; align-items:center; gap:12px; animation:floaty 6s ease-in-out infinite; }
+.hv-score-lbl{ font-size:10px; color:var(--text2); text-transform:uppercase; letter-spacing:0.08em; max-width:96px; line-height:1.3; }
+.hv-score-band{ font-size:12px; font-weight:700; color:#ef4444; margin-top:3px; text-transform:uppercase; letter-spacing:0.04em; }
+.hv-float-2{ top:46%; right:-34px; display:flex; align-items:center; gap:11px; animation:floaty 7s ease-in-out infinite 0.6s; }
+.hv-cert-badge{ width:30px; height:30px; border-radius:8px; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.35); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.hv-cert-t{ font-size:12px; font-weight:700; color:#fff; }
+.hv-cert-s{ font-size:10px; color:var(--green); font-family:var(--mono); margin-top:2px; }
+.hv-float-3{ bottom:-24px; left:-22px; animation:floaty 6.5s ease-in-out infinite 0.3s; }
+.hv-fw-lbl{ font-size:9px; color:var(--text2); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:7px; }
+.hv-fw-chips{ display:flex; gap:6px; }
+.hv-fw-chips span{ font-family:var(--mono); font-size:10px; color:var(--text); background:rgba(79,142,247,0.1); border:1px solid rgba(79,142,247,0.2); border-radius:5px; padding:3px 7px; }
+
+@keyframes floaty{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-9px); } }
+
+@media (max-width:900px){
+  .hero{ padding:130px 24px 70px; min-height:auto; }
+  .hero-grid{ grid-template-columns:1fr; gap:0; }
+  .hero-visual{ display:none; }
+  .hero-left h1{ max-width:100%; }
+}
+</style>
 
 <!-- MARQUEE -->
 <div class="marquee-wrap">
