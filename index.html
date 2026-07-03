@@ -870,7 +870,7 @@ document.querySelectorAll('.product-tab').forEach(tab => {
   </div>
 </section>
 
- <!-- THE REPORT -->
+<!-- THE REPORT -->
 <section class="report" id="report">
   <div class="wrap">
     <p class="s-label">The Report</p>
@@ -881,7 +881,6 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 
       <!-- COLONNA SINISTRA: immagine report blurred (placeholder) -->
       <div class="report-visual">
-        <!-- PLACEHOLDER: qui andrà l'immagine del report blurred (conteggi visibili + dettagli sfocati + lucchetto) -->
         <div class="report-blurred-placeholder">
           <div class="rb-counts">
             <div class="rb-count rb-critical"><span class="rb-num">3</span><span class="rb-label">Critical</span></div>
@@ -919,9 +918,9 @@ document.querySelectorAll('.product-tab').forEach(tab => {
           <div class="report-check">✓</div>
           <p>Every finding mapped to OWASP Agentic, MITRE ATLAS, NIST AI RMF, and the EU AI Act</p>
         </div>
-       <div class="report-cta">
-  <a href="/Agensure-AI-Agent-PenTest-Sample-Report.pdf" download class="report-btn">Download sample report</a>
-</div>
+        <div class="report-cta">
+          <a href="#" onclick="openSampleModal(); return false;" class="report-btn">Download sample report</a>
+        </div>
       </div>
 
     </div>
@@ -980,6 +979,28 @@ document.querySelectorAll('.product-tab').forEach(tab => {
 
   </div>
 </section>
+
+<!-- ===== SAMPLE REPORT GATE (popup + download) ===== -->
+<div class="sr-modal" id="srModal" aria-hidden="true">
+  <div class="sr-overlay" onclick="closeSampleModal()"></div>
+  <div class="sr-card" role="dialog" aria-modal="true" aria-labelledby="srTitle">
+    <button class="sr-close" onclick="closeSampleModal()" aria-label="Close">×</button>
+    <div class="sr-eyebrow">Sample report</div>
+    <h3 class="sr-title" id="srTitle">Get the sample report</h3>
+    <p class="sr-sub">Enter your work email and the download starts right away.</p>
+    <div class="sr-field">
+      <label for="srName">Name</label>
+      <input type="text" id="srName" placeholder="Jane Doe" autocomplete="name"/>
+    </div>
+    <div class="sr-field">
+      <label for="srEmail">Work email</label>
+      <input type="email" id="srEmail" placeholder="jane@company.com" autocomplete="email"/>
+    </div>
+    <div class="sr-error" id="srError"></div>
+    <button class="sr-submit" id="srSubmit" onclick="submitSampleModal()">Download the report</button>
+    <p class="sr-note">No spam. We just like to know who's evaluating Agensure.</p>
+  </div>
+</div>
 
 <style>
 /* stacco verticale della sezione, uguale alle altre */
@@ -1134,7 +1155,83 @@ document.querySelectorAll('.product-tab').forEach(tab => {
   .fc-meta-cell{ border-right: none; border-bottom: 1px solid var(--border); }
   .fc-meta-cell:last-child{ border-bottom: none; }
 }
+
+/* ===== SAMPLE REPORT MODAL ===== */
+.sr-modal{ display:none; position:fixed; inset:0; z-index:1000; align-items:center; justify-content:center; padding:20px; }
+.sr-modal.open{ display:flex; }
+.sr-overlay{ position:absolute; inset:0; background:rgba(3,5,12,0.72); backdrop-filter:blur(6px); }
+.sr-card{ position:relative; z-index:1; width:100%; max-width:420px; background:#0b0f1c; border:1px solid rgba(79,142,247,0.22); border-radius:18px; padding:32px 30px 26px; box-shadow:0 40px 90px -30px rgba(0,0,0,0.85); animation:srUp 0.25s ease; font-family:'Inter',sans-serif; }
+@keyframes srUp{ from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:translateY(0)} }
+.sr-close{ position:absolute; top:14px; right:16px; width:30px; height:30px; border:none; background:transparent; color:#7a8fab; font-size:22px; line-height:1; cursor:pointer; border-radius:8px; }
+.sr-close:hover{ color:#dde4f0; background:rgba(255,255,255,0.05); }
+.sr-eyebrow{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#4f8ef7; margin-bottom:10px; }
+.sr-title{ font-size:22px; font-weight:700; color:#fff; letter-spacing:-0.02em; margin-bottom:8px; }
+.sr-sub{ font-size:14px; color:#b8c5d6; line-height:1.6; margin-bottom:22px; }
+.sr-field{ margin-bottom:14px; }
+.sr-field label{ display:block; font-size:12px; font-weight:600; color:#7a8fab; margin-bottom:6px; }
+.sr-field input{ width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(79,142,247,0.2); border-radius:9px; padding:12px 14px; font-family:inherit; font-size:14px; color:#dde4f0; outline:none; transition:border-color 0.2s; }
+.sr-field input:focus{ border-color:rgba(79,142,247,0.55); }
+.sr-field input::placeholder{ color:rgba(122,143,171,0.5); }
+.sr-error{ font-size:13px; color:#f87171; min-height:18px; margin-bottom:6px; }
+.sr-submit{ width:100%; background:linear-gradient(135deg,#10b981,#34d399); color:#052e1a; border:none; border-radius:10px; padding:14px; font-family:inherit; font-size:15px; font-weight:700; cursor:pointer; box-shadow:0 0 24px rgba(16,185,129,0.3); transition:transform 0.15s; }
+.sr-submit:hover{ transform:translateY(-1px); }
+.sr-submit:disabled{ opacity:0.6; cursor:default; transform:none; }
+.sr-note{ font-size:11.5px; color:#4e5f7a; text-align:center; margin-top:12px; }
 </style>
+
+<script>
+(function(){
+  var PDF_URL = '/Agensure-AI-Agent-PenTest-Sample-Report.pdf';   // path del PDF sul sito
+  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/xlgvpzqw';
+  var FREE_DOMAINS = ['gmail.com','googlemail.com','yahoo.','hotmail.','outlook.','live.','msn.com','icloud.','me.com','aol.','proton.me','protonmail.com','gmx.','mail.com','yandex.','zoho.com','pm.me','hey.com','tutanota.com','fastmail.com','libero.it','virgilio.it','tin.it','alice.it'];
+
+  window.openSampleModal = function(){
+    document.getElementById('srError').textContent = '';
+    var m = document.getElementById('srModal');
+    m.classList.add('open'); m.setAttribute('aria-hidden','false');
+    setTimeout(function(){ document.getElementById('srName').focus(); }, 50);
+  };
+  window.closeSampleModal = function(){
+    var m = document.getElementById('srModal');
+    m.classList.remove('open'); m.setAttribute('aria-hidden','true');
+  };
+  function validEmail(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+  function isWorkEmail(e){
+    var d = (e.toLowerCase().split('@')[1]||'');
+    for(var i=0;i<FREE_DOMAINS.length;i++){
+      if(d === FREE_DOMAINS[i] || d.indexOf(FREE_DOMAINS[i]) === 0) return false;
+    }
+    return true;
+  }
+  function downloadPdf(){
+    var a = document.createElement('a');
+    a.href = PDF_URL; a.download = 'Agensure-Sample-Report.pdf';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  }
+  window.submitSampleModal = function(){
+    var name = document.getElementById('srName').value.trim();
+    var email = document.getElementById('srEmail').value.trim();
+    var err = document.getElementById('srError');
+    var btn = document.getElementById('srSubmit');
+    if(!name){ err.textContent = 'Please enter your name.'; return; }
+    if(!validEmail(email)){ err.textContent = 'Please enter a valid email.'; return; }
+    if(!isWorkEmail(email)){ err.textContent = 'Please use your work email, not a personal one.'; return; }
+    err.textContent = '';
+    btn.disabled = true; btn.textContent = 'Preparing your download...';
+    if(FORMSPREE_ENDPOINT){
+      try{ fetch(FORMSPREE_ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify({ name:name, email:email, source:'sample-report-home' }) }); }catch(e){}
+    }
+    downloadPdf();
+    setTimeout(function(){
+      closeSampleModal();
+      btn.disabled = false; btn.textContent = 'Download the report';
+      document.getElementById('srName').value = '';
+      document.getElementById('srEmail').value = '';
+    }, 900);
+  };
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeSampleModal(); });
+})();
+</script>
 
 <!-- CONTINUOUS -->
 <section class="continuous" id="continuous">
