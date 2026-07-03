@@ -390,6 +390,47 @@ nav .btn-primary { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
       .footer-nav-cols { grid-template-columns: 1fr 1fr; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
+
+    /* ===== HEADER con dropdown centrali ===== */
+nav{ position:relative; }
+.nav-center{
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  display:flex; align-items:center; gap:6px;
+}
+.nav-item{ position:relative; }
+.nav-trigger{
+  display:inline-flex; align-items:center; gap:6px;
+  background:none; border:none; cursor:pointer;
+  font-family:inherit; font-size:14px; font-weight:500; color:var(--gray);
+  padding:10px 14px; border-radius:8px; transition:color 0.2s, background 0.2s;
+}
+.nav-item:hover .nav-trigger{ color:var(--text); background:rgba(255,255,255,0.03); }
+.nav-caret{ font-size:9px; color:var(--text3); transition:transform 0.2s; }
+.nav-item:hover .nav-caret{ transform:rotate(180deg); color:var(--blue); }
+
+/* ponte invisibile per non perdere l'hover tra voce e menu */
+.nav-menu::before{ content:''; position:absolute; top:-12px; left:0; right:0; height:12px; }
+
+.nav-menu{
+  position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(8px);
+  min-width:290px; background:rgba(8,11,20,0.97); backdrop-filter:blur(24px);
+  border:1px solid rgba(79,142,247,0.16); border-radius:14px; padding:8px;
+  box-shadow:0 30px 70px -24px rgba(0,0,0,0.8);
+  opacity:0; visibility:hidden; pointer-events:none; transition:opacity 0.2s ease, transform 0.2s ease;
+  z-index:120;
+}
+.nav-item:hover .nav-menu{ opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0); }
+.nav-menu a{
+  display:flex; flex-direction:column; gap:2px;
+  padding:11px 14px; border-radius:10px; text-decoration:none; transition:background 0.15s;
+}
+.nav-menu a:hover{ background:rgba(79,142,247,0.1); }
+.nm-t{ font-size:14px; font-weight:600; color:var(--text); }
+.nm-d{ font-size:12px; color:var(--text2); line-height:1.4; }
+
+@media (max-width:1040px){
+  .nav-center{ display:none; }   /* sotto i 1040px torna il burger */
+}
   </style>
 </head>
 <body>
