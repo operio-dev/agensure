@@ -100,6 +100,28 @@
       .ready-card{ padding:52px 24px; }
       .offer-card{ padding:32px 24px; }
     }
+
+    /* SAMPLE REPORT MODAL */
+    .sr-modal{ display:none; position:fixed; inset:0; z-index:1000; align-items:center; justify-content:center; padding:20px; }
+    .sr-modal.open{ display:flex; }
+    .sr-overlay{ position:absolute; inset:0; background:rgba(3,5,12,0.72); backdrop-filter:blur(6px); }
+    .sr-card{ position:relative; z-index:1; width:100%; max-width:420px; background:#0b0f1c; border:1px solid rgba(79,142,247,0.22); border-radius:18px; padding:32px 30px 26px; box-shadow:0 40px 90px -30px rgba(0,0,0,0.85); animation:srUp 0.25s ease; font-family:'Inter',sans-serif; }
+    @keyframes srUp{ from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:translateY(0)} }
+    .sr-close{ position:absolute; top:14px; right:16px; width:30px; height:30px; border:none; background:transparent; color:#7a8fab; font-size:22px; line-height:1; cursor:pointer; border-radius:8px; }
+    .sr-close:hover{ color:#dde4f0; background:rgba(255,255,255,0.05); }
+    .sr-eyebrow{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#4f8ef7; margin-bottom:10px; }
+    .sr-title{ font-size:22px; font-weight:700; color:#fff; letter-spacing:-0.02em; margin-bottom:8px; }
+    .sr-sub{ font-size:14px; color:#b8c5d6; line-height:1.6; margin-bottom:22px; }
+    .sr-field{ margin-bottom:14px; }
+    .sr-field label{ display:block; font-size:12px; font-weight:600; color:#7a8fab; margin-bottom:6px; }
+    .sr-field input{ width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(79,142,247,0.2); border-radius:9px; padding:12px 14px; font-family:inherit; font-size:14px; color:#dde4f0; outline:none; transition:border-color 0.2s; }
+    .sr-field input:focus{ border-color:rgba(79,142,247,0.55); }
+    .sr-field input::placeholder{ color:rgba(122,143,171,0.5); }
+    .sr-error{ font-size:13px; color:#f87171; min-height:18px; margin-bottom:6px; }
+    .sr-submit{ width:100%; background:linear-gradient(135deg,#10b981,#34d399); color:#052e1a; border:none; border-radius:10px; padding:14px; font-family:inherit; font-size:15px; font-weight:700; cursor:pointer; box-shadow:0 0 24px rgba(16,185,129,0.3); transition:transform 0.15s; }
+    .sr-submit:hover{ transform:translateY(-1px); }
+    .sr-submit:disabled{ opacity:0.6; cursor:default; transform:none; }
+    .sr-note{ font-size:11.5px; color:#4e5f7a; text-align:center; margin-top:12px; }
   </style>
 </head>
 <body>
@@ -166,7 +188,7 @@
       </div>
       <div class="offer-actions">
         <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/filippo-agensure/30min'});return false;" class="btn-green">Scope a pentest</a>
-        <a href="/sample-report" class="btn-dark">See a sample report</a>
+        <a href="#" onclick="openSampleModal(); return false;" class="btn-dark">See a sample report</a>
       </div>
     </div>
   </div>
@@ -180,14 +202,14 @@
       <p>Book a demo and we'll walk through a live attack campaign against one of your own agents, together.</p>
       <div class="ready-actions">
         <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/filippo-agensure/30min'});return false;" class="btn-green">Book a demo</a>
-        <a href="/sample-report" class="btn-dark">View sample report</a>
+        <a href="#" onclick="openSampleModal(); return false;" class="btn-dark">View sample report</a>
       </div>
       <div class="ready-note">Or email us at <a href="mailto:info@agensure.eu">info@agensure.eu</a></div>
     </div>
   </div>
 </section>
 
-  <!-- ===== SAMPLE REPORT GATE (incolla prima di </body>) ===== -->
+<!-- ===== SAMPLE REPORT GATE ===== -->
 <div class="sr-modal" id="srModal" aria-hidden="true">
   <div class="sr-overlay" onclick="closeSampleModal()"></div>
   <div class="sr-card" role="dialog" aria-modal="true" aria-labelledby="srTitle">
@@ -208,29 +230,6 @@
     <p class="sr-note">No spam. We just like to know who's evaluating Agensure.</p>
   </div>
 </div>
-
-<style>
-.sr-modal{ display:none; position:fixed; inset:0; z-index:1000; align-items:center; justify-content:center; padding:20px; }
-.sr-modal.open{ display:flex; }
-.sr-overlay{ position:absolute; inset:0; background:rgba(3,5,12,0.72); backdrop-filter:blur(6px); }
-.sr-card{ position:relative; z-index:1; width:100%; max-width:420px; background:#0b0f1c; border:1px solid rgba(79,142,247,0.22); border-radius:18px; padding:32px 30px 26px; box-shadow:0 40px 90px -30px rgba(0,0,0,0.85); animation:srUp 0.25s ease; font-family:'Inter',sans-serif; }
-@keyframes srUp{ from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:translateY(0)} }
-.sr-close{ position:absolute; top:14px; right:16px; width:30px; height:30px; border:none; background:transparent; color:#7a8fab; font-size:22px; line-height:1; cursor:pointer; border-radius:8px; }
-.sr-close:hover{ color:#dde4f0; background:rgba(255,255,255,0.05); }
-.sr-eyebrow{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#4f8ef7; margin-bottom:10px; }
-.sr-title{ font-size:22px; font-weight:700; color:#fff; letter-spacing:-0.02em; margin-bottom:8px; }
-.sr-sub{ font-size:14px; color:#b8c5d6; line-height:1.6; margin-bottom:22px; }
-.sr-field{ margin-bottom:14px; }
-.sr-field label{ display:block; font-size:12px; font-weight:600; color:#7a8fab; margin-bottom:6px; }
-.sr-field input{ width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(79,142,247,0.2); border-radius:9px; padding:12px 14px; font-family:inherit; font-size:14px; color:#dde4f0; outline:none; transition:border-color 0.2s; }
-.sr-field input:focus{ border-color:rgba(79,142,247,0.55); }
-.sr-field input::placeholder{ color:rgba(122,143,171,0.5); }
-.sr-error{ font-size:13px; color:#f87171; min-height:18px; margin-bottom:6px; }
-.sr-submit{ width:100%; background:linear-gradient(135deg,#10b981,#34d399); color:#052e1a; border:none; border-radius:10px; padding:14px; font-family:inherit; font-size:15px; font-weight:700; cursor:pointer; box-shadow:0 0 24px rgba(16,185,129,0.3); transition:transform 0.15s; }
-.sr-submit:hover{ transform:translateY(-1px); }
-.sr-submit:disabled{ opacity:0.6; cursor:default; transform:none; }
-.sr-note{ font-size:11.5px; color:#4e5f7a; text-align:center; margin-top:12px; }
-</style>
 
 <script>
 (function(){
