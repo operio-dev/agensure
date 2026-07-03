@@ -391,22 +391,25 @@ nav .btn-primary { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
 
-    /* ===== HEADER con dropdown centrali ===== */
+/* ===== HEADER con dropdown centrali (stile ZioSec) ===== */
 nav{ position:relative; }
 .nav-center{
   position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
-  display:flex; align-items:center; gap:6px;
+  display:flex; align-items:center; gap:10px;
 }
 .nav-item{ position:relative; }
 .nav-trigger{
-  display:inline-flex; align-items:center; gap:6px;
+  display:inline-flex; align-items:center; gap:7px;
   background:none; border:none; cursor:pointer;
-  font-family:inherit; font-size:14px; font-weight:500; color:var(--gray);
-  padding:10px 14px; border-radius:8px; transition:color 0.2s, background 0.2s;
+  font-family:inherit; font-size:15px; font-weight:500; color:var(--gray);
+  padding:8px 6px; border-radius:6px; transition:color 0.2s;
 }
-.nav-item:hover .nav-trigger{ color:var(--text); background:rgba(255,255,255,0.03); }
-.nav-caret{ font-size:9px; color:var(--text3); transition:transform 0.2s; }
-.nav-item:hover .nav-caret{ transform:rotate(180deg); color:var(--blue); }
+.nav-item:hover .nav-trigger{ color:#fff; }
+.nav-caret{
+  font-size:8px; color:var(--text3); transition:transform 0.25s ease, color 0.2s;
+  display:inline-block; margin-top:1px;
+}
+.nav-item:hover .nav-caret{ transform:rotate(180deg); color:var(--gray); }
 
 /* ponte invisibile per non perdere l'hover tra voce e menu */
 .nav-menu::before{ content:''; position:absolute; top:-12px; left:0; right:0; height:12px; }
