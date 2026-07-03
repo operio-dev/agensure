@@ -434,6 +434,26 @@ nav{ position:relative; }
 @media (max-width:1040px){
   .nav-center{ display:none; }   /* sotto i 1040px torna il burger */
 }
+    /* ===== FOOTER: proporzioni + testo più grande ===== */
+.footer-inner{ grid-template-columns: 1fr 1.5fr; gap: 20px; }
+
+.footer-brand{ padding: 40px; }
+.footer-brand-tagline{ font-size: 15px; }
+.footer-brand-label{ font-size: 11px; letter-spacing: 0.14em; }
+.footer-brand-headline{ font-size: 24px; line-height: 1.3; }
+
+.footer-nav-card{ padding: 40px; }
+.footer-nav-cols{ gap: 28px; }
+.footer-nav-col-label{ font-size: 12px; letter-spacing: 0.14em; margin-bottom: 18px; color: var(--blue); }
+.footer-nav-col a{ font-size: 15px; margin-bottom: 14px; }
+
+@media (max-width:900px){
+  .footer-inner{ grid-template-columns: 1fr; }
+  .footer-nav-cols{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width:520px){
+  .footer-nav-cols{ grid-template-columns: 1fr; }
+}
   </style>
 </head>
 <body>
