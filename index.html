@@ -543,21 +543,47 @@ nav{ position:relative; }
       </div>
 
       <div class="hero-visual" aria-hidden="true">
-        <div class="hv-card">
-          <div class="hv-card-head">
-            <div>
-              <div class="hv-eyebrow">Agensure Report</div>
-              <div class="hv-agent">Support Agent</div>
-            </div>
-            <div class="hv-live"><span class="d"></span> Live</div>
-          </div>
-          <div class="hv-frow"><span class="hv-dot crit"></span><span class="hv-fname">Indirect prompt injection</span><span class="hv-code">ASI01</span></div>
-          <div class="hv-frow"><span class="hv-dot high"></span><span class="hv-fname">Tool misuse via chaining</span><span class="hv-code">ASI02</span></div>
-          <div class="hv-frow"><span class="hv-dot high"></span><span class="hv-fname">Sensitive data disclosure</span><span class="hv-code">ASI06</span></div>
-          <div class="hv-frow"><span class="hv-dot med"></span><span class="hv-fname">Human approval bypass</span><span class="hv-code">ASI09</span></div>
-          <div class="hv-frow"><span class="hv-dot med"></span><span class="hv-fname">Model fingerprinting</span><span class="hv-code">ASI03</span></div>
-        </div>
+  <div class="hv-stage">
+    <div class="hv-glow"></div>
 
+    <div class="hv-card">
+      <div class="hv-scan"></div>
+      <div class="hv-card-head">
+        <div>
+          <div class="hv-eyebrow">Agensure Report</div>
+          <div class="hv-agent">Support Agent</div>
+        </div>
+        <div class="hv-live"><span class="d"></span> Live</div>
+      </div>
+      <div class="hv-prog"><span></span></div>
+
+      <div class="hv-frow"><span class="hv-dot crit"></span><span class="hv-fname">Indirect prompt injection</span><span class="hv-code">ASI01</span></div>
+      <div class="hv-frow"><span class="hv-dot high"></span><span class="hv-fname">Tool misuse via chaining</span><span class="hv-code">ASI02</span></div>
+      <div class="hv-frow"><span class="hv-dot high"></span><span class="hv-fname">Sensitive data disclosure</span><span class="hv-code">ASI06</span></div>
+      <div class="hv-frow"><span class="hv-dot med"></span><span class="hv-fname">Human approval bypass</span><span class="hv-code">ASI09</span></div>
+      <div class="hv-frow"><span class="hv-dot med"></span><span class="hv-fname">Model fingerprinting</span><span class="hv-code">ASI03</span></div>
+    </div>
+
+    <div class="hv-float hv-float-1">
+      <svg width="60" height="60" viewBox="0 0 84 84">
+        <circle cx="42" cy="42" r="33" fill="none" stroke="rgba(79,142,247,0.15)" stroke-width="8"/>
+        <circle class="hv-donut-val" cx="42" cy="42" r="33" fill="none" stroke="#ef4444" stroke-width="8" stroke-linecap="round" stroke-dasharray="207.3" stroke-dashoffset="49.7" transform="rotate(-90 42 42)"/>
+        <text x="42" y="49" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#ffffff">76</text>
+      </svg>
+      <div><div class="hv-score-lbl">Agensure Risk Score</div><div class="hv-score-band">Critical</div></div>
+    </div>
+
+    <div class="hv-float hv-float-2">
+      <div class="hv-cert-badge"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3 6-7" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div><div class="hv-cert-t">ADR Certificate</div><div class="hv-cert-s">Verified &middot; Valid</div></div>
+    </div>
+
+    <div class="hv-float hv-float-3">
+      <div class="hv-fw-lbl">Mapped to</div>
+      <div class="hv-fw-chips"><span>OWASP ASI</span><span>MITRE ATLAS</span><span>NIST AI RMF</span><span>ISO 42001</span><span>EU AI Act</span><span>AIUC-1</span></div>
+    </div>
+  </div>
+</div>
         <div class="hv-float hv-float-1">
           <svg width="60" height="60" viewBox="0 0 84 84">
             <circle cx="42" cy="42" r="33" fill="none" stroke="rgba(79,142,247,0.15)" stroke-width="8"/>
@@ -600,33 +626,70 @@ nav{ position:relative; }
 .hero-cta .btn-primary{ font-size:0.95rem; padding:0.8rem 1.5rem; }
 .hero-cta .btn-outline{ font-size:0.9rem; padding:0.8rem 1.4rem; }
 
-/* ===== HERO VISUAL: report mockup + tre tab fluttuanti ===== */
+/* ===== HERO VISUAL — versione "wow" animata ===== */
 .hero-visual{ position:relative; opacity:0; animation:up 0.8s ease 0.45s forwards; }
-.hv-card{ position:relative; z-index:1; background:rgba(255,255,255,0.035); border:1px solid rgba(79,142,247,0.14); border-radius:18px; padding:22px 22px 12px; backdrop-filter:blur(8px); box-shadow:0 40px 70px -28px rgba(0,0,0,0.6); }
-.hv-card-head{ display:flex; justify-content:space-between; align-items:flex-start; padding-bottom:15px; border-bottom:1px solid rgba(79,142,247,0.1); margin-bottom:8px; }
+.hv-stage{ position:relative; }
+
+/* aura luminosa che ruota dietro la card */
+.hv-glow{ position:absolute; inset:-34px; z-index:0; border-radius:44px; pointer-events:none;
+  background:conic-gradient(from 0deg, rgba(79,142,247,0) 0deg, rgba(79,142,247,0.30) 70deg, rgba(16,185,129,0) 150deg, rgba(16,185,129,0.26) 230deg, rgba(79,142,247,0) 320deg);
+  filter:blur(34px); opacity:0.5; animation:hvSpin 12s linear infinite; }
+@keyframes hvSpin{ to{ transform:rotate(360deg); } }
+
+.hv-card{ position:relative; z-index:1; overflow:hidden; background:rgba(255,255,255,0.035); border:1px solid rgba(79,142,247,0.16); border-radius:18px; padding:22px 22px 14px; backdrop-filter:blur(8px); box-shadow:0 40px 70px -28px rgba(0,0,0,0.6); }
+.hv-card::after{ content:''; position:absolute; inset:0; pointer-events:none; opacity:0.5; background-image:radial-gradient(rgba(79,142,247,0.10) 1px, transparent 1px); background-size:18px 18px; }
+
+/* linea di scansione */
+.hv-scan{ position:absolute; left:0; right:0; top:0; height:70px; z-index:2; pointer-events:none;
+  background:linear-gradient(to bottom, rgba(79,142,247,0) 0%, rgba(79,142,247,0.14) 45%, rgba(79,142,247,0.02) 100%);
+  animation:hvScan 4.5s ease-in-out infinite; }
+@keyframes hvScan{ 0%{ transform:translateY(-70px); opacity:0 } 12%{ opacity:1 } 80%{ opacity:1 } 100%{ transform:translateY(380px); opacity:0 } }
+
+.hv-card-head{ position:relative; z-index:3; display:flex; justify-content:space-between; align-items:flex-start; padding-bottom:14px; border-bottom:1px solid rgba(79,142,247,0.1); }
 .hv-eyebrow{ font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--blue); }
 .hv-agent{ font-size:15px; font-weight:700; color:#fff; margin-top:4px; }
 .hv-live{ display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:10px; color:var(--green); text-transform:uppercase; letter-spacing:0.1em; }
-.hv-live .d{ width:6px; height:6px; border-radius:50%; background:var(--green); animation:pulse 2s ease-in-out infinite; }
-.hv-frow{ display:flex; align-items:center; gap:11px; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.04); font-size:13px; color:var(--text); }
+.hv-live .d{ width:6px; height:6px; border-radius:50%; background:var(--green); box-shadow:0 0 8px rgba(16,185,129,0.8); animation:hvBlink 1.6s ease-in-out infinite; }
+@keyframes hvBlink{ 0%,100%{ opacity:1 } 50%{ opacity:0.35 } }
+
+/* barra campaign running */
+.hv-prog{ position:relative; z-index:3; height:3px; border-radius:3px; margin:10px 0 4px; background:rgba(79,142,247,0.12); overflow:hidden; }
+.hv-prog span{ position:absolute; left:0; top:0; height:100%; width:36%; border-radius:3px; background:linear-gradient(90deg,#4f8ef7,#34d399); animation:hvProg 2.6s ease-in-out infinite; }
+@keyframes hvProg{ 0%{ transform:translateX(-120%) } 100%{ transform:translateX(400%) } }
+
+.hv-frow{ position:relative; z-index:3; display:flex; align-items:center; gap:11px; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.04); font-size:13px; color:var(--text); }
 .hv-frow:last-child{ border-bottom:none; }
 .hv-dot{ width:8px; height:8px; border-radius:2px; flex-shrink:0; }
-.hv-dot.crit{ background:#ef4444; } .hv-dot.high{ background:#f59e0b; } .hv-dot.med{ background:var(--blue); }
+.hv-dot.crit{ background:#ef4444; animation:hvDotC 2.4s ease-in-out infinite; }
+.hv-dot.high{ background:#f59e0b; animation:hvDotH 2.4s ease-in-out infinite 0.6s; }
+.hv-dot.med{ background:var(--blue); }
+@keyframes hvDotC{ 0%,100%{ box-shadow:0 0 0 0 rgba(239,68,68,0.55) } 60%{ box-shadow:0 0 0 5px rgba(239,68,68,0) } }
+@keyframes hvDotH{ 0%,100%{ box-shadow:0 0 0 0 rgba(245,158,11,0.5) } 60%{ box-shadow:0 0 0 5px rgba(245,158,11,0) } }
 .hv-fname{ flex:1; }
 .hv-code{ font-family:var(--mono); font-size:11px; color:var(--text2); }
 
-.hv-float{ position:absolute; z-index:2; background:rgba(9,13,24,0.9); border:1px solid rgba(79,142,247,0.22); border-radius:14px; padding:12px 15px; backdrop-filter:blur(12px); box-shadow:0 24px 44px -16px rgba(0,0,0,0.7); }
+/* tab fluttuanti */
+.hv-float{ position:absolute; z-index:4; background:rgba(9,13,24,0.92); border:1px solid rgba(79,142,247,0.22); border-radius:14px; padding:12px 15px; backdrop-filter:blur(12px); box-shadow:0 24px 44px -16px rgba(0,0,0,0.7); }
 .hv-float-1{ top:-28px; right:-22px; display:flex; align-items:center; gap:12px; animation:floaty 6s ease-in-out infinite; }
+.hv-donut-val{ animation:hvDraw 1.6s ease 0.5s both; }
+@keyframes hvDraw{ from{ stroke-dashoffset:207.3 } to{ stroke-dashoffset:49.7 } }
 .hv-score-lbl{ font-size:10px; color:var(--text2); text-transform:uppercase; letter-spacing:0.08em; max-width:96px; line-height:1.3; }
 .hv-score-band{ font-size:12px; font-weight:700; color:#ef4444; margin-top:3px; text-transform:uppercase; letter-spacing:0.04em; }
-.hv-float-2{ top:46%; right:-34px; display:flex; align-items:center; gap:11px; animation:floaty 7s ease-in-out infinite 0.6s; }
-.hv-cert-badge{ width:30px; height:30px; border-radius:8px; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.35); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.hv-float-2{ top:42%; right:-34px; display:flex; align-items:center; gap:11px; animation:floaty 7s ease-in-out infinite 0.6s; }
+.hv-cert-badge{ width:30px; height:30px; border-radius:8px; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.4); display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 0 16px rgba(16,185,129,0.25); }
 .hv-cert-t{ font-size:12px; font-weight:700; color:#fff; }
 .hv-cert-s{ font-size:10px; color:var(--green); font-family:var(--mono); margin-top:2px; }
 .hv-float-3{ top:calc(100% - 10px); left:-8px; max-width:340px; animation:floaty 6.5s ease-in-out infinite 0.3s; }
-.hv-fw-lbl{ font-size:9px; color:var(--text2); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:7px; }
+.hv-fw-lbl{ font-size:9px; color:var(--text2); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:8px; }
 .hv-fw-chips{ display:flex; flex-wrap:wrap; gap:6px; }
 .hv-fw-chips span{ font-family:var(--mono); font-size:10px; color:var(--text); background:rgba(79,142,247,0.1); border:1px solid rgba(79,142,247,0.2); border-radius:5px; padding:3px 7px; }
+
+@keyframes floaty{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-9px) } }
+
+/* rispetta chi ha disattivato le animazioni */
+@media (prefers-reduced-motion: reduce){
+  .hv-glow, .hv-scan, .hv-prog span, .hv-dot, .hv-donut-val, .hv-float, .hv-live .d{ animation:none !important; }
+}
 
 @keyframes floaty{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-9px); } }
 
