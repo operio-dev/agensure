@@ -400,11 +400,11 @@ nav{ position:relative; }
 .nav-item{ position:relative; }
 .nav-trigger{
   display:inline-flex; align-items:center; gap:7px;
-  background:none; border:none; cursor:pointer;
-  font-family:inherit; font-size:15px; font-weight:500; color:var(--gray);
+  background:transparent !important; border:none !important; box-shadow:none !important;
+  cursor:pointer; font-family:inherit; font-size:15px; font-weight:500; color:var(--gray);
   padding:8px 6px; border-radius:6px; transition:color 0.2s;
 }
-.nav-item:hover .nav-trigger{ color:#fff; }
+.nav-item:hover .nav-trigger{ color:#fff; background:transparent !important; }
 .nav-caret{
   font-size:8px; color:var(--text3); transition:transform 0.25s ease, color 0.2s;
   display:inline-block; margin-top:1px;
