@@ -212,13 +212,14 @@ button[type=button]:hover { background: var(--blue2); transform: translateY(-1px
     .step-options { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
     .step-option { background: rgba(255,255,255,0.03); border: 1px solid rgba(59,130,246,0.1); border-radius: 6px; padding: 0.75rem 1rem; font-size: 0.825rem; color: var(--gray); line-height: 1.55; }
     .step-option strong { color: var(--text); }
-    /* ===== ADR SHOWCASE (widget dashboard + certificato pubblico) ===== */
+   /* ===== ADR SHOWCASE — CSS COMPLETO (colonne + widget + certificato) ===== */
+
+/* layout a due colonne */
 .adr-showcase{ display:grid; grid-template-columns:360px 1fr; gap:36px; align-items:start; margin-top:64px; }
 @media (max-width:860px){ .adr-showcase{ grid-template-columns:1fr; gap:40px; } }
 .adr-cap{ font-size:11px; font-weight:700; color:var(--blue); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:16px; }
 
-/* dark dashboard widget */
-.adr-widget{ }
+/* widget dashboard (dark) */
 .adr-w-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
 .adr-w-label{ font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text2); }
 .adr-w-frame{ font-family:var(--mono); font-size:11px; color:var(--text3); }
@@ -232,23 +233,30 @@ button[type=button]:hover { background: var(--blue2); transform: translateY(-1px
 .adr-w-btn:hover{ border-color:rgba(79,142,247,0.4); }
 .adr-w-arrow{ color:var(--text2); font-size:15px; }
 
-/* light public certificate */
-.adr-cert{ background:#fff; border:1px solid #e4e8ee; border-radius:14px; padding:34px 36px; color:#1b2432; box-shadow:0 30px 60px -25px rgba(0,0,0,0.5); }
-.adr-c-brand{ display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#7c8794; margin-bottom:22px; }
+/* certificato pubblico (light) */
+.adr-cert{ position:relative; background:#fff; border:1px solid #e4e8ee; border-radius:16px; overflow:hidden; color:#1b2432; box-shadow:0 40px 80px -30px rgba(0,0,0,0.55), 0 2px 8px rgba(0,0,0,0.06); }
+.adr-c-accent{ height:4px; background:linear-gradient(90deg,#10b981,#34d399 55%,#10b981); }
+.adr-c-inner{ padding:30px 34px 32px; }
+.adr-c-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:20px; }
+.adr-c-brand{ display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#7c8794; padding-top:6px; }
 .adr-c-brand svg{ flex-shrink:0; }
-.adr-c-h1{ font-size:26px; font-weight:700; letter-spacing:-0.02em; color:#111826; line-height:1.15; margin-bottom:8px; }
+.adr-c-seal{ flex-shrink:0; width:56px; height:56px; border-radius:50%; background:radial-gradient(circle at 50% 38%,#ffffff,#eefaf4); border:1.5px solid rgba(16,185,129,0.4); display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 4px 14px rgba(16,185,129,0.18); }
+.adr-c-seal span{ font-family:var(--mono); font-size:6px; letter-spacing:0.06em; color:#0f9d63; font-weight:600; margin-top:1px; }
+.adr-c-h1{ font-size:25px; font-weight:700; letter-spacing:-0.02em; color:#0f1622; line-height:1.16; margin-bottom:8px; }
 .adr-c-id{ font-size:14px; color:#5b6472; }
 .adr-c-id b{ font-family:var(--mono); font-weight:500; color:#2a3342; }
-.adr-c-div{ height:1px; background:#e8ebef; margin:22px 0; }
-.adr-c-status{ background:#eafaf2; border:1px solid rgba(16,185,129,0.3); border-radius:10px; padding:16px 18px; display:flex; gap:12px; align-items:flex-start; }
-.adr-c-status .d{ width:10px; height:10px; border-radius:50%; background:var(--green); margin-top:5px; flex-shrink:0; }
+.adr-c-div{ height:1px; background:#eceff3; margin:20px 0; }
+.adr-c-status{ background:linear-gradient(135deg,rgba(16,185,129,0.09),rgba(16,185,129,0.04)); border:1px solid rgba(16,185,129,0.32); border-radius:12px; padding:15px 17px; display:flex; gap:13px; align-items:center; }
+.adr-c-status .ic{ width:32px; height:32px; border-radius:50%; background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.4); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .adr-c-status-t{ font-size:15px; font-weight:700; color:#0f7a52; letter-spacing:0.01em; }
-.adr-c-status-s{ font-size:13px; color:#2e9e73; margin-top:3px; }
-.adr-c-sec{ font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#9aa3b0; margin-bottom:14px; }
-.adr-c-row{ display:flex; justify-content:space-between; align-items:baseline; gap:20px; padding:7px 0; }
+.adr-c-status-s{ font-size:13px; color:#2e9e73; margin-top:2px; }
+.adr-c-sec{ display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#9aa3b0; margin-bottom:8px; }
+.adr-c-sec::before{ content:''; width:7px; height:7px; border-radius:2px; background:#10b981; opacity:0.75; }
+.adr-c-row{ display:flex; justify-content:space-between; align-items:center; gap:20px; padding:11px 0; border-bottom:1px solid #f1f3f6; }
+.adr-c-row:last-child{ border-bottom:none; }
 .adr-c-k{ font-size:14px; color:#5b6472; flex-shrink:0; }
 .adr-c-v{ font-family:var(--mono); font-size:13px; color:#2a3342; text-align:right; }
-.adr-c-v.green{ color:#0f9d63; font-weight:600; }
+.adr-c-riskpill{ display:inline-block; font-family:var(--mono); font-size:12.5px; font-weight:600; color:#0f9d63; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.32); border-radius:6px; padding:3px 10px; }
 
     /* WHAT YOU GET */
     .what-you-get { padding: 110px 0; border-top: 1px solid rgba(59,130,246,0.1); }
@@ -1306,35 +1314,44 @@ document.querySelectorAll('.product-tab').forEach(tab => {
       <div>
         <p class="adr-cap">What your customers see</p>
         <div class="adr-cert">
-          <div class="adr-c-brand">
-            <svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M7 1 L13 3 V8 C13 12 10 14.5 7 15.5 C4 14.5 1 12 1 8 V3 Z" stroke="#10b981" stroke-width="1.3" fill="rgba(16,185,129,0.08)"/></svg>
-            Agensure · Public Verification Portal
-          </div>
-          <div class="adr-c-h1">Agent Deployment Readiness (ADR) Registry</div>
-          <div class="adr-c-id">Certificate ID: <b>ADR-2026-0525-N9</b></div>
-          <div class="adr-c-div"></div>
-          <div class="adr-c-status">
-            <span class="d"></span>
-            <div>
-              <div class="adr-c-status-t">VERIFIED COMPLIANT · ARS SECURE</div>
-              <div class="adr-c-status-s">Dynamic attestation · auto-suspends on behavioral drift</div>
+          <div class="adr-c-accent"></div>
+          <div class="adr-c-inner">
+            <div class="adr-c-head">
+              <div class="adr-c-brand">
+                <svg width="14" height="16" viewBox="0 0 14 16" fill="none"><path d="M7 1 L13 3 V8 C13 12 10 14.5 7 15.5 C4 14.5 1 12 1 8 V3 Z" stroke="#10b981" stroke-width="1.3" fill="rgba(16,185,129,0.08)"/></svg>
+                Agensure · Public Verification Portal
+              </div>
+              <div class="adr-c-seal">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M4 9.6l3.4 3.4L15 5.4" stroke="#0f9d63" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>VERIFIED</span>
+              </div>
             </div>
+            <div class="adr-c-h1">Agent Deployment Readiness (ADR) Registry</div>
+            <div class="adr-c-id">Certificate ID: <b>ADR-2026-0525-N9</b></div>
+            <div class="adr-c-div"></div>
+            <div class="adr-c-status">
+              <div class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.5 8.4l3 3 6-7" stroke="#0f9d63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div>
+                <div class="adr-c-status-t">VERIFIED COMPLIANT · LOW RISK</div>
+                <div class="adr-c-status-s">Dynamic attestation · auto-suspends on behavioral drift</div>
+              </div>
+            </div>
+            <div class="adr-c-div"></div>
+            <div class="adr-c-sec">Certificate Profile</div>
+            <div class="adr-c-row"><span class="adr-c-k">Certificate ID</span><span class="adr-c-v">ADR-2026-0525-N9</span></div>
+            <div class="adr-c-row"><span class="adr-c-k">Issued</span><span class="adr-c-v">May 25, 2026 · 01:38 UTC</span></div>
+            <div class="adr-c-row"><span class="adr-c-k">Expires</span><span class="adr-c-v">August 25, 2026 (90-Day Dynamic Validity)</span></div>
+            <div class="adr-c-row"><span class="adr-c-k">Target Agent</span><span class="adr-c-v">CustomerBot v2.3</span></div>
+            <div class="adr-c-row"><span class="adr-c-k">Deployer Company</span><span class="adr-c-v">Acme Corp</span></div>
+            <div class="adr-c-div"></div>
+            <div class="adr-c-sec">Compliance &amp; Risk Metrics</div>
+            <div class="adr-c-row"><span class="adr-c-k">Regulatory Frame</span><span class="adr-c-v">EU AI Act Article 15 (Accuracy, Robustness &amp; Cybersecurity)</span></div>
+            <div class="adr-c-row"><span class="adr-c-k">Gov. Standard</span><span class="adr-c-v">ISO/IEC 42001 Crosswalk Aligned</span></div>
+            <div class="adr-c-row"><span class="adr-c-k">Risk Methodology</span><span class="adr-c-v">AIUC-1 Framework Taxonomy Reference</span></div>
+            <div class="adr-c-row"><span class="adr-c-k">Agensure Risk Score</span><span class="adr-c-riskpill">13 / 100 · LOW RISK PROFILE</span></div>
+            <div class="adr-c-row"><span class="adr-c-k">Monitoring Protocol</span><span class="adr-c-v">Continuous Multi-Domain Adversarial Probing</span></div>
+            <div class="adr-c-row"><span class="adr-c-k">Active Enforcement</span><span class="adr-c-v">Zero-Access Endpoint Probing Loop</span></div>
           </div>
-          <div class="adr-c-div"></div>
-          <div class="adr-c-sec">Certificate Profile</div>
-          <div class="adr-c-row"><span class="adr-c-k">Certificate ID</span><span class="adr-c-v">ADR-2026-0525-N9</span></div>
-          <div class="adr-c-row"><span class="adr-c-k">Issued</span><span class="adr-c-v">May 25, 2026 · 01:38 UTC</span></div>
-          <div class="adr-c-row"><span class="adr-c-k">Expires</span><span class="adr-c-v">August 25, 2026 (90-Day Dynamic Validity)</span></div>
-          <div class="adr-c-row"><span class="adr-c-k">Target Agent</span><span class="adr-c-v">CustomerBot v2.3</span></div>
-          <div class="adr-c-row"><span class="adr-c-k">Deployer Company</span><span class="adr-c-v">Acme Corp</span></div>
-          <div class="adr-c-div"></div>
-          <div class="adr-c-sec">Compliance &amp; Risk Metrics</div>
-          <div class="adr-c-row"><span class="adr-c-k">Regulatory Frame</span><span class="adr-c-v">EU AI Act Article 50 (Transparency Mandate)</span></div>
-          <div class="adr-c-row"><span class="adr-c-k">Gov. Standard</span><span class="adr-c-v">ISO/IEC 42001 Crosswalk Aligned</span></div>
-          <div class="adr-c-row"><span class="adr-c-k">Risk Methodology</span><span class="adr-c-v">AIUC-1 Framework Taxonomy Reference</span></div>
-          <div class="adr-c-row"><span class="adr-c-k">Agensure Risk Score</span><span class="adr-c-v green">13 / 100 · LOW RISK PROFILE</span></div>
-          <div class="adr-c-row"><span class="adr-c-k">Monitoring Protocol</span><span class="adr-c-v">Continuous Multi-Domain Adversarial Probing</span></div>
-          <div class="adr-c-row"><span class="adr-c-k">Active Enforcement</span><span class="adr-c-v">Zero-Access Endpoint Probing Loop</span></div>
         </div>
       </div>
 
