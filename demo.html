@@ -60,21 +60,45 @@
     .expect-card h3{ font-size:17px; font-weight:700; color:#fff; margin-bottom:10px; letter-spacing:-0.01em; }
     .expect-card p{ font-size:14px; color:var(--gray); line-height:1.65; }
 
-    /* READY CTA */
-    .ready{ padding:60px 0 120px; }
-    .ready-card{ background:linear-gradient(135deg, rgba(59,130,246,0.08), rgba(167,139,250,0.06)); border:1px solid rgba(79,142,247,0.2); border-radius:20px; padding:64px 48px; text-align:center; }
-    .ready-card h2{ font-size:clamp(30px,4vw,46px); font-weight:800; letter-spacing:-0.03em; color:#fff; margin-bottom:16px; }
-    .ready-card p{ font-size:18px; font-weight:300; color:var(--gray); max-width:560px; margin:0 auto 34px; line-height:1.7; }
-    .ready-btn{ display:inline-flex; align-items:center; gap:9px; font-size:15px; font-weight:700; color:#fff; background:var(--blue); padding:15px 34px; border-radius:10px; text-decoration:none; border:none; cursor:pointer; font-family:inherit; transition:background 0.2s, transform 0.15s; }
-    .ready-btn:hover{ background:var(--blue2); transform:translateY(-2px); }
-    .ready-note{ margin-top:18px; font-size:13px; color:var(--text3); }
-    .ready-note a{ color:var(--blue); text-decoration:none; }
+    /* GREEN + DARK BUTTONS */
+    .btn-green{ display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:inherit; font-size:15px; font-weight:700; color:#052e1a; background:linear-gradient(135deg,#10b981,#34d399); padding:14px 28px; border-radius:10px; text-decoration:none; border:none; cursor:pointer; box-shadow:0 0 30px rgba(16,185,129,0.35), 0 8px 20px -8px rgba(16,185,129,0.5); transition:transform 0.15s, box-shadow 0.2s; }
+    .btn-green:hover{ transform:translateY(-2px); box-shadow:0 0 44px rgba(16,185,129,0.5), 0 10px 26px -8px rgba(16,185,129,0.6); }
+    .btn-dark{ display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:inherit; font-size:15px; font-weight:600; color:var(--text); background:rgba(255,255,255,0.04); padding:14px 26px; border-radius:10px; text-decoration:none; border:1px solid rgba(255,255,255,0.12); cursor:pointer; transition:background 0.2s, border-color 0.2s; }
+    .btn-dark:hover{ background:rgba(255,255,255,0.07); border-color:rgba(255,255,255,0.22); }
+
+    /* LOWEST-COMMITMENT OFFER CARD */
+    .offer{ padding:20px 0 40px; }
+    .offer-card{ position:relative; overflow:hidden; display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center; background:linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border:1px solid rgba(79,142,247,0.14); border-radius:20px; padding:40px 44px; }
+    @media (max-width:820px){ .offer-card{ grid-template-columns:1fr; gap:28px; } }
+    .offer-card::before{ content:''; position:absolute; inset:0; background:radial-gradient(ellipse 50% 80% at 85% 50%, rgba(16,185,129,0.09), transparent 70%); pointer-events:none; }
+    .offer-eyebrow{ font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#34d399; margin-bottom:16px; position:relative; }
+    .offer-card h2{ font-size:clamp(26px,3.2vw,36px); font-weight:800; letter-spacing:-0.03em; color:#fff; margin-bottom:14px; line-height:1.1; position:relative; }
+    .offer-card > div > p{ font-size:15px; color:var(--gray); line-height:1.7; max-width:520px; position:relative; }
+    .offer-actions{ display:flex; flex-direction:column; gap:12px; position:relative; z-index:1; }
+    @media (max-width:820px){ .offer-actions{ flex-direction:row; flex-wrap:wrap; } }
+
+    /* READY CTA (animated) */
+    .ready{ padding:40px 0 120px; }
+    .ready-card{ position:relative; overflow:hidden; border:1px solid rgba(139,92,246,0.3); border-radius:24px; padding:72px 48px; text-align:center;
+      background:linear-gradient(120deg,#1a1140,#251559,#15214e,#1a1140); background-size:300% 300%; animation:readyGrad 14s ease infinite; }
+    @keyframes readyGrad{ 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    .ready-card::before{ content:''; position:absolute; inset:0; opacity:0.7; pointer-events:none; background:
+        radial-gradient(ellipse 40% 70% at 50% 118%, rgba(16,185,129,0.22), transparent 60%),
+        linear-gradient(transparent 96%, rgba(255,255,255,0.05) 96%) 0 0/100% 34px,
+        linear-gradient(90deg, transparent 96%, rgba(255,255,255,0.05) 96%) 0 0/34px 100%; }
+    .ready-card > *{ position:relative; z-index:1; }
+    .ready-card h2{ font-size:clamp(34px,4.6vw,54px); font-weight:800; letter-spacing:-0.035em; color:#fff; margin-bottom:16px; }
+    .ready-card p{ font-size:18px; font-weight:300; color:#c9c2e8; max-width:600px; margin:0 auto 34px; line-height:1.7; }
+    .ready-actions{ display:inline-flex; gap:14px; flex-wrap:wrap; justify-content:center; }
+    .ready-note{ margin-top:20px; font-size:13px; color:#9a94c0; }
+    .ready-note a{ color:#c4b5fd; text-decoration:none; }
 
     @media (max-width:900px){
       nav{ padding:16px 24px; }
       .wrap{ padding:0 24px; }
       .demo-hero{ padding:120px 0 10px; }
-      .ready-card{ padding:44px 24px; }
+      .ready-card{ padding:52px 24px; }
+      .offer-card{ padding:32px 24px; }
     }
   </style>
 </head>
@@ -131,13 +155,33 @@
   </div>
 </section>
 
+<!-- LOWEST-COMMITMENT OFFER -->
+<section class="offer">
+  <div class="wrap">
+    <div class="offer-card">
+      <div>
+        <div class="offer-eyebrow">Lowest-commitment start</div>
+        <h2>Start with a fixed-scope pentest.</h2>
+        <p>A senior-led assessment with a fixed scope and audit-ready evidence. If you move to a continuous subscription later, it counts toward it. Not sure which path fits? Book the call and we'll help you choose.</p>
+      </div>
+      <div class="offer-actions">
+        <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/filippo-agensure/30min'});return false;" class="btn-green">Scope a pentest</a>
+        <a href="/sample-report" class="btn-dark">See a sample report</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- READY -->
 <section class="ready">
   <div class="wrap">
     <div class="ready-card">
       <h2>Ready to see it run?</h2>
       <p>Book a demo and we'll walk through a live attack campaign against one of your own agents, together.</p>
-      <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/filippo-agensure/30min'});return false;" class="ready-btn">Book a demo</a>
+      <div class="ready-actions">
+        <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/filippo-agensure/30min'});return false;" class="btn-green">Book a demo</a>
+        <a href="/sample-report" class="btn-dark">View sample report</a>
+      </div>
       <div class="ready-note">Or email us at <a href="mailto:info@agensure.eu">info@agensure.eu</a></div>
     </div>
   </div>
